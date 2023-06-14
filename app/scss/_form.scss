@@ -1,0 +1,170 @@
+.form-group {
+    margin-bottom: 1.6rem;
+
+    &__label {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: .2rem;
+
+        &[for] {
+            cursor: pointer;
+        }
+    }
+}
+
+.form-check {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin: 1.6rem 0;
+
+    &__label {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    &__text {
+        display: block;
+        position: relative;
+        padding: 0 0 0 3rem;
+
+        .form-check__input:disabled + & {
+            opacity: 0.5;
+            cursor: default;
+            cursor: not-allowed;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.15s ease-in-out;
+        }
+
+        &:before {
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid $c-border;
+            background: #fff;
+
+            .form-check__input[type=radio] + & {
+                border-radius: 50%;
+            }
+
+            .form-check__input:focus + & {
+                border-color: $c-base;
+            }
+
+            .form-check__input.error + & {
+                border-color: $c-error;
+            }
+        }
+
+        &:after {
+            .form-check__input[type=checkbox] + & {
+                width: 1.3rem;
+                height: .7rem;
+                margin: .4rem 0 0 .4rem;
+                border: 2px solid $c-base;
+                border-width: 0 0 2px 2px;
+                opacity: 0;
+                transform: rotate(-45deg);
+            }
+
+            .form-check__input[type=radio] + & {
+                width: 1.2rem;
+                height: 1.2rem;
+                margin: .4rem 0 0 .4rem;
+                background: $c-base;
+                border-radius: 50%;
+                opacity: 0;
+            }
+
+            .form-check__input:checked + & {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.form-control::placeholder {
+    color: $c-border;
+}
+
+.form-control:focus::placeholder {
+    color: transparent;
+}
+
+.form-control {
+    display: block;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    transition: 0.15s ease-in-out;
+    width: 100%;
+    height: calc(3.6rem + 2px);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding: .6rem 1.2rem;
+    border: 1px solid $c-border;
+    border-radius: .4rem;
+    background-color: #fff;
+    color: $c-base;
+
+    &:focus {
+        border-color: $c-base;
+    }
+
+    &[disabled],
+    &.disabled {
+        background-color: #f5f5f5;
+        border-color: $c-border;
+        color: #888;
+        cursor: default;
+        cursor: not-allowed;
+    }
+
+    &.error {
+        border-color: $c-error;
+    }
+}
+
+select.form-control {
+    max-width: 100%; 
+    margin: 0;
+    padding-right: 2.5rem;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSI5cHgiIHZpZXdCb3g9IjAgMCAxNiA5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiICBmaWxsPSJyZ2IoNjQsIDY0LCA2NCkiIGQ9Ik0xNS4wNzEsMS4wMDAgTDguNzA3LDcuMzY0IEw4LjAwMCw4LjA3MSBMMC45MjksMS4wMDAgTDEuNjM2LDAuMjkzIEw4LjAwMCw2LjY1NyBMMTQuMzY0LDAuMjkzIEwxNS4wNzEsMS4wMDAgWiIvPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-position: right .6rem center;
+    background-size: 1.6rem .9rem;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+input[type=file].form-control {
+    padding: 3px;
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+label.error {
+    display: block;
+    color: $c-error;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin-bottom: -1.4rem;
+}

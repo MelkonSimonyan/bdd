@@ -1,0 +1,21 @@
+<div class="header">
+    <div class="container">
+        <button type="button" class="menu-btn">
+            <span></span>
+        </button>
+
+        <div class="menu-popup">
+            <div class="menu-popup__bg"></div>
+            <div class="menu-popup__inner">
+                <button type="button" class="menu-popup__close close-btn"></button>
+                <div class="menu-popup__content">
+                    <nav>
+                        <ul>
+                            <li><a href="index.php" @@if (context.page === 'Home') {class="is-active"}>Главная</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

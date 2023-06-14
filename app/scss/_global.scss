@@ -1,0 +1,27 @@
+.container {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @media (max-width: $breakpoint-lg-max) {
+        max-width: 960px;
+    }
+
+    @media (max-width: $breakpoint-md-max) {
+        max-width: 720px;
+    }
+
+    @media (max-width: $breakpoint-sm-max) {
+        max-width: 540px;
+    }
+
+    @media (max-width: $breakpoint-xs-max) {
+        max-width: none;
+    }
+}
+
+.content {
+    flex-grow: 1;
+}

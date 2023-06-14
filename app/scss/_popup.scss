@@ -1,0 +1,15 @@
+.popup-window {
+    background: #fff;
+    width: 450px;
+    max-width: 100%;
+    padding: 3rem;
+    overflow: visible;
+
+    &:not(.fancybox-content) {
+        display: none;
+    }
+
+    &__title {
+        text-align: center;
+    }
+}

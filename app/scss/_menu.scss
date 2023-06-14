@@ -1,0 +1,99 @@
+.menu-btn {
+    display: none;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+        content: '';
+    }
+
+    &:before,
+    &:after,
+    & > span {
+        position: absolute;
+        width: 24px;
+        left: 50%;
+        top: 50%;
+        margin: -1px 0 0 -12px;
+        border-bottom: 2px solid;
+        transition: 0.25s ease-in-out;
+    }
+
+    &:before {
+        transform: translateY(-8px);
+    }
+
+    &:after {
+        transform: translateY(8px);
+    }
+
+    @media (max-width: $breakpoint-sm-max) {
+        display: block;
+    }
+}
+
+.menu-popup {
+    &__bg,
+    &__close {
+        display: none;
+    }
+
+    @media (max-width: $breakpoint-sm-max) {
+        &__bg {
+            display: block;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 90001;
+            background: rgba(0, 0, 0, .5);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            backface-visibility: hidden;
+            transition: 0.25s ease-in-out;
+        }
+
+        &__inner {
+            position: fixed;
+            z-index: 90002;
+            top: 0;
+            bottom: 0;
+            left: -250px;
+            width: 250px;
+            background: #fff;
+            backface-visibility: hidden;
+            transition: 0.25s ease-in-out;
+        }
+
+        html.is-menu-open &__bg {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        html.is-menu-open &__inner {
+            transform: translateX(100%);
+        }
+
+        &__close {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        &__content {
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+}
