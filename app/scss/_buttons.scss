@@ -1,27 +1,98 @@
 .btn {
-    display: inline-block;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    text-decoration: none;
-    background: $c-base;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 6px 16px;
+  column-gap: 4px;
+  border-radius: 4px;
+
+  &_smx {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  &_primary {
+    background-color: var(--accent-primary);
     color: #fff;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    padding: .6rem 3rem;
-    border-radius: .4rem;
-    height: calc(3.6rem + 2px);
 
     &:hover {
-        background: #000;
-        color: #fff;
+      background-color: var(--accent-primary);
+      color: #fff;
+    }
+  }
+
+  &_secondary {
+    background-color: var(--button-secondary-bg);
+    color: var(--text-subhead);
+
+    &:hover {
+      background-color: var(--button-secondary-bg);
+      color: var(--text-subhead);
+    }
+  }
+
+  &_danger {
+    background-color: var(--accent-danger);
+    color: #fff;
+
+    &:hover {
+      background-color: var(--accent-danger);
+      color: #fff;
+    }
+  }
+
+  &_success {
+    background-color: var(--accent-success);
+    color: #fff;
+
+    &:hover {
+      background-color: var(--accent-success);
+      color: #fff;
+    }
+  }
+
+  &_block {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &[disabled],
+  &.is-disabled {
+    opacity: .4;
+    cursor: default;
+    cursor: not-allowed;
+  }
+}
+
+.buttons {
+  display: flex;
+  background: var(--bg-containers-gray);
+  border-radius: 4px;
+  padding: 4px;
+  
+  .btn {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 2px 6px;
+
+    &:hover {
+      background-color: var(--button-secondary-bg);
     }
 
-    &[disabled],
-    &.is-disabled {
-        opacity: .55;
-        cursor: default;
-        cursor: not-allowed;
+    &.is-active {
+      background-color: var(--accent-primary-1);
     }
+  }
 }

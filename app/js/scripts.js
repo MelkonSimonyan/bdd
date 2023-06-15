@@ -1,2 +1,1 @@
-@@include('_menu.js')
-@@include('_global.js')
+@@include('_radial-graph.js')

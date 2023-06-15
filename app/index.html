@@ -1,19 +1,25 @@
 <!DOCTYPE HTML>
 <html lang="ru">
+
 <head>
-  @@include('./components/head/_head.html')
+  @@include('./components/_head.html')
 </head>
+
 <body>
-  @@include('./components/header/_header.html')
+  @@include('./components/_header.html')
 
   <div class="content">
-    <div class="container">
-      Content
+    <div class="aside has-scrollbar">
+      @@include('./components/_aside.html')
+    </div>
+
+    <div class="main">
+      @@include('./components/_map.html')
     </div>
   </div>
 
-  @@include('./components/footer/_footer.html')
-  @@include('./components/svg/_svg.html')
-  @@include('./components/foot/_foot.html')
+  @@include('./components/_svg.html')
+  @@include('./components/_foot.html')
 </body>
+
 </html>

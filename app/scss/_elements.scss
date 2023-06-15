@@ -1,26 +1,84 @@
-.close-btn {
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    border: none;
-    background: none;
-    padding: 0;
-    width: 4rem;
-    height: 4rem;
+.switch {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	position: relative;
+	cursor: pointer;
+	width: 50px;
+	height: 28px;
 
-    &:before,
-    &:after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 2rem;
-        border-bottom: 2px solid;
-        margin: -1px 0 0 -1rem;
-        transform: rotate(45deg);
-    }
+	input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+	}
 
-    &:after {
-        transform: rotate(-45deg);  
-    }
+	&__content {
+		width: 42px;
+		height: 16px;
+		background-color: var(--button-secondary-bg);
+		border-radius: 100px;
+		position: relative;
+		transition: background-color 0.15s ease-in-out;
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: -1px;
+			top: 50%;
+			margin-top: -10px;
+			width: 20px;
+			height: 20px;
+			background: #fff;
+			border-radius: 50%;
+			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+			transition: left 0.15s ease-in-out;
+		}
+	}
+
+	input:checked ~ &__content {
+		background-color: var(--accent-primary);
+
+		&:after {
+			left: calc(100% - 19px);
+		}
+	}
+}
+
+.switcher {
+	display: flex;
+	align-items: center;
+	column-gap: 8px;
+	cursor: pointer;
+	height: 36px;
+}
+
+.radial-graph {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-weight: 600;
+
+	&__graph {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transform: rotate(-180deg);
+	}
+
+	&__text {
+
+	}
+
+	&__arrow {
+
+	}
 }
