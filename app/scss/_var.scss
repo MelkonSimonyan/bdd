@@ -1,29 +1,29 @@
 :root {
-  --text-primary: #090E14;
-  --text-subhead: #404652;
-  --text-secondary: #9398A3;
+  --text-primary:               rgb(9 14 20);
+  --text-subhead:               rgb(64 70 82);
+  --text-secondary:             rgb(147 152 163);
 
-  --accent-primary-1: rgba(46, 147, 254, 0.12);
-  --accent-primary-2: rgba(46, 147, 254, 0.5);
-  --accent-primary: #2E93FE;
-  --accent-danger: #D94141;
-  --accent-success: #40A228;
-  --accent-warning: #D69338;
+  --accent-primary:             rgb(46 147 254);
+  --accent-primary-12:          rgb(46 147 254 / 12%);
+  --accent-primary-50:           rgb(46 147 254 / 50%);
   
-  --bg-panel-primary: #F2F3F5;
-  --bg-containers-gray: rgba(110, 116, 128, 0.08);
+  --accent-danger:              rgb(217 65 65);
+  --accent-danger-10:           rgb(217 65 65 / 10%);
 
-  --icons-high-contrast: #6E7480;
-  --icons-low-contrast: #B4B8BF;
-
-  --dividers-low-contrast: rgba(0, 0, 0, 0.12);
+  --accent-success:             rgb(64 162 40);
+  --accent-warning:             rgb(214 147 56);
   
-  --button-secondary-bg: rgba(110, 116, 128, 0.16);
+  --bg-panel-primary:           rgb(242 243 245);
+  --bg-surface:                 rgb(247 248 250);
 
-  --field-bg: rgba(110, 116, 128, 0.08);
-  --field-danger-bg: rgba(217, 65, 65, 0.1);
-  --field-border: rgba(0, 0, 0, 0.12);
-  --field-placeholder: #909499;
+  --dividers-low-contrast:      rgb(0 0 0 / 12%);
+  
+  --icons-low-contrast:         rgb(180 184 191);
+  
+  --icons-high-contrast:        rgb(110 116 128);
+  --button-secondary-bg:        rgb(110 116 128 / 16%);
+  --button-secondary-bg-h:      rgb(110 116 128 / 10%);
+  --bg-containers-gray:         rgb(110 116 128 / 8%);
 
-  --modal-bg: #F7F8FA;
+  --field-placeholder:          rgb(144 148 153);
 }

@@ -12,18 +12,16 @@
   position: absolute;
   right: 8px;
   top: 8px;
-  z-index: 1;
+  z-index: 2;
 
   &__group {
-    background: var(--modal-bg);
+    background: var(--bg-surface);
     border-radius: 4px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08);
     margin-bottom: 8px;
   }
 
-  &__item {
-
-  }
+  &__item {}
 
   &__btn {
     border: none;
@@ -40,6 +38,205 @@
       width: 24px;
       height: 24px;
       color: var(--icons-high-contrast);
+    }
+
+    &:hover {
+      svg {
+        color: var(--text-primary);
+      }
+    }
+  }
+}
+
+.map-info {
+  position: absolute;
+  right: 8px;
+  bottom: 16px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+
+  &__coord {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background-color: var(--bg-containers-gray);
+  }
+
+  &__scale {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 28px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -1px 0 0 -33px;
+      width: 66px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: var(--icons-high-contrast);
+    }
+
+    > span {
+      padding: 2px 4px;
+      border-radius: 2px;
+      background: var(--bg-surface);
+      position: relative;
+    }
+  }
+}
+
+.map-tooltip {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--dividers-low-contrast);
+  width: 200px;
+  margin-left: -100px;
+  margin-bottom: 9px;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  font-size: 12px;
+  line-height: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08);
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    margin-left: -8px;
+    border-style: solid;
+    border-width: 8px;
+    border-bottom-width: 0;
+    border-color: var(--bg-surface) transparent;
+  }
+
+  &:before {
+    bottom: -9px;
+    border-top-color: var(--dividers-low-contrast);
+  }
+
+  &__header {
+    flex-shrink: 0;
+    margin-bottom: 8px;
+    padding: 4px 8px 4px 0;
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      flex-shrink: 0;
+      margin-right: 4px;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &-content {
+      flex-grow: 1;
+      min-width: 1px;
+    }
+
+    &-title {
+      margin-bottom: 2px;
+    }
+
+    &-text {
+      font-weight: 600;
+    }
+  }
+
+  &__footer {
+    flex-shrink: 0;
+    margin-top: 8px;
+
+    .btn {
+      padding-top: 2px;
+      padding-bottom: 2px;
+      font-weight: 600;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    min-height: 1px;
+  }
+
+  &__item {
+    border-top: 1px solid var(--dividers-low-contrast);
+    padding-top: 2px;
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    &-text {
+
+    }
+  }
+}
+
+.map-objects-tooltip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--dividers-low-contrast);
+  width: 240px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08);
+
+  &__header {
+    flex-shrink: 0;
+    padding: 8px;
+    padding-bottom: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--text-subhead);
+  }
+
+  &__content {
+    flex-grow: 1;
+    min-height: 1px;
+    padding-bottom: 8px;
+  }
+
+  &__item {
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      padding: 8px 12px;
     }
   }
 }

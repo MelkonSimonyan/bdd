@@ -37,7 +37,7 @@
     color: var(--text-subhead);
 
     &:hover {
-      background-color: var(--button-secondary-bg);
+      background-color: var(--button-secondary-bg-h);
       color: var(--text-subhead);
     }
   }
@@ -74,6 +74,12 @@
     cursor: default;
     cursor: not-allowed;
   }
+
+  &:hover {
+    .icon {
+      color: var(--text-primary);
+    }
+  }
 }
 
 .buttons {
@@ -88,11 +94,11 @@
     padding: 2px 6px;
 
     &:hover {
-      background-color: var(--button-secondary-bg);
+      background-color: var(--bg-containers-gray);
     }
 
     &.is-active {
-      background-color: var(--accent-primary-1);
+      background-color: var(--accent-primary-12);
     }
   }
 }

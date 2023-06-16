@@ -80,7 +80,6 @@ strong {
 .has-scrollbar {
   overflow: hidden;
   overflow-y: auto;
-  overflow-y: overlay;
   scroll-behavior: smooth;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -88,8 +87,8 @@ strong {
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: 10px;
+    height: 10px;
   }
 
   &::-webkit-scrollbar-track {
@@ -97,8 +96,10 @@ strong {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--accent-primary-2);
+    background-color: var(--accent-primary-50);
     border-radius: 4px;
+    border: 3px solid transparent;
+    background-clip: content-box;
   }
 }
 

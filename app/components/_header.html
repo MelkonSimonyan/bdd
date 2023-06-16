@@ -39,9 +39,16 @@
         <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
       </button>
 
+      @@if(context.select_plot){
+        <button type="button" class="btn btn_smx btn_secondary">
+          <span>Выбрать участок</span>
+          <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
+        </button>
+      }
+
       <label class="switcher">
         <span class="switch">
-          <input type="checkbox" checked>
+          <input type="checkbox" name="swicth" checked>
           <span class="switch__content"></span>
         </span>
         <span class="switcher__text">Показать подсказки</span>

@@ -32,8 +32,8 @@ select {
 	line-height: 20px;
 	padding: 7px 11px;
 	border-radius: 4px;
-	border: 1px solid var(--field-border);
-	background-color:var(--field-bg);
+	border: 1px solid var(--dividers-low-contrast);
+	background-color:var(--bg-containers-gray);
 	color: var(--text-primary);
 
 	&::placeholder {
@@ -42,7 +42,7 @@ select {
 
 	&:focus {
 		outline: none;
-		border-color: var(--field-border);
+		border-color: var(--dividers-low-contrast);
 	}
 
 	&[disabled] {
@@ -53,7 +53,7 @@ select {
 
 	&.error {
 		border-color: var(--accent-danger);
-		background-color: var(--field-danger-bg);
+		background-color: var(--accent-danger-10);
 	}
 }
 
