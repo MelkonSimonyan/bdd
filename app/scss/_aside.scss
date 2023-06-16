@@ -6,7 +6,30 @@
   width: 300px;
   background: var(--bg-panel-primary);
 
-  &__header {}
+  &__header {
+    border-bottom: 1px solid var(--dividers-low-contrast);
+
+    a {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      column-gap: 8px;
+      padding: 8px;
+      padding-right: 36px;
+      color: var(--text-subhead);
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        color: var(--text-primary);
+      }
+
+      & > span {
+        flex-grow: 1;
+        text-align: center;
+      }
+    }
+  }
   
   &__content {
     padding: 8px;
@@ -32,6 +55,15 @@
   border-radius: 4px;
   margin-bottom: 8px;
 
+  &:hover,
+  &.is-active {
+    background: #90C3FA;
+
+    .radial-graph {
+      border-color: #B8D7FF;
+    }
+  }
+
   &__content {
     flex-grow: 1;
     min-width: 1px;
@@ -40,6 +72,7 @@
 
   &__title {
     display: block;
+    font-weight: 600;
   }
 
   &__text {

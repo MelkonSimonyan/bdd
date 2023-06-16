@@ -7,3 +7,39 @@
   width: 100%;
   height: 100%;
 }
+
+.map-control {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 1;
+
+  &__group {
+    background: var(--modal-bg);
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08);
+    margin-bottom: 8px;
+  }
+
+  &__item {
+
+  }
+
+  &__btn {
+    border: none;
+    padding: 0;
+    background: none;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: var(--icons-high-contrast);
+    }
+  }
+}

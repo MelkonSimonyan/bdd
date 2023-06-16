@@ -2,15 +2,16 @@
   --text-primary: #090E14;
   --text-subhead: #404652;
   --text-secondary: #9398A3;
+
+  --accent-primary-1: rgba(46, 147, 254, 0.12);
+  --accent-primary-2: rgba(46, 147, 254, 0.5);
+  --accent-primary: #2E93FE;
+  --accent-danger: #D94141;
+  --accent-success: #40A228;
+  --accent-warning: #D69338;
   
   --bg-panel-primary: #F2F3F5;
   --bg-containers-gray: rgba(110, 116, 128, 0.08);
-
-  --accent-primary: #2E93FE;
-  --accent-primary-1: rgba(46, 147, 254, 0.12);
-  --accent-primary-2: rgba(46, 147, 254, 0.5);
-  --accent-danger: #D94141;
-  --accent-success: #40A228;
 
   --icons-high-contrast: #6E7480;
   --icons-low-contrast: #B4B8BF;
@@ -23,4 +24,6 @@
   --field-danger-bg: rgba(217, 65, 65, 0.1);
   --field-border: rgba(0, 0, 0, 0.12);
   --field-placeholder: #909499;
+
+  --modal-bg: #F7F8FA;
 }

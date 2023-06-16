@@ -1,11 +1,17 @@
 <div class="map-wrapper">
-  <!-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <div class="map" id="map"></div>
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script>
+    /* https://leaflet-extras.github.io/leaflet-providers/preview/ */
     new L.map('map', {
-      center: [55.751244, 37.618423],
-      zoom: 11,
-    }).addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
-  </script> -->
+      center: [55.751244, 42.618423],
+      zoom: 6,
+      zoomControl: false,
+      attributionControl: false,
+    }).addLayer(new L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+      maxZoom: 20,
+      attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+    }));
+  </script>
 </div>

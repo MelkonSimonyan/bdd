@@ -1,20 +1,6 @@
-const arc = (x, y, radius, startAngle, endAngle) => {
-  const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
-
-  const d = [
-    "M", x + (radius * Math.cos((endAngle-90) * Math.PI / 180.0)), y + (radius * Math.sin((endAngle-90) * Math.PI / 180.0)), 
-    "A", radius, radius, 0, largeArcFlag, 0, x + (radius * Math.cos((startAngle-90) * Math.PI / 180.0)), y + (radius * Math.sin((startAngle-90) * Math.PI / 180.0))
-    ].join(" ");
-
-  return d;
-}
-
-const radialGraphs = document.querySelectorAll('.radial-graph__graph');
-radialGraphs.forEach(graph => {
-  const path = graph.querySelector('path');
+document.querySelectorAll('.radial-graph__graph').forEach(graph => {
   const w = graph.getBoundingClientRect().width;
-  const r = path.getAttribute('stroke-width');
-  const a = path.dataset.angle;
-
-  path.setAttribute('d', arc(w / 2, w / 2, w / 2 - r / 2, 0, a));
+  const a = graph.dataset.angle;
+  const r = w / 2 - graph.getAttribute('stroke-width') / 2;
+  graph.querySelector('path').setAttribute('d', `M ${w / 2 + (r * Math.cos((a - 90) * Math.PI / 180))} ${w / 2 + (r * Math.sin((a - 90) * Math.PI / 180))} A ${r} ${r} 0 ${a <= 180 ? "0" : "1"} 0 ${w / 2 + (r * Math.cos(-90 * Math.PI / 180))} ${w / 2 + (r * Math.sin(-90 * Math.PI / 180))}`);
 });

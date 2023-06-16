@@ -62,23 +62,33 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
-	font-weight: 600;
+	border: 6px solid #EBEDF0;
+	border-radius: 50%;
 
 	&__graph {
 		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
+		left: -6px;
+		top: -6px;
+		width: calc(100% + 12px);
+		height: calc(100% + 12px);
 		transform: rotate(-180deg);
+
+		&.color-accent-success {
+			stroke: var(--accent-success);
+		}
+
+		&.color-accent-warning {
+			stroke: var(--accent-warning);
+		}
+
+		&.color-accent-danger {
+			stroke: var(--accent-danger);
+		}
 	}
 
 	&__text {
-
-	}
-
-	&__arrow {
-
+		text-align: center;
+		font-weight: 600;
+		position: relative;
 	}
 }

@@ -210,6 +210,22 @@
   color: var(--text-secondary);
 }
 
+.color-accent-primary {
+  color: var(--accent-primary);
+}
+
+.color-accent-danger {
+  color: var(--accent-danger);
+}
+
+.color-accent-success {
+  color: var(--accent-success);
+}
+
+.color-accent-warning {
+  color: var(--accent-warning);
+}
+
 .content {
   flex-grow: 1;
   min-height: 1px;
