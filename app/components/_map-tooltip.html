@@ -1,0 +1,22 @@
+<div class="map-tooltip">
+	<div class="map-tooltip__header">
+		<div class="map-tooltip__header-icon">
+			<svg class="icon"><use xlink:href="@@icon"></use></svg>
+		</div>
+		<div class="map-tooltip__header-content">
+			<div class="map-tooltip__header-title">@@title</div>
+			<div class="map-tooltip__header-text color-accent-@@class">@@subtitle</div>
+		</div>
+	</div>
+	<div class="map-tooltip__content has-scrollbar">
+		@@for (var i = 0; i < list.length; i++) {
+		  <div class="map-tooltip__item">
+				<div class="map-tooltip__item-title">` + list[i][0] + `</div>
+				<div class="map-tooltip__item-text">` + list[i][1] + `</div>
+			</div>
+		}
+	</div>
+	<div class="map-tooltip__footer">
+		<a href="#" class="btn btn_secondary btn_block">@@btn</a>
+	</div>
+</div>

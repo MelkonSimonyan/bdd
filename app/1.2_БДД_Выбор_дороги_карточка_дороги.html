@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  @@include('./components/_head.html')
+</head>
+<body>
+  @@include('./components/_header.html')
+
+  <div class="content">
+    <div class="aside">
+      @@include('./components/_aside-1.html')
+    </div>
+
+    <div class="main">
+      @@include('./components/_map.html')
+      
+      <div style="position: absolute; left: 42.5%; bottom: 63.1%;">
+        @@include('./components/_map-tooltip.html', {
+          "icon": "#icon-route",
+          "title": "М-3 «Украина»",
+          "subtitle": "+10 баллов",
+          "class": "success",
+          "btn": "Подробнее",
+          "list": [
+            ["Участок ПК", "76+36,738"]
+          ]
+        })
+      </div>
+    </div>
+  </div>
+
+  @@include('./components/_svg.html')
+  @@include('./components/_foot.html')
+</body>
+</html>

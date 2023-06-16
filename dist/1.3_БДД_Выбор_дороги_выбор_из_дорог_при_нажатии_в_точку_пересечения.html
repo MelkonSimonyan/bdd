@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=1280">
+
+  <title>Безопасность дорожного движения</title>
+
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="header">
+    <div class="header__row">
+      <div class="flex align-items-center gx-16">
+        <div class="header__logo-wrapper flex align-items-center gx-16 pr-16">
+          <a href="/" class="header__logo">
+            <img src="assets/images/logo.png" alt="">
+          </a>
+        
+          <button type="button" class="btn btn_smx btn_secondary">
+            <svg class="icon" width="24" height="24"><use xlink:href="#icon-list"></use></svg>
+            <span>Все модули</span>
+          </button>
+        </div>
+
+        <div class="header__title">Безопасность дорожного движения</div>
+      </div>
+
+      <div class="flex align-items-center gx-16">
+        <button type="button" class="btn btn_smx color-secondary">
+          <svg class="icon" width="24" height="24"><use xlink:href="#icon-sync-done"></use></svg>
+          <span>Данные сохранены</span>
+        </button>
+
+        <button type="button" class="btn btn_smx">
+          <svg class="icon" width="24" height="24"><use xlink:href="#icon-notification"></use></svg>
+        </button>
+
+        <button type="button" class="btn btn_smx">
+          <svg class="icon" width="24" height="24"><use xlink:href="#icon-user-avatar"></use></svg>
+          <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="header__row">
+      <div class="flex align-items-center gx-8">
+        <button type="button" class="btn btn_smx btn_secondary">
+          <span>Показать данные за период</span>
+          <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
+        </button>
+
+        
+
+        <label class="switcher">
+          <span class="switch">
+            <input type="checkbox" name="swicth" checked>
+            <span class="switch__content"></span>
+          </span>
+          <span class="switcher__text">Показать подсказки</span>
+        </label>
+      </div>
+
+      <div class="flex align-items-center gx-8">
+        <div class="buttons">
+          <button type="button" class="btn is-active">Карта</button>
+          <button type="button" class="btn">Таблица</button>
+          <button type="button" class="btn">Мероприятия</button>
+        </div>
+
+        <a href="#" class="btn btn_smx btn_secondary">
+          <svg class="icon" width="24" height="24"><use xlink:href="#icon-download"></use></svg>
+          <span>Создать отчёт</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="aside">
+      <div class="aside__header">
+        <div class="aside__search">
+          <div class="search-field">
+            <svg class="search-field__icon" width="20" height="20"><use xlink:href="#icon-search"></use></svg>
+            <input type="text" name="search" placeholder="Поиск">
+          </div>
+        </div>
+      </div>
+
+      <div class="aside__content has-scrollbar">
+        <div class="aside-nav">
+          <a href="2.1_БДД_Основной_экран_аудита_дороги_карта.html" class="aside-item">
+            <span class="aside-item__content">
+              <span class="aside-item__title">М-3 «Украина»</span>
+              <span class="aside-item__text">
+                <span class="color-accent-success">+10</span> за период
+              </span>
+            </span>
+            <span class="aside-item__graph">
+              <span class="radial-graph">
+                <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
+                <span class="radial-graph__text">83</span>
+              </span>
+            </span>
+            <svg class="aside-item__arrow icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
+          </a>
+
+          <a href="2.1_БДД_Основной_экран_аудита_дороги_карта.html" class="aside-item">
+            <span class="aside-item__content">
+              <span class="aside-item__title">М-5 «Урал»</span>
+              <span class="aside-item__text">
+                <span class="color-accent-warning">-10</span> за период
+              </span>
+            </span>
+            <span class="aside-item__graph">
+              <span class="radial-graph">
+                <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                <span class="radial-graph__text">63</span>
+              </span>
+            </span>
+            <svg class="aside-item__arrow icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
+          </a>
+
+          <a href="2.1_БДД_Основной_экран_аудита_дороги_карта.html" class="aside-item">
+            <span class="aside-item__content">
+              <span class="aside-item__title">М-7 «Волга»</span>
+              <span class="aside-item__text">
+                <span class="color-accent-danger">+10</span> за период
+              </span>
+            </span>
+            <span class="aside-item__graph">
+              <span class="radial-graph">
+                <svg class="radial-graph__graph color-accent-danger" fill="none" stroke-linecap="round" stroke-width="6" data-angle="119"><path /></svg>
+                <span class="radial-graph__text">33</span>
+              </span>
+            </span>
+            <svg class="aside-item__arrow icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="map-wrapper">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <div class="map" id="map"></div>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script>
+          /* https://leaflet-extras.github.io/leaflet-providers/preview/ */
+          new L.map('map', {
+            center: [55.751244, 42.618423],
+            zoom: 6,
+            zoomControl: false,
+            attributionControl: false,
+          }).addLayer(new L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+            maxZoom: 20,
+            attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+          }));
+        </script>
+        <div class="map-control">
+          <div class="map-control__group">
+            <div class="map-control__item">
+              <button type="button" class="map-control__btn">
+                <svg><use xlink:href="#icon-folder-layer"></use></svg>
+              </button>
+            </div>
+            <div class="map-control__item">
+              <button type="button" class="map-control__btn">
+                <svg><use xlink:href="#icon-image"></use></svg>
+              </button>
+            </div>
+            <div class="map-control__item">
+              <button type="button" class="map-control__btn">
+                <svg><use xlink:href="#icon-2d"></use></svg>
+              </button>
+            </div>
+            <div class="map-control__item">
+              <button type="button" class="map-control__btn">
+                <svg><use xlink:href="#icon-compass-north"></use></svg>
+              </button>
+            </div>
+            <div class="map-control__item">
+              <button type="button" class="map-control__btn">
+                <svg><use xlink:href="#icon-geometry-instruments"></use></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="map-control__group">
+            <div class="map-control__item">
+              <button type="button" class="map-control__btn">
+                <svg><use xlink:href="#icon-info"></use></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="map-info">
+        	<div class="map-info__coord">57.64911,10.40744</div>
+        	<div class="map-info__scale">
+        		<span>4 км</span>
+        	</div>
+        </div>
+      </div>
+      
+      <div style="position: absolute; left: 26.5%; bottom: 57.1%;">
+        <div class="map-objects-tooltip">
+        	<div class="map-objects-tooltip__header">Доступные объекты</div>
+        	<div class="map-objects-tooltip__content has-scrollbar">
+        	  <div class="map-objects-tooltip__item">
+        			<a href="#">М-3 «Украина»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-5 «Урал»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svg-sprite">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <symbol id="icon-list" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 6.25a.75.75 0 0 0 0 1.5H5a.75.75 0 0 0 0-1.5h-.5Zm4 0a.75.75 0 0 0 0 1.5h11a.75.75 0 0 0 0-1.5h-11Zm0 5a.75.75 0 0 0 0 1.5h11a.75.75 0 0 0 0-1.5h-11ZM7.75 17a.75.75 0 0 1 .75-.75h11a.75.75 0 0 1 0 1.5h-11a.75.75 0 0 1-.75-.75Zm-4-5a.75.75 0 0 1 .75-.75H5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Zm.75 4.25a.75.75 0 0 0 0 1.5H5a.75.75 0 0 0 0-1.5h-.5Z" />
+      </symbol>
+      <symbol id="icon-sync-done" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.75 9.5a3.75 3.75 0 0 1 3.75-3.75h.5A4.25 4.25 0 0 1 16.25 10v1c0 .414.336.75.75.75h1.208a3.042 3.042 0 0 1 3.042 3.042V15A2.25 2.25 0 0 1 19 17.25H5.923a3.173 3.173 0 0 1-3.173-3.173 3.827 3.827 0 0 1 3.827-3.827H7a.75.75 0 0 0 .75-.75Zm-1.448-.743A5.251 5.251 0 0 1 11.5 4.25h.5A5.75 5.75 0 0 1 17.75 10v.25h.458a4.542 4.542 0 0 1 4.542 4.542V15A3.75 3.75 0 0 1 19 18.75H5.923a4.673 4.673 0 0 1-4.673-4.673 5.327 5.327 0 0 1 5.052-5.32Zm8.312 2.173a.75.75 0 1 0-1.228-.86l-2.988 4.268L8.53 12.47a.75.75 0 0 0-1.06 1.06l2.289 2.29a1 1 0 0 0 1.526-.134l3.33-4.756Z" />
+      </symbol>
+      <symbol id="icon-notification" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.116 4.116A1.25 1.25 0 0 1 13 4.25h-2c.035-.047.074-.092.116-.134ZM7.792 7.861a6.25 6.25 0 0 1 2.382-2.111h3.653a6.25 6.25 0 0 1 3.423 5.268V14c0 .03.002.06.006.09a4.75 4.75 0 0 0 .828 2.16H5.916l.065-.096a4.75 4.75 0 0 0 .764-2.064.75.75 0 0 0 .005-.09v-2.982a6.25 6.25 0 0 1 1.042-3.157Zm.458 9.889H4a.75.75 0 0 1-.37-1.403 3.25 3.25 0 0 0 1.62-2.395v-2.987a7.75 7.75 0 0 1 4.043-6.447 2.75 2.75 0 0 1 5.415 0A7.75 7.75 0 0 1 18.75 11v2.952a3.25 3.25 0 0 0 1.62 2.395.75.75 0 0 1-.37 1.403h-4.25V18a3.75 3.75 0 0 1-7.5 0v-.25Zm6 0V18a2.25 2.25 0 0 1-4.5 0v-.25h4.5Z" />
+      </symbol>
+      <symbol id="icon-user-avatar" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm3.333-14.444A3.329 3.329 0 0 0 12 4.222a3.329 3.329 0 0 0-3.333 3.334A3.329 3.329 0 0 0 12 10.889a3.329 3.329 0 0 0 3.333-3.333ZM8.217 19.049a8 8 0 0 0 10.45-2.627C18.633 14.212 14.21 13 12 13c-2.222 0-6.633 1.211-6.667 3.422a8 8 0 0 0 2.884 2.627Z" />
+      </symbol>
+      <symbol id="icon-drop-down" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 15.109a.409.409 0 0 1-.29-.12L7.62 10.9a.41.41 0 0 1 .289-.699h8.181a.41.41 0 0 1 .29.699l-4.09 4.09a.409.409 0 0 1-.29.12Z"/>
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.75 5a.75.75 0 0 0-1.5 0v8.69l-3.095-3.095a.75.75 0 1 0-1.06 1.06l4.375 4.375a.746.746 0 0 0 1.06 0l4.375-4.375a.75.75 0 0 0-1.06-1.06l-3.095 3.094V5ZM5 14.75a.75.75 0 0 1 .75.75v1.75a1 1 0 0 0 1 1h10.5a1 1 0 0 0 1-1V15.5a.75.75 0 0 1 1.5 0v1.75a2.5 2.5 0 0 1-2.5 2.5H6.75a2.5 2.5 0 0 1-2.5-2.5V15.5a.75.75 0 0 1 .75-.75Z"/>
+      </symbol>
+      <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.47 9.22a.75.75 0 0 1 1.06 0L12 14.69l5.47-5.47a.75.75 0 1 1 1.06 1.06l-6 6a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 0 1 0-1.06Z"/>
+      </symbol>
+      <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.22 18.28a.75.75 0 0 1 0-1.06l5.47-5.47-5.47-5.47a.75.75 0 0 1 1.06-1.06l6 6a.75.75 0 0 1 0 1.06l-6 6a.75.75 0 0 1-1.06 0Z"/>
+      </symbol>
+      <symbol id="icon-date-calendar" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.75 3a.75.75 0 0 0-1.5 0v1.25H6A2.75 2.75 0 0 0 3.25 7v12A2.75 2.75 0 0 0 6 21.75h12A2.75 2.75 0 0 0 20.75 19V7A2.75 2.75 0 0 0 18 4.25h-1.25V3a.75.75 0 0 0-1.5 0v1.25h-6.5V3ZM6 5.75h1.25V7a.75.75 0 0 0 1.5 0V5.75h6.5V7a.75.75 0 0 0 1.5 0V5.75H18c.69 0 1.25.56 1.25 1.25v3.25H4.75V7c0-.69.56-1.25 1.25-1.25Zm-1.25 6h14.5V19c0 .69-.56 1.25-1.25 1.25H6c-.69 0-1.25-.56-1.25-1.25v-7.25ZM7.25 15a.75.75 0 0 1 .75-.75h2a.75.75 0 0 1 .75.75v2a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75v-2Z"/>
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.75 10.222a5.472 5.472 0 1 1 10.944 0 5.472 5.472 0 0 1-10.944 0Zm5.472-6.972a6.972 6.972 0 1 0 4.372 12.404l4.876 4.876a.75.75 0 1 0 1.06-1.06l-4.876-4.876A6.972 6.972 0 0 0 10.222 3.25Z"/>
+      </symbol>
+      <symbol id="icon-arrow-back" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.53 6.53a.75.75 0 0 0-1.06-1.06l-5.996 5.995a.767.767 0 0 0-.158.228.747.747 0 0 0 .154.837l6 6a.75.75 0 0 0 1.06-1.06l-4.72-4.72H21a.75.75 0 0 0 0-1.5H4.81l4.72-4.72Z"/>
+      </symbol>
+      <symbol id="icon-folder-layer" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.336 5.83a.75.75 0 0 0-.671 0l-8 4a.75.75 0 0 0 0 1.34l8 4a.75.75 0 0 0 .67 0l8-4a.75.75 0 0 0 0-1.34l-8-4ZM12 13.661 5.677 10.5 12 7.339l6.323 3.161L12 13.662Zm-7.664.167a.75.75 0 1 0-.671 1.342l8 4a.75.75 0 0 0 .67 0l8-4a.75.75 0 1 0-.67-1.342L12 17.661 4.336 13.83Z"/>
+      </symbol>
+      <symbol id="icon-image" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M4.385 5A1.392 1.392 0 0 0 3 6.4v11.2A1.392 1.392 0 0 0 4.385 19h15.23A1.393 1.393 0 0 0 21 17.6V6.4A1.394 1.394 0 0 0 19.615 5H4.385Zm13.616 2.1a1.4 1.4 0 1 1-1.282.866 1.393 1.393 0 0 1 1.282-.866ZM7.846 9.6a1.66 1.66 0 0 1 1.184.5l2.258 2.283.712.717.8.809a.741.741 0 0 0 1.056 0 .764.764 0 0 0 0-1.072l-.8-.805.526-.532a1.661 1.661 0 0 1 2.369 0l3.469 3v3H4.58v-5.8l2.082-1.6a1.66 1.66 0 0 1 1.184-.5Z"/>
+      </symbol>
+      <symbol id="icon-2d" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10.539 17.598a.3.3 0 0 1-.3.3H3.015a.3.3 0 0 1-.3-.3v-.918a.3.3 0 0 1 .078-.203l3.798-4.141c.56-.624.956-1.143 1.19-1.559.24-.42.36-.842.36-1.263 0-.554-.157-1.001-.471-1.342-.31-.341-.727-.512-1.255-.512-.629 0-1.116.192-1.463.576-.292.324-.461.749-.507 1.274a.321.321 0 0 1-.312.3H2.79a.285.285 0 0 1-.29-.3c.039-.59.195-1.126.47-1.61a3.354 3.354 0 0 1 1.382-1.327c.602-.314 1.295-.471 2.078-.471 1.13 0 2.02.285 2.67.855.655.565.982 1.348.982 2.35 0 .58-.165 1.19-.495 1.83-.325.634-.86 1.356-1.606 2.166l-2.846 3.045h5.103a.3.3 0 0 1 .3.3v.95Zm2.581.3a.3.3 0 0 1-.3-.3V6.562a.3.3 0 0 1 .3-.3h3.137c1.028 0 1.94.229 2.733.687a4.68 4.68 0 0 1 1.855 1.95c.437.842.655 1.806.655 2.893v.584c0 1.103-.221 2.072-.663 2.909a4.599 4.599 0 0 1-1.879 1.934c-.81.453-1.74.68-2.789.68H13.12Zm1.722-10.006v8.392h1.32c1.06 0 1.872-.33 2.437-.991.57-.666.86-1.62.871-2.861v-.648c0-1.263-.274-2.227-.823-2.893-.55-.666-1.346-1-2.39-1h-1.415Z"/>
+      </symbol>
+      <symbol id="icon-compass-north" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.674 2.416a.75.75 0 0 0-1.341 0l-4.625 9.249a.75.75 0 0 0 0 .67l4.625 9.25a.75.75 0 0 0 1.341 0l4.625-9.25a.75.75 0 0 0 0-.67l-4.625-9.25Zm-.67 17.157L8.217 12h7.573l-3.786 7.573Zm.83-8.472c.033.033.08.05.142.05h.38c.04 0 .075-.015.104-.044a.141.141 0 0 0 .044-.103V7.486a.141.141 0 0 0-.044-.103.141.141 0 0 0-.103-.044h-.441a.142.142 0 0 0-.104.044.141.141 0 0 0-.043.103V9.73l-1.525-2.264a1.016 1.016 0 0 0-.07-.077.196.196 0 0 0-.142-.049h-.381a.141.141 0 0 0-.104.044.141.141 0 0 0-.043.103v3.518c0 .04.014.074.043.103a.141.141 0 0 0 .104.043h.44c.04 0 .075-.014.104-.043a.142.142 0 0 0 .044-.103V8.76l1.524 2.265c.015.018.038.044.07.076Z"/>
+      </symbol>
+      <symbol id="icon-geometry-instruments" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v1.354a2.751 2.751 0 0 1 1.063 4.714l1.379 4.134a.75.75 0 0 1-1.423.474l-1.321-3.962a2.771 2.771 0 0 1-.895 0L9.51 15.842c.792.265 1.63.408 2.49.408 3.106 0 5.925-1.87 7.334-4.595a.75.75 0 1 1 1.332.69 10.157 10.157 0 0 1-4.316 4.332l1.362 4.086a.75.75 0 0 1-1.423.474l-1.324-3.972a9.33 9.33 0 0 1-5.93 0l-1.323 3.972a.75.75 0 0 1-1.423-.474l1.361-4.084a10.14 10.14 0 0 1-4.316-4.335.75.75 0 1 1 1.333-.688 8.636 8.636 0 0 0 3.464 3.579l2.056-6.167a2.751 2.751 0 0 1 1.063-4.714V3a.75.75 0 0 1 .75-.75Zm0 3.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/>
+      </symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.75a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm9-4a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75Zm1.5 3a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h1a.75.75 0 0 0 0-1.5h-.25V11Z"/>
+      </symbol>
+      <symbol id="icon-route" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.75 5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0ZM18 2.25a2.75 2.75 0 1 0 0 5.5 2.75 2.75 0 0 0 0-5.5Zm-9.5 3.5a2.75 2.75 0 1 0 0 5.5h8a4.25 4.25 0 0 1 0 8.5H11a.75.75 0 0 1 0-1.5h5.5a2.75 2.75 0 1 0 0-5.5h-8a4.25 4.25 0 0 1 0-8.5H13a.75.75 0 0 1 0 1.5H8.5Zm-2.5 12a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5ZM3.25 19a2.75 2.75 0 1 1 5.5 0 2.75 2.75 0 0 1-5.5 0Z"/>
+      </symbol>
+      <symbol id="icon-car-accident" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.532 3.715a.75.75 0 0 1 .53.919l-.776 2.898a.75.75 0 0 1-1.45-.389l.777-2.897a.75.75 0 0 1 .919-.53ZM1.25 7.001A.75.75 0 0 1 2 6.25h7.5a.75.75 0 0 1 .586.281l3.774 4.719h.64A2.75 2.75 0 0 1 17.25 14v4a.75.75 0 0 1-.75.75h-1.354a2.751 2.751 0 0 1-5.292 0H2a.75.75 0 0 1 0-1.5h7.854a2.751 2.751 0 0 1 5.293 0h.603V14a1.25 1.25 0 0 0-1.25-1.25H2a.75.75 0 0 1 0-1.5h4.75v-3.5H2A.75.75 0 0 1 1.25 7Zm7 .75v3.5h3.69l-2.8-3.5h-.89Zm4.25 9a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Zm5.186-7.464a.75.75 0 1 0 .75 1.299l3.464-2a.75.75 0 0 0-.75-1.3l-3.464 2Zm2.069 2.522a.75.75 0 0 0-.388 1.45l2.897.776a.75.75 0 0 0 .389-1.449l-2.898-.777Z"/>
+      </symbol>
+      <symbol id="icon-work" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.125 7.876a1.688 1.688 0 1 0 0-3.376 1.688 1.688 0 0 0 0 3.376Zm2.07-.726a.75.75 0 0 0-.706.496l-1.692 4.717a.747.747 0 0 0 .018.55l-4.157 2.39a.752.752 0 0 0-.155.118L6.034 13.1a.75.75 0 0 0-1.223-.063l-4 5.085a.75.75 0 0 0 .59 1.213h7.215a.75.75 0 0 0 .634-1.15l-.964-1.525a.757.757 0 0 0 .12-.056l4.659-2.679a.75.75 0 0 0 .18-1.155l1.257-3.502 1.783 1.783-2.62 2.62a.75.75 0 0 0-.22.53v3.24a.75.75 0 0 0 1.5 0v-2.93l1.65-1.65v1.34c0 .199.08.39.22.53l3.24 3.24a.75.75 0 0 0 1.06-1.06l-3.02-3.02v-2.84a.75.75 0 0 0-.22-.53l-1.869-1.87h2.739l.177.177-.526.302a.75.75 0 0 0 .748 1.3l3.13-1.8a.75.75 0 1 0-.747-1.3l-1.258.723-.683-.683a.75.75 0 0 0-.53-.22h-4.86ZM2.945 17.834h4.31l-1.921-3.036-2.39 3.036Z"/>
+      </symbol>
+      <symbol id="icon-alert-triangle" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.236 3.948a.271.271 0 0 0-.474 0l-8.477 15.26c-.1.18.03.402.237.402h16.954a.271.271 0 0 0 .238-.403L12.236 3.948Zm-1.785-.728c.675-1.215 2.422-1.215 3.096 0l8.478 15.259a1.771 1.771 0 0 1-1.549 2.631H3.522a1.771 1.771 0 0 1-1.548-2.631l8.477-15.26Zm1.548 5.53a.75.75 0 0 1 .75.75v5a.75.75 0 0 1-1.5 0v-5a.75.75 0 0 1 .75-.75Zm0 7.777a.75.75 0 0 0 0 1.5h.011a.75.75 0 0 0 0-1.5H12Z"/>
+      </symbol>
+      <symbol id="icon-speed-intense" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="m7.69 7.066.518.791a.75.75 0 1 1-1.255.822l-.483-.74a8.49 8.49 0 0 0-2.23 2.998l1.15.5a.75.75 0 1 1-.598 1.375l-1.032-.449c-.27 1.174-.262 2.371-.253 3.76v.075h3.874a.75.75 0 0 1 0 1.5H2.76a.75.75 0 0 1-.75-.75c0-.261-.002-.523-.004-.785-.015-1.682-.03-3.378.562-5.075a9.99 9.99 0 0 1 18.863 0c.592 1.697.577 3.393.563 5.075a68.62 68.62 0 0 0-.005.785.75.75 0 0 1-.75.75h-4.62a.75.75 0 1 1 0-1.5h3.873v-.075c.01-1.392.02-2.591-.254-3.768l-.7.296a.75.75 0 1 1-.585-1.381l.803-.34a8.49 8.49 0 0 0-2.25-3.011l-.56.784a.75.75 0 1 1-1.22-.87l.557-.783a8.49 8.49 0 0 0-3.533-1.126v.923a.75.75 0 0 1-1.5 0v-.923a8.49 8.49 0 0 0-3.56 1.142Zm9.66 3.403a.75.75 0 0 1 .095 1.056l-3.424 4.103a2.502 2.502 0 1 1-1.21-.891l.01-.013 3.472-4.16a.75.75 0 0 1 1.056-.095Zm-4.347 6.636a1.002 1.002 0 1 1-2.005 0 1.002 1.002 0 0 1 2.005 0Z"/>
+      </symbol>
+    </svg>
+  </div>
+
+  <!-- <svg class="icon" width="20" height="20"><use xlink:href="#icon-"></use></svg> -->
+  <script src="js/scripts.js"></script>
+</body>
+</html>

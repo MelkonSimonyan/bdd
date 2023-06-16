@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  @@include('./components/_head.html')
+</head>
+<body>
+  @@include('./components/_header.html')
+
+  <div class="content">
+    <div class="aside">
+      @@include('./components/_aside-1.html')
+    </div>
+
+    <div class="main">
+      @@include('./components/_map.html')
+      
+      <div style="position: absolute; left: 26.5%; bottom: 57.1%;">
+        @@include('./components/_map-objects-tooltip.html')
+      </div>
+    </div>
+  </div>
+
+  @@include('./components/_svg.html')
+  @@include('./components/_foot.html')
+</body>
+</html>
