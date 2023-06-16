@@ -90,7 +90,7 @@
 
       <div class="aside__content has-scrollbar">
         <div class="aside-nav">
-          <a href="2.1_БДД_Основной_экран_аудита_дороги_карта.html" class="aside-item">
+          <a href="2.1.html" class="aside-item">
             <span class="aside-item__content">
               <span class="aside-item__title">М-3 «Украина»</span>
               <span class="aside-item__text">
@@ -106,7 +106,7 @@
             <svg class="aside-item__arrow icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
           </a>
 
-          <a href="2.1_БДД_Основной_экран_аудита_дороги_карта.html" class="aside-item">
+          <a href="2.1.html" class="aside-item">
             <span class="aside-item__content">
               <span class="aside-item__title">М-5 «Урал»</span>
               <span class="aside-item__text">
@@ -122,7 +122,7 @@
             <svg class="aside-item__arrow icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
           </a>
 
-          <a href="2.1_БДД_Основной_экран_аудита_дороги_карта.html" class="aside-item">
+          <a href="2.1.html" class="aside-item">
             <span class="aside-item__content">
               <span class="aside-item__title">М-7 «Волга»</span>
               <span class="aside-item__text">
@@ -143,20 +143,30 @@
 
     <div class="main">
       <div class="map-wrapper">
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
         <div class="map" id="map"></div>
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
         <script>
-          /* https://leaflet-extras.github.io/leaflet-providers/preview/ */
-          new L.map('map', {
+          var map = new L.map('map', {
             center: [55.751244, 42.618423],
             zoom: 6,
             zoomControl: false,
             attributionControl: false,
-          }).addLayer(new L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+          });
+
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(map);
+
+          /* https://leaflet-extras.github.io/leaflet-providers/preview/ */
+          /*L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
             maxZoom: 20,
             attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-          }));
+          }).addTo(map);*/
         </script>
         <div class="map-control">
           <div class="map-control__group">
@@ -199,6 +209,44 @@
         	<div class="map-info__coord">57.64911,10.40744</div>
         	<div class="map-info__scale">
         		<span>4 км</span>
+        	</div>
+        </div>
+      </div>
+      
+      <div style="position: absolute; left: 26.5%; bottom: 57.1%;">
+        <div class="map-objects-tooltip">
+        	<div class="map-objects-tooltip__header">Доступные объекты</div>
+        	<div class="map-objects-tooltip__content has-scrollbar">
+        	  <div class="map-objects-tooltip__item">
+        			<a href="#">М-3 «Украина»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-5 «Урал»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
+        		<div class="map-objects-tooltip__item">
+        			<a href="#">М-7 «Волга»</a>
+        		</div>
         	</div>
         </div>
       </div>
