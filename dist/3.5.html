@@ -59,12 +59,20 @@
         
 
         
+          <label class="switcher">
+            <span class="switch">
+              <input type="checkbox" name="swicth" checked>
+              <span class="switch__content"></span>
+            </span>
+            <span class="switcher__text">Показать подсказки</span>
+          </label>
+        
       </div>
 
       <div class="flex align-items-center gx-8">
         <div class="buttons">
-          <a href="2.1.html" class="btn ">Карта</a>
-          <a href="#" class="btn is-active">Таблица</a>
+          <a href="#" class="btn is-active">Карта</a>
+          <a href="2.4.html" class="btn ">Таблица</a>
           <a href="#" class="btn ">Мероприятия</a>
         </div>
 
@@ -79,17 +87,17 @@
   <div class="content">
     <div class="aside">
       <div class="aside__header">
-        <a href="1.1.html" class="aside__back">
+        <a href="2.1.html" class="aside__back">
           <svg class="icon" width="20" height="20"><use xlink:href="#icon-arrow-back"></use></svg>
-          <span>М-3 Украина</span>
+          <span>ДТП М-3 Украина</span>
         </a>
       </div>
 
       <div class="aside__content has-scrollbar">
         <div class="aside-nav">
-          <a href="2.3.html" class="aside-item">
+          <a href="3.4.html" class="aside-item ">
             <span class="aside-item__content">
-              <span class="aside-item__title">Дорожные условия</span>
+              <span class="aside-item__title">ДТП без группировки</span>
               <span class="aside-item__text">
                 <span class="color-accent-success">+10</span> за период
               </span>
@@ -100,12 +108,26 @@
                 <span class="radial-graph__text">83</span>
               </span>
             </span>
-            <svg class="aside-item__arrow icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
           </a>
 
-          <a href="3.1.html" class="aside-item">
+          <a href="3.2.html" class="aside-item ">
             <span class="aside-item__content">
-              <span class="aside-item__title">ДТП</span>
+              <span class="aside-item__title">Места концентрации ДТП</span>
+              <span class="aside-item__text">
+                <span class="color-accent-success">+10</span> за период
+              </span>
+            </span>
+            <span class="aside-item__graph">
+              <span class="radial-graph">
+                <svg class="radial-graph__graph color-accent-danger" fill="none" stroke-linecap="round" stroke-width="6" data-angle="119"><path /></svg>
+                <span class="radial-graph__text">33</span>
+              </span>
+            </span>
+          </a>
+
+          <a href="#" class="aside-item">
+            <span class="aside-item__content">
+              <span class="aside-item__title">Опасность участков дорог комплексный показатель</span>
               <span class="aside-item__text">
                 <span class="color-accent-warning">-10</span> за период
               </span>
@@ -116,12 +138,11 @@
                 <span class="radial-graph__text">63</span>
               </span>
             </span>
-            <svg class="aside-item__arrow icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
           </a>
 
-          <a href="#" class="aside-item">
+          <a href="3.5.html" class="aside-item is-active">
             <span class="aside-item__content">
-              <span class="aside-item__title">ОДД</span>
+              <span class="aside-item__title">Опасность участков дорог риска ДТП и гибели людей</span>
               <span class="aside-item__text">
                 <span class="color-accent-danger">+10</span> за период
               </span>
@@ -132,7 +153,6 @@
                 <span class="radial-graph__text">33</span>
               </span>
             </span>
-            <svg class="aside-item__arrow icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
           </a>
         </div>
       </div>
@@ -140,435 +160,260 @@
 
     <div class="main">
       <div class="layout">
-        <div class="layout__header">
-          <div class="layout__header-row">
-            <div class="layout__title">
-              <svg class="icon" width="24" height="24"><use xlink:href="#icon-layer-map"></use></svg>
-              <span>Общие показатели М-3 “Украина” (Количество объектов: 3754)</span>
+        <div class="map-wrapper">
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+             crossorigin=""/>
+          <div class="map" id="map"></div>
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+             crossorigin=""></script>
+          <script>
+            var map = new L.map('map', {
+              center: [55.751244, 42.618423],
+              zoom: 6,
+              zoomControl: false,
+              attributionControl: false,
+            });
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            /* https://leaflet-extras.github.io/leaflet-providers/preview/ */
+            /*L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+              maxZoom: 20,
+              attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+            }).addTo(map);*/
+          </script>
+          <div class="map-control">
+            <div class="map-control__group">
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="#icon-folder-layer"></use></svg>
+                </button>
+              </div>
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="#icon-image"></use></svg>
+                </button>
+              </div>
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="#icon-2d"></use></svg>
+                </button>
+              </div>
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="#icon-compass-north"></use></svg>
+                </button>
+              </div>
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="#icon-geometry-instruments"></use></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="map-control__group">
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="#icon-info"></use></svg>
+                </button>
+              </div>
             </div>
           </div>
+          <div class="map-info">
+          	<div class="map-info__coord">57.64911,10.40744</div>
+          	<div class="map-info__scale">
+          		<span>4 км</span>
+          	</div>
+          </div>
+          
+          <div style="position: absolute; left: 30.7%; bottom: 59.4%;">
+            
+            	<div 
+            		class="map-tooltip" 
+            		
+            			
+            			
+            				
+            					style="margin-bottom: 28px;"
+            				
+            				
+            			
+            		
+            	>
+            		<div class="map-tooltip__header">
+            			<div class="map-tooltip__header-icon">
+            				<svg class="icon"><use xlink:href="#icon-alert-triangle"></use></svg>
+            			</div>
+            			<div class="map-tooltip__header-content">
+            				<div class="map-tooltip__header-title">Опасный участок</div>
+            				<div class="map-tooltip__header-text color-accent-danger">-6 баллов</div>
+            			</div>
+            		</div>
+            		<div class="map-tooltip__content has-scrollbar">
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Адрес</div>
+            					<div class="map-tooltip__item-text">12+35,738 / 12+36,738</div>
+            				</div>
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Тип аудита</div>
+            					<div class="map-tooltip__item-text">Места конц. ДТП</div>
+            				</div>
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Количество ДТП</div>
+            					<div class="map-tooltip__item-text">23</div>
+            				</div>
+            			
+            		</div>
+            		<div class="map-tooltip__footer">
+            			<a href="#" class="btn btn_secondary btn_block">Подробнее...</a>
+            		</div>
+            	</div>
+            
+
+            
+            	
+            		<div class="map-pin-circle ">
+            			<svg width="34" height="34"><use xlink:href="#icon-map-pin-circle"></use></svg>
+            		</div>
+            	
+
+            	
+            
+          </div>
+          
+          <div style="position: absolute; left: 55%; bottom: 56.7%;">
+            
+            	<div 
+            		class="map-tooltip" 
+            		
+            			
+            			
+            				
+            					style="margin-bottom: 28px;"
+            				
+            				
+            			
+            		
+            	>
+            		<div class="map-tooltip__header">
+            			<div class="map-tooltip__header-icon">
+            				<svg class="icon"><use xlink:href="#icon-alert-triangle"></use></svg>
+            			</div>
+            			<div class="map-tooltip__header-content">
+            				<div class="map-tooltip__header-title">Опасный участок</div>
+            				<div class="map-tooltip__header-text color-accent-danger">-6 баллов</div>
+            			</div>
+            		</div>
+            		<div class="map-tooltip__content has-scrollbar">
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Адрес</div>
+            					<div class="map-tooltip__item-text">12+35,738 / 12+36,738</div>
+            				</div>
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Тип аудита</div>
+            					<div class="map-tooltip__item-text">Места конц. ДТП</div>
+            				</div>
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Количество ДТП</div>
+            					<div class="map-tooltip__item-text">23</div>
+            				</div>
+            			
+            		</div>
+            		<div class="map-tooltip__footer">
+            			<a href="#" class="btn btn_secondary btn_block">Подробнее...</a>
+            		</div>
+            	</div>
+            
+
+            
+            	
+            		<div class="map-pin-circle ">
+            			<svg width="34" height="34"><use xlink:href="#icon-map-pin-circle"></use></svg>
+            		</div>
+            	
+
+            	
+            
+          </div>
+          
+          <div style="position: absolute; left: 75.7%; bottom: 54.3%;">
+            
+            	<div 
+            		class="map-tooltip" 
+            		
+            			
+            			
+            				
+            					style="margin-bottom: 28px;"
+            				
+            				
+            			
+            		
+            	>
+            		<div class="map-tooltip__header">
+            			<div class="map-tooltip__header-icon">
+            				<svg class="icon"><use xlink:href="#icon-alert-triangle"></use></svg>
+            			</div>
+            			<div class="map-tooltip__header-content">
+            				<div class="map-tooltip__header-title">Опасный участок</div>
+            				<div class="map-tooltip__header-text color-accent-danger">-6 баллов</div>
+            			</div>
+            		</div>
+            		<div class="map-tooltip__content has-scrollbar">
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Адрес</div>
+            					<div class="map-tooltip__item-text">12+35,738 / 12+36,738</div>
+            				</div>
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Тип аудита</div>
+            					<div class="map-tooltip__item-text">Места конц. ДТП</div>
+            				</div>
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Количество ДТП</div>
+            					<div class="map-tooltip__item-text">23</div>
+            				</div>
+            			
+            		</div>
+            		<div class="map-tooltip__footer">
+            			<a href="#" class="btn btn_secondary btn_block">Подробнее...</a>
+            		</div>
+            	</div>
+            
+
+            
+            	
+            		<div class="map-pin-circle ">
+            			<svg width="34" height="34"><use xlink:href="#icon-map-pin-circle"></use></svg>
+            		</div>
+            	
+
+            	
+            
+          </div>
         </div>
-        
-        <div class="layout__content has-scrollbar">
-          <table class="table">
-            <colgroup>
-              <col width="68" style="min-width: 68px;">
-              <col width="364" style="min-width: 364px;">
-              <col width="173" style="min-width: 173px;">
-              <col width="287" style="min-width: 287px;">
-              <col width="270" style="min-width: 270px;">
-            </colgroup>
 
-            <thead class="table__thead">
-              <tr class="table__thead-row">
-                <th class="table__th">
-                  <div class="table__th-cell">
-                    <div class="table__th-cell-content">№</div>
-                    <div class="table__th-cell-aside">
-                      <div class="table__col-filter">
-                        <button type="button" class="table__col-filter-btn">
-                          <svg><use xlink:href="#icon-filter"></use></svg>
-                        </button>
-                        <div class="table__col-filter-dropdown"></div>
-                    </div>
-                  </div>
-                </th>
+        <div class="map-widget graph-widget">
+          <button type="button" class="map-widget__target btn btn_smx">
+            <svg class="icon" width="24" height="24"><use xlink:href="#icon-double-chevron-up"></use></svg>
+            <span>Развернуть</span>
+          </button>
 
-                <th class="table__th">
-                  <div class="table__th-cell">
-                    <div class="table__th-cell-content">Вид аудита</div>
-                    <div class="table__th-cell-aside">
-                      <div class="table__col-filter">
-                        <button type="button" class="table__col-filter-btn">
-                          <svg><use xlink:href="#icon-filter"></use></svg>
-                        </button>
-                        <div class="table__col-filter-dropdown"></div>
-                    </div>
-                  </div>
-                </th>
-
-                <th class="table__th">
-                  <div class="table__th-cell">
-                    <div class="table__th-cell-content">Результат (баллы)</div>
-                    <div class="table__th-cell-aside">
-                      <div class="table__col-filter">
-                        <button type="button" class="table__col-filter-btn">
-                          <svg><use xlink:href="#icon-filter"></use></svg>
-                        </button>
-                        <div class="table__col-filter-dropdown"></div>
-                    </div>
-                  </div>
-                </th>
-
-                <th class="table__th">
-                  <div class="table__th-cell">
-                    <div class="table__th-cell-content">Изменение  Баллов за период</div>
-                    <div class="table__th-cell-aside">
-                      <div class="table__col-filter">
-                        <button type="button" class="table__col-filter-btn">
-                          <svg><use xlink:href="#icon-filter"></use></svg>
-                        </button>
-                        <div class="table__col-filter-dropdown"></div>
-                    </div>
-                  </div>
-                </th>
-
-                <th class="table__th">
-                  <div class="table__th-cell">
-                    <div class="table__th-cell-content">Изменение  Баллов за период</div>
-                    <div class="table__th-cell-aside">
-                      <div class="table__col-filter">
-                        <button type="button" class="table__col-filter-btn">
-                          <svg><use xlink:href="#icon-filter"></use></svg>
-                        </button>
-                        <div class="table__col-filter-dropdown"></div>
-                    </div>
-                  </div>
-                </th>
-              </tr>
-            </thead>
-
-            <tbody class="table__section-head">
-              <tr>
-                <td class="table__section-head-cell" colspan="5">
-                  <div class="table__section-head-inner">
-                    <div class="table__section-head-content">Дорожные условия</div>
-                    <div class="table__section-head-arrow">
-                      <svg class="icon"><use xlink:href="#icon-drop-down"></use></svg>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-            <tbody class="table__section">
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">1</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">Дорожные условия</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">83</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">2</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">Ровность покрытий</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">83</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">3</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">Сцепление с покрытием</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">63</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">4</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">Повреждения</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">33</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-
-            <tbody class="table__section-head">
-              <tr>
-                <td class="table__section-head-cell" colspan="5">
-                  <div class="table__section-head-inner">
-                    <div class="table__section-head-content">ДТП</div>
-                    <div class="table__section-head-arrow">
-                      <svg class="icon"><use xlink:href="#icon-drop-down"></use></svg>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-            <tbody class="table__section">
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">9</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">ОДД</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">33</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">Эксплуатационная скорость транспортных средств</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">83</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">11</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">Задержки и перепробег</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">63</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">11</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">Число и опасность конфликтных ситуаций</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">63</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-
-            <tbody class="table__section-head">
-              <tr>
-                <td class="table__section-head-cell" colspan="5">
-                  <div class="table__section-head-inner">
-                    <div class="table__section-head-content">ОДД</div>
-                    <div class="table__section-head-arrow">
-                      <svg class="icon"><use xlink:href="#icon-drop-down"></use></svg>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-            <tbody class="table__section">
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">5</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">ДТП</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">63</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">+10</div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">6</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">Места концентрации ДТП</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">83</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-                <td class="table__td">
-                  <div class="table__td-cell">
-                    <div class="table__td-content">-10</div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <div class="layout__footer">
-          <div class="pagination">
-            <div class="pagination__list">
-              <a href="#" class="pagination__btn">
-                <svg><use xlink:href="#icon-double-chevron-left"></use></svg>
-              </a>
-              <a href="#" class="pagination__btn">
-                <svg><use xlink:href="#icon-chevron-left"></use></svg>
-              </a>
-              <a href="#" class="pagination__btn">7</a>
-              <a href="#" class="pagination__btn is-active">8</a>
-              <a href="#" class="pagination__btn">9</a>
-              <a href="#" class="pagination__btn">10</a>
-              <a href="#" class="pagination__btn">
-                <svg><use xlink:href="#icon-chevron-right"></use></svg>
-              </a>
-              <a href="#" class="pagination__btn">
-                <svg><use xlink:href="#icon-double-chevron-right"></use></svg>
-              </a>
-            </div>
-
-            <div class="pagination__go">
-              <div class="pagination__go-title">Перейти к странице</div>
-              <input type="text" class="pagination__go-field" value="8">
+          <div class="map-widget__content">
+            <div class="graph-widget__main">
+              
             </div>
           </div>
         </div>

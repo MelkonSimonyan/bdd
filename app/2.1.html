@@ -11,55 +11,68 @@
 
   <div class="content">
     <div class="aside">
-      @@include('./components/_aside-2.html')
+      @@include('./components/aside/_aside-m3.html')
     </div>
 
     <div class="main">
-      @@include('./components/_map.html')
-      
-      <div style="position: absolute; left: 30.7%; bottom: 62.2%;">
-        @@include('./components/_map-tooltip.html', {
-          "icon": "#icon-car-accident",
-          "title": "Высокая конц. ДТП",
-          "subtitle": "-6 баллов",
-          "class": "danger",
-          "btn": "Подробнее...",
-          "list": [
-            ["Адрес", "12+35,738 / 12+36,738"],
-            ["Тип аудита", "Места конц. ДТП"],
-            ["Количество ДТП", "23"]
-          ]
-        })
-      </div>
-      
-      <div style="position: absolute; left: 55%; bottom: 59.7%;">
-        @@include('./components/_map-tooltip.html', {
-          "icon": "#icon-work",
-          "title": "Неровный участок",
-          "subtitle": "-8 баллов",
-          "class": "danger",
-          "btn": "Подробнее...",
-          "list": [
-            ["Адрес", "12+35,738 / 12+36,738"],
-            ["Тип аудита", "Дорожные условия"],
-            ["Протяженность", "20м"]
-          ]
-        })
-      </div>
-      
-      <div style="position: absolute; left: 75.7%; bottom: 57.3%;">
-        @@include('./components/_map-tooltip.html', {
-          "icon": "#icon-car-accident",
-          "title": "Высокая конц. ДТП",
-          "subtitle": "-6 баллов",
-          "class": "danger",
-          "btn": "Подробнее...",
-          "list": [
-            ["Адрес", "12+35,738 / 12+36,738"],
-            ["Тип аудита", "Места конц. ДТП"],
-            ["Количество ДТП", "23"]
-          ]
-        })
+      <div class="layout">
+        <div class="map-wrapper">
+          @@include('./components/_map.html')
+          
+          <div style="position: absolute; left: 30.7%; bottom: 59.4%;">
+            @@include('./components/_map-tooltip.html', {
+              "icon": "#icon-car-accident",
+              "title": "Высокая конц. ДТП",
+              "subtitle": "-6 баллов",
+              "class": "danger",
+              "btn": "Подробнее...",
+              "list": [
+                ["Адрес", "12+35,738 / 12+36,738"],
+                ["Тип аудита", "Места конц. ДТП"],
+                ["Количество ДТП", "23"]
+              ],
+              "pin": {
+                "type": "circle"
+              }
+            })
+          </div>
+          
+          <div style="position: absolute; left: 55%; bottom: 56.7%;">
+            @@include('./components/_map-tooltip.html', {
+              "icon": "#icon-work",
+              "title": "Неровный участок",
+              "subtitle": "-8 баллов",
+              "class": "danger",
+              "btn": "Подробнее...",
+              "list": [
+                ["Адрес", "12+35,738 / 12+36,738"],
+                ["Тип аудита", "Дорожные условия"],
+                ["Протяженность", "20м"]
+              ],
+              "pin": {
+                "type": "circle"
+              }
+            })
+          </div>
+          
+          <div style="position: absolute; left: 75.7%; bottom: 54.3%;">
+            @@include('./components/_map-tooltip.html', {
+              "icon": "#icon-car-accident",
+              "title": "Высокая конц. ДТП",
+              "subtitle": "-6 баллов",
+              "class": "danger",
+              "btn": "Подробнее...",
+              "list": [
+                ["Адрес", "12+35,738 / 12+36,738"],
+                ["Тип аудита", "Места конц. ДТП"],
+                ["Количество ДТП", "23"]
+              ],
+              "pin": {
+                "type": "circle"
+              }
+            })
+          </div>
+        </div>
       </div>
     </div>
   </div>

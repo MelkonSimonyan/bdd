@@ -8,23 +8,27 @@
 
   <div class="content">
     <div class="aside">
-      @@include('./components/_aside-1.html')
+      @@include('./components/aside/_aside.html')
     </div>
 
     <div class="main">
-      @@include('./components/_map.html')
-      
-      <div style="position: absolute; left: 42.5%; bottom: 63.1%;">
-        @@include('./components/_map-tooltip.html', {
-          "icon": "#icon-route",
-          "title": "М-3 «Украина»",
-          "subtitle": "+10 баллов",
-          "class": "success",
-          "btn": "Подробнее",
-          "list": [
-            ["Участок ПК", "76+36,738"]
-          ]
-        })
+      <div class="layout">
+        <div class="map-wrapper">
+          @@include('./components/_map.html')
+          
+          <div style="position: absolute; left: 42.5%; bottom: 63.1%;">
+            @@include('./components/_map-tooltip.html', {
+              "icon": "#icon-route",
+              "title": "М-3 «Украина»",
+              "subtitle": "+10 баллов",
+              "class": "success",
+              "btn": "Подробнее",
+              "list": [
+                ["Участок ПК", "76+36,738"]
+              ]
+            })
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -8,14 +8,18 @@
 
   <div class="content">
     <div class="aside">
-      @@include('./components/_aside-1.html')
+      @@include('./components/aside/_aside.html')
     </div>
 
     <div class="main">
-      @@include('./components/_map.html')
-      
-      <div style="position: absolute; left: 26.5%; bottom: 57.1%;">
-        @@include('./components/_map-objects-tooltip.html')
+      <div class="layout">
+        <div class="map-wrapper">
+          @@include('./components/_map.html')
+          
+          <div style="position: absolute; left: 26.5%; bottom: 57.1%;">
+            @@include('./components/_map-objects-tooltip.html')
+          </div>
+        </div>
       </div>
     </div>
   </div>

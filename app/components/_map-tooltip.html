@@ -1,22 +1,58 @@
-<div class="map-tooltip">
-	<div class="map-tooltip__header">
-		<div class="map-tooltip__header-icon">
-			<svg class="icon"><use xlink:href="@@icon"></use></svg>
-		</div>
-		<div class="map-tooltip__header-content">
-			<div class="map-tooltip__header-title">@@title</div>
-			<div class="map-tooltip__header-text color-accent-@@class">@@subtitle</div>
-		</div>
-	</div>
-	<div class="map-tooltip__content has-scrollbar">
-		@@for (var i = 0; i < list.length; i++) {
-		  <div class="map-tooltip__item">
-				<div class="map-tooltip__item-title">` + list[i][0] + `</div>
-				<div class="map-tooltip__item-text">` + list[i][1] + `</div>
-			</div>
+@@if(context.tooltip !== "hide"){
+	<div 
+		class="map-tooltip" 
+		@@if(context.pin){
+			@@if(context.pin.type === 'pin'){style="margin-bottom: 54px;"}
+			@@if(context.pin.type === 'circle'){
+				@@if(context.pin.size !== 'lg'){
+					style="margin-bottom: 28px;"
+				}
+				@@if(context.pin.size === 'lg'){
+					style="margin-bottom: 40px;"
+				}
+			}
 		}
+	>
+		<div class="map-tooltip__header">
+			<div class="map-tooltip__header-icon">
+				<svg class="icon"><use xlink:href="@@icon"></use></svg>
+			</div>
+			<div class="map-tooltip__header-content">
+				<div class="map-tooltip__header-title">@@title</div>
+				<div class="map-tooltip__header-text color-accent-@@class">@@subtitle</div>
+			</div>
+		</div>
+		<div class="map-tooltip__content has-scrollbar">
+			@@for (var i = 0; i < list.length; i++) {
+			  <div class="map-tooltip__item">
+					<div class="map-tooltip__item-title">` + list[i][0] + `</div>
+					<div class="map-tooltip__item-text">` + list[i][1] + `</div>
+				</div>
+			}
+		</div>
+		<div class="map-tooltip__footer">
+			<a href="#" class="btn btn_secondary btn_block">@@btn</a>
+		</div>
 	</div>
-	<div class="map-tooltip__footer">
-		<a href="#" class="btn btn_secondary btn_block">@@btn</a>
-	</div>
-</div>
+}
+
+@@if(context.pin){
+	@@if(context.pin.type === "circle"){
+		<div class="map-pin-circle @@if(context.pin.size === 'lg'){map-pin-circle_lg}">
+			<svg width="34" height="34"><use xlink:href="#icon-map-pin-circle@@if(context.pin.size === 'lg'){-lg}"></use></svg>
+		</div>
+	}
+
+	@@if(context.pin.type === "pin"){
+		<div class="map-pin-icon @@if(context.pinColor){color-accent-@@pinColor}">
+			<div class="map-pin-icon__icon">
+				<svg width="24" height="24"><use xlink:href="#@@pinIcon"></use></svg>
+				<!-- <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
+				<svg width="24" height="24"><use xlink:href="#icon-bus-hollow"></use></svg> -->
+			</div>
+			<div class="map-pin-icon__pin">
+				<svg width="34" height="46"><use xlink:href="#icon-map-pin-icon"></use></svg>
+			</div>
+		</div>
+	}
+}

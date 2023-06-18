@@ -205,43 +205,47 @@
 }
 
 .text-left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .color-primary {
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
 }
 
 .color-subhead {
-  color: var(--text-subhead);
+  color: var(--text-subhead) !important;
 }
 
 .color-secondary {
-  color: var(--text-secondary);
+  color: var(--text-secondary) !important;
 }
 
 .color-accent-primary {
-  color: var(--accent-primary);
+  color: var(--accent-primary) !important;
 }
 
 .color-accent-danger {
-  color: var(--accent-danger);
+  color: var(--accent-danger) !important;
 }
 
 .color-accent-success {
-  color: var(--accent-success);
+  color: var(--accent-success) !important;
 }
 
 .color-accent-warning {
-  color: var(--accent-warning);
+  color: var(--accent-warning) !important;
+}
+
+.color-accent-active {
+  color: var(--accent-active) !important;
 }
 
 .content {

@@ -11,7 +11,7 @@
 
   <div class="content">
     <div class="aside">
-      @@include('./components/aside/_aside-du.html')
+      @@include('./components/aside/_aside-dtp.html')
     </div>
 
     <div class="main">
@@ -39,8 +39,8 @@
           
           <div style="position: absolute; left: 55%; bottom: 56.7%;">
             @@include('./components/_map-tooltip.html', {
-              "icon": "#icon-car-accident",
-              "title": "Высокая конц. ДТП",
+              "icon": "#icon-alert-triangle",
+              "title": "Опасный участок дороги",
               "subtitle": "-6 баллов",
               "class": "danger",
               "btn": "Подробнее...",
@@ -71,6 +71,19 @@
                 "type": "circle"
               }
             })
+          </div>
+        </div>
+
+        <div class="map-widget hint-widget">
+          <button type="button" class="map-widget__target btn btn_smx">
+            <svg class="icon" width="24" height="24"><use xlink:href="#icon-double-chevron-up"></use></svg>
+            <span>Развернуть</span>
+          </button>
+
+          <div class="map-widget__content">
+            <div class="hint-widget__main">
+              
+            </div>
           </div>
         </div>
       </div>

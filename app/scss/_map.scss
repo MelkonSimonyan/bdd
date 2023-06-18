@@ -1,6 +1,8 @@
 .map-wrapper {
   width: 100%;
-  height: 100%;
+  flex-grow: 1;
+  min-height: 1px;
+  position: relative;
 }
 
 .map {
@@ -240,5 +242,136 @@
       text-decoration: none;
       padding: 8px 12px;
     }
+  }
+}
+
+.map-pin-icon {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: -17px;
+  z-index: 3;
+  width: 34px;
+  height: 46px;
+  color: var(--icons-low-contrast);
+  cursor: pointer;
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 5px auto 0;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__pin {
+    width: 100%;
+    height: 100%;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.map-pin-circle {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  margin: -17px;
+  color: var(--accent-primary);
+  z-index: 3;
+  cursor: pointer;
+
+  &_lg {
+    width: 60px;
+    height: 60px;
+    margin: -30px;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.map-widget {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+
+  &__target {
+    position: absolute;
+    left: 8px;
+    bottom: 100%;
+    margin-bottom: 8px;
+    padding: 10px;
+    background-color: var(--bg-surface);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08);
+
+    &:hover {
+      background-color: var(--bg-surface);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &.is-open &__target {
+    box-shadow: none;
+
+    .icon {
+      transform: rotate(180deg);
+    }
+
+    & > span {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: none;
+  }
+
+  &.is-open &__content {
+    display: block;
+  }
+}
+
+.hint-widget {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  &.is-open .map-widget__target {
+    bottom: auto;
+    top: 0;
+  }
+
+  &__main {
+    width: 300px;
+    min-height: 44px;
+    margin-left: 60px;
+    margin-bottom: 8px;
+    background-color: var(--bg-surface);
+    border-radius: 4px;
+  }
+}
+
+.graph-widget {
+  &__main {
+    background: #fff;
+    padding: 8px;
   }
 }
