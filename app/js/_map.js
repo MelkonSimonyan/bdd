@@ -4,4 +4,11 @@ if(mapWidget){
   btn.addEventListener('click', () => {
     mapWidget.classList.toggle('is-open');
   });
+
+  const closeBtn = mapWidget.querySelector('.map-widget__close');
+  if(closeBtn){
+    closeBtn.addEventListener('click', () => {
+      mapWidget.classList.remove('is-open');
+    });
+  }
 }

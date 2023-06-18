@@ -29,9 +29,9 @@
               "class": "danger",
               "btn": "Подробнее...",
               "list": [
-                ["Адрес", "12+35,738 / 12+36,738"],
-                ["Тип аудита", "Места конц. ДТП"],
-                ["Количество ДТП", "23"]
+              ["Адрес", "12+35,738 / 12+36,738"],
+              ["Тип аудита", "Места конц. ДТП"],
+              ["Количество ДТП", "23"]
               ],
               "pin": {
                 "type": "circle"
@@ -47,9 +47,9 @@
               "class": "danger",
               "btn": "Подробнее...",
               "list": [
-                ["Адрес", "12+35,738 / 12+36,738"],
-                ["Тип аудита", "Места конц. ДТП"],
-                ["Количество ДТП", "23"]
+              ["Адрес", "12+35,738 / 12+36,738"],
+              ["Тип аудита", "Места конц. ДТП"],
+              ["Количество ДТП", "23"]
               ],
               "pin": {
                 "type": "circle"
@@ -65,9 +65,9 @@
               "class": "danger",
               "btn": "Подробнее...",
               "list": [
-                ["Адрес", "12+35,738 / 12+36,738"],
-                ["Тип аудита", "Места конц. ДТП"],
-                ["Количество ДТП", "23"]
+              ["Адрес", "12+35,738 / 12+36,738"],
+              ["Тип аудита", "Места конц. ДТП"],
+              ["Количество ДТП", "23"]
               ],
               "pin": {
                 "type": "circle"
@@ -77,14 +77,28 @@
         </div>
 
         <div class="map-widget graph-widget">
-          <button type="button" class="map-widget__target btn btn_smx">
+          <button type="button" class="map-widget__target btn">
             <svg class="icon" width="24" height="24"><use xlink:href="#icon-double-chevron-up"></use></svg>
             <span>Развернуть</span>
           </button>
 
           <div class="map-widget__content">
             <div class="graph-widget__main">
-              
+              <div class="graph-widget__header">
+                <div class="graph-widget__buttons">
+                  <button type="button" class="btn is-active">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-chart-line"></use></svg>
+                  </button>
+                  <button type="button" class="btn flex-grow">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-chart-bar"></use></svg>
+                  </button>
+                </div>
+                <div class="graph-widget__title">ДТП прогноз</div>
+              </div>
+
+              <div class="graph-widget__content">
+                @@include('./components/_graph.html')
+              </div>
             </div>
           </div>
         </div>

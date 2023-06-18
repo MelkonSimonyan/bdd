@@ -367,11 +367,136 @@
     background-color: var(--bg-surface);
     border-radius: 4px;
   }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    padding: 8px;
+    border-bottom: 1px solid var(--dividers-low-contrast);
+  }
+
+  &__title {
+    flex-grow: 1;
+    min-width: 1px;
+    font-weight: 600;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    margin: -4px 0;
+
+    &:hover .icon {
+      color: var(--text-primary);
+    }
+  }
+
+  &__content {
+    padding: 8px 16px;
+    min-height: 213px;
+  }
+
+  &__footer {
+    padding: 4px 12px;
+    border-top: 1px solid var(--dividers-low-contrast);
+    display: flex;
+
+    .btn {
+      flex-basis: 0;
+      flex-grow: 1;
+      width: auto;
+      padding: 4px 0;
+
+      &.is-active {
+        background-color: var(--accent-primary-12);
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 600;
+    margin-bottom: 8px;
+
+    &-icon {
+      flex-shrink: 0;
+    }
+
+    &-title {
+      flex-grow: 1;
+      min-width: 1px;
+    }
+
+    &-desc {
+      display: flex;
+      align-items: center;
+      column-gap: 4px;
+    }
+
+    &-percent {
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    &-value {
+      min-width: 1.6em;
+      text-align: right;
+    }
+  }
 }
 
 .graph-widget {
   &__main {
     background: #fff;
     padding: 8px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  &__buttons {
+    display: flex;
+    padding: 4px;
+    background: var(--bg-containers-gray);
+    border-radius: 4px;
+
+    .btn {
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.is-active {
+        background-color: var(--accent-primary-12);
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  &__chart {
+    overflow: hidden;
+        margin-bottom: -6px;
   }
 }

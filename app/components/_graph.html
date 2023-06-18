@@ -1,0 +1,85 @@
+<div class="graph-widget__chart" id="chart"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+  var chart = new ApexCharts(document.querySelector("#chart"), {
+    chart: {
+      height: 260,
+      type: 'line',
+      toolbar: {
+        show: false,
+      },
+      zoom: {
+        enabled: false,
+      },
+    },
+    series: [{
+      name: '2022 год',
+      data: [30, 70, 65, 85, 65, 58, 45, 50, 60, 70, 68, 70]
+    },{
+      name: 'Прогноз на 2023 год',
+      data: [30, 45, 55, 60, 55, 65, 70, 70, 80, 85, 65, 50]
+    }],
+    colors: ['#4EA4FF', '#D94141'],
+    xaxis: {
+      categories: ["янв.", "фев.", "март.", "апр.", "май.", "июнь.", "июль.", "авг.", "сент.", "окт.", "нояб.", "дек."],
+      labels: {
+        style: {
+          fontSize: '12px',
+          fontFamily: 'Segoe UI, sans-serif',
+        }
+      },
+      tooltip: {
+        enabled: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        style: {
+          fontSize: '12px',
+          fontFamily: 'Segoe UI, sans-serif',
+        }
+      },
+      title: {
+        text: "ДТП",
+        style: {
+          fontSize: '12px',
+          fontFamily: 'Segoe UI, sans-serif',
+          fontWeight: 600,
+        },
+      },
+    },
+    stroke: {
+      curve: 'smooth',
+      width: 2,
+    },
+    legend: {
+      fontSize: '12px',
+      fontFamily: 'Segoe UI, sans-serif',
+      labels: {
+        colors: ['#9398A3'],
+      },
+      markers: {
+        width: 20,
+        height: 10,
+        radius: 1,
+      },
+      itemMargin: {
+        horizontal: 6,
+      },
+    },
+    tooltip: {
+      style: {
+        fontSize: '12px',
+        fontFamily: 'Segoe UI, sans-serif',
+      },
+    }
+  });
+
+  chart.render();
+</script>

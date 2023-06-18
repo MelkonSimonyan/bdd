@@ -406,14 +406,77 @@
         </div>
 
         <div class="map-widget hint-widget">
-          <button type="button" class="map-widget__target btn btn_smx">
+          <button type="button" class="map-widget__target btn">
             <svg class="icon" width="24" height="24"><use xlink:href="#icon-double-chevron-up"></use></svg>
             <span>Развернуть</span>
           </button>
 
           <div class="map-widget__content">
             <div class="hint-widget__main">
-              
+              <div class="hint-widget__header">
+                <div class="hint-widget__title">ДТП</div>
+                <button type="button" class="hint-widget__close map-widget__close">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-close-delete"></use></svg>
+                </button>
+              </div>
+
+              <div class="hint-widget__content">
+                <div class="hint-widget__item">
+                  <div class="hint-widget__item-title color-secondary">Всего дтп</div>
+                  <div class="hint-widget__item-desc">
+                    <div class="hint-widget__item-percent color-accent-danger">+12%</div>
+                    <div class="hint-widget__item-value">542</div>
+                  </div>
+                </div>
+
+                <div class="hint-widget__item">
+                  <div class="hint-widget__item-icon">
+                    <div class="hint-icon" style="color: #C0504F;">
+                      <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
+                    </div>
+                  </div>
+                  <div class="hint-widget__item-title">Учетные смерт. исход</div>
+                  <div class="hint-widget__item-desc">
+                    <div class="hint-widget__item-percent color-accent-danger">+5%</div>
+                    <div class="hint-widget__item-value">364</div>
+                  </div>
+                </div>
+
+                <div class="hint-widget__item">
+                  <div class="hint-widget__item-icon">
+                    <div class="hint-icon" style="color: #F89444;">
+                      <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
+                    </div>
+                  </div>
+                  <div class="hint-widget__item-title">Учетные</div>
+                  <div class="hint-widget__item-desc">
+                    <div class="hint-widget__item-percent color-accent-success">-21%</div>
+                    <div class="hint-widget__item-value">146</div>
+                  </div>
+                </div>
+
+                <div class="hint-widget__item">
+                  <div class="hint-widget__item-icon">
+                    <div class="hint-icon" style="color: #79DB62;">
+                      <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
+                    </div>
+                  </div>
+                  <div class="hint-widget__item-title">Не учетные</div>
+                  <div class="hint-widget__item-desc">
+                    <div class="hint-widget__item-percent color-accent-danger">+14%</div>
+                    <div class="hint-widget__item-value">65</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hint-widget__footer">
+                <button type="button" class="btn is-active">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-list"></use></svg>
+                </button>
+                <button type="button" class="btn flex-grow">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-chart-pie"></use></svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -532,10 +595,20 @@
       <symbol id="icon-close-delete" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.734 6.275a.907.907 0 0 0-1.283 0L12 10.717 7.55 6.266a.907.907 0 1 0-1.284 1.283L10.716 12l-4.45 4.45a.908.908 0 0 0 1.283 1.284L12 13.284l4.45 4.45a.907.907 0 1 0 1.284-1.283L13.284 12l4.45-4.45a.912.912 0 0 0 0-1.275Z"/>
       </symbol>
+      <symbol id="icon-chart-pie" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.55 1.35a.75.75 0 0 0-.75.75v7.5c0 .415.336.75.75.75h7.5a.75.75 0 0 0 .75-.75 8.25 8.25 0 0 0-8.25-8.25Zm-3.627 2.053a9.524 9.524 0 1 0 9.524 9.524.75.75 0 0 0-.75-.75h-8.024V4.154a.75.75 0 0 0-.75-.75Z"/>
+      </symbol>
+      <symbol id="icon-chart-bar" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.222 2H17.14a.75.75 0 0 0-.75.75v18.5c0 .413.336.75.75.75h3.083a.75.75 0 0 0 .75-.75V2.75a.75.75 0 0 0-.75-.75ZM6.862 6.111H3.778a.75.75 0 0 0-.75.75V21.25c0 .414.336.75.75.75h3.084a.75.75 0 0 0 .75-.75V6.86a.75.75 0 0 0-.75-.75Zm6.68 5.139H10.46a.75.75 0 0 0-.75.75v9.25c0 .413.336.75.75.75h3.083a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75Z"/>
+      </symbol>
+      <symbol id="icon-chart-line" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.677 3.323a.75.75 0 1 0-1.354-.645l-4.568 9.593-4.253-3.828a.75.75 0 0 0-1.173.222l-4 8a.75.75 0 0 0 1.342.67l3.56-7.119 4.267 3.842a.75.75 0 0 0 1.18-.235l5-10.5ZM3.75 3a.75.75 0 0 0-1.5 0v18c0 .414.336.75.75.75h18a.75.75 0 0 0 0-1.5H3.75V3Z"/>
+      </symbol>
     </svg>
   </div>
 
-  <!-- <svg class="icon" width="24" height="24"><use xlink:href="#icon-double-chevron-up"></use></svg> -->
+  <!-- <svg class="icon" width="24" height="24"><use xlink:href="#icon-chart-bar"></use></svg> -->
+
   <script src="js/scripts.js"></script>
 </body>
 </html>
