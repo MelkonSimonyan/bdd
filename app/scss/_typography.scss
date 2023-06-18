@@ -21,7 +21,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   font-size: 14px;
   line-height: 20px;
-  background: #fff;
+  background: var(--bg-surface);
   color: var(--text-primary);
   min-width: 1280px;
   min-height: 100vh;
@@ -78,8 +78,7 @@ strong {
 }
 
 .has-scrollbar {
-  overflow: hidden;
-  overflow-y: auto;
+  overflow: auto;
   scroll-behavior: smooth;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -101,23 +100,4 @@ strong {
     border: 3px solid transparent;
     background-clip: content-box;
   }
-}
-
-.svg-sprite {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-  height: 0;
-  width: 0;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.icon {
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  flex-shrink: 0;
-  color: var(--icons-high-contrast);
 }

@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  @@include('./components/_head.html')
+</head>
+<body>
+  @@include('./components/_header.html', {
+    "select_plot": true,
+    "type": "table",
+    "switcher": "hide",
+    "mapLink": "2.1.html",
+  })
+
+  <div class="content">
+    <div class="aside">
+      @@include('./components/_aside-2.html')
+    </div>
+
+    <div class="main">
+      <div class="layout">
+        <div class="layout__header">
+          <div class="layout__header-row">
+            <div class="layout__title">
+              <svg class="icon" width="24" height="24"><use xlink:href="#icon-layer-map"></use></svg>
+              <span>Общие показатели М-3 “Украина” (Количество объектов: 3754)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="layout__content has-scrollbar">
+          <table class="table">
+            <colgroup>
+              <col width="68" style="min-width: 68px;">
+              <col width="364" style="min-width: 364px;">
+              <col width="173" style="min-width: 173px;">
+              <col width="287" style="min-width: 287px;">
+              <col width="270" style="min-width: 270px;">
+            </colgroup>
+
+            <thead class="table__thead">
+              <tr class="table__thead-row">
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">№</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown"></div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Вид аудита</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown"></div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Результат (баллы)</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown"></div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Изменение  Баллов за период</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown"></div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Изменение  Баллов за период</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown"></div>
+                    </div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody class="table__section-head">
+              <tr>
+                <td class="table__section-head-cell" colspan="5">
+                  <div class="table__section-head-inner">
+                    <div class="table__section-head-content">Дорожные условия</div>
+                    <div class="table__section-head-arrow">
+                      <svg class="icon"><use xlink:href="#icon-drop-down"></use></svg>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody class="table__section">
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Дорожные условия</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">83</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Ровность покрытий</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">83</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">3</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Сцепление с покрытием</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">63</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">4</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Повреждения</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">33</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+            <tbody class="table__section-head">
+              <tr>
+                <td class="table__section-head-cell" colspan="5">
+                  <div class="table__section-head-inner">
+                    <div class="table__section-head-content">ДТП</div>
+                    <div class="table__section-head-arrow">
+                      <svg class="icon"><use xlink:href="#icon-drop-down"></use></svg>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody class="table__section">
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">9</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ОДД</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">33</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Эксплуатационная скорость транспортных средств</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">83</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">11</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Задержки и перепробег</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">63</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">11</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Число и опасность конфликтных ситуаций</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">63</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+            <tbody class="table__section-head">
+              <tr>
+                <td class="table__section-head-cell" colspan="5">
+                  <div class="table__section-head-inner">
+                    <div class="table__section-head-content">ОДД</div>
+                    <div class="table__section-head-arrow">
+                      <svg class="icon"><use xlink:href="#icon-drop-down"></use></svg>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody class="table__section">
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ДТП</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">63</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">+10</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">6</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Места концентрации ДТП</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">83</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">-10</div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="layout__footer">
+          @@include('./components/_pagination.html')
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @@include('./components/_svg.html')
+  @@include('./components/_foot.html')
+</body>
+</html>

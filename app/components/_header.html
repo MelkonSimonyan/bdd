@@ -46,20 +46,22 @@
         </button>
       }
 
-      <label class="switcher">
-        <span class="switch">
-          <input type="checkbox" name="swicth" checked>
-          <span class="switch__content"></span>
-        </span>
-        <span class="switcher__text">Показать подсказки</span>
-      </label>
+      @@if(context.switcher !== "hide"){
+        <label class="switcher">
+          <span class="switch">
+            <input type="checkbox" name="swicth" checked>
+            <span class="switch__content"></span>
+          </span>
+          <span class="switcher__text">Показать подсказки</span>
+        </label>
+      }
     </div>
 
     <div class="flex align-items-center gx-8">
       <div class="buttons">
-        <button type="button" class="btn is-active">Карта</button>
-        <button type="button" class="btn">Таблица</button>
-        <button type="button" class="btn">Мероприятия</button>
+        <a href="@@if(context.mapLink){@@mapLink}@@if(!context.mapLink){#}" class="btn @@if(context.type !== 'table' && context.type !== 'event'){is-active}">Карта</a>
+        <a href="@@if(context.tableLink){@@tableLink}@@if(!context.tableLink){#}" class="btn @@if(context.type === 'table'){is-active}">Таблица</a>
+        <a href="@@if(context.eventLink){@@eventLink}@@if(!context.eventLink){#}" class="btn @@if(context.type === 'event'){is-active}">Мероприятия</a>
       </div>
 
       <a href="#" class="btn btn_smx btn_secondary">

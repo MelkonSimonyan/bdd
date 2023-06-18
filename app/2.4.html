@@ -1,0 +1,1252 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  @@include('./components/_head.html')
+</head>
+<body>
+  @@include('./components/_header.html', {
+    "select_plot": true,
+    "type": "table",
+    "switcher": "hide",
+    "mapLink": "2.3.html",
+  })
+
+  <div class="content">
+    <div class="aside">
+      @@include('./components/_aside-3.html')
+    </div>
+
+    <div class="main">
+      <div class="layout">
+        <div class="layout__header">
+          <div class="layout__header-row">
+            <div class="layout__title">
+              <svg class="icon" width="24" height="24"><use xlink:href="#icon-layer-map"></use></svg>
+              <span>М-3 “Украина” / Дорожные условия / Ровность покрытий  (Количество объектов: 3754)</span>
+            </div>
+          </div>
+          <div class="layout__header-row">
+            <div class="table-filters-row">
+              <div class="table-filters-value">Фильтрация по: На развязке, Дорога </div>
+              <div class="table-columns-control">
+                <button type="button" class="table-columns-control__btn btn btn_smx btn_secondary">
+                  <svg class="icon" width="24" height="24"><use xlink:href="#icon-columns"></use></svg>
+                  <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
+                </button>
+                <div class="table-columns-control__dropdown">
+                  @@include('./components/droplist/_droplist-columns.html')
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="layout__content has-scrollbar">
+          <table class="table">
+            <colgroup>
+              <col width="156">
+              <col width="130">
+              <col width="130">
+              <col width="130">
+              <col width="130">
+              <col width="130">
+              <col width="130">
+              <col width="130">
+            </colgroup>
+
+            <thead class="table__thead">
+              <tr class="table__thead-row">
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">КМ</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-km.html')
+                        </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">КМ+</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-km.html')
+                        </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Дорога</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-root.html')
+                        </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th is-active">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">На развязке</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-nar.html')
+                        </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Обратное 1</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-nar.html')
+                        </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Обратное 2</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-nar.html')
+                        </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Прямое 1</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-nar.html')
+                        </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Прямое 2</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-nar.html')
+                        </div>
+                    </div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody class="table__section">
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,200</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+132,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,42</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,13</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,5</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,33</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,37</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,300</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+232,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,48</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,79</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,14</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,82</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,52</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,400</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+332,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,2</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,65</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,8</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,44</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,39</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,500</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+432,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,95</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,49</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,71</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,600</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+532,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,0</div>
+                    <div class="table__td-aside">
+                      <div class="tooltip-wrapper">
+                        <svg class="icon icon-alert" width="24" height="24"><use xlink:href="#icon-alert-triangle"></use></svg>
+                        <div class="tooltip">Не соответсвует нормативам</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,40</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,93</div>
+                    <div class="table__td-aside">
+                      <div class="tooltip-wrapper">
+                        <svg class="icon icon-alert" width="24" height="24"><use xlink:href="#icon-alert-triangle"></use></svg>
+                        <div class="tooltip">Не соответсвует нормативам</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,96</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,97</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,200</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+132,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,42</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,13</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,5</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,33</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,37</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,300</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+232,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,48</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,79</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,14</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,82</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,52</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,400</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+332,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,2</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,65</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,8</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,44</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,39</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,500</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+432,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,95</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,49</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,71</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,500</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+432,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,95</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,49</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,71</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,600</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+532,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,0</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,40</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,93</div>
+                    <div class="table__td-aside">
+                      <div class="tooltip-wrapper">
+                        <svg class="icon icon-alert" width="24" height="24"><use xlink:href="#icon-alert-triangle"></use></svg>
+                        <div class="tooltip">Не соответсвует нормативам</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,96</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,97</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,600</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+532,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,0</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,40</div>
+                    <div class="table__td-aside">
+                      <div class="tooltip-wrapper">
+                        <svg class="icon icon-alert" width="24" height="24"><use xlink:href="#icon-alert-triangle"></use></svg>
+                        <div class="tooltip">Не соответсвует нормативам</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,93</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,96</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,97</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,200</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+132,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,42</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,13</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,5</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,33</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,37</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,300</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+232,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,48</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,79</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,14</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,82</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,52</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,400</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+332,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,2</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,65</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,8</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,44</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,39</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,500</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+432,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,95</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,49</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,71</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,600</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+532,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,0</div>
+                    <div class="table__td-aside">
+                      <div class="tooltip-wrapper">
+                        <svg class="icon icon-alert" width="24" height="24"><use xlink:href="#icon-alert-triangle"></use></svg>
+                        <div class="tooltip">Не соответсвует нормативам</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,40</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,93</div>
+                    <div class="table__td-aside">
+                      <div class="tooltip-wrapper">
+                        <svg class="icon icon-alert" width="24" height="24"><use xlink:href="#icon-alert-triangle"></use></svg>
+                        <div class="tooltip">Не соответсвует нормативам</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,96</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,97</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,200</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+132,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,42</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,13</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,5</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,33</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,37</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,300</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+232,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,48</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,79</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,14</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,82</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,52</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,400</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+332,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,2</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,65</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,8</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,44</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,39</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,500</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+432,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,95</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,49</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,71</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,500</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+432,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,95</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,36</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,49</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,71</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,600</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+532,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,0</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,40</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,93</div>
+                    <div class="table__td-aside">
+                      <div class="tooltip-wrapper">
+                        <svg class="icon icon-alert" width="24" height="24"><use xlink:href="#icon-alert-triangle"></use></svg>
+                        <div class="tooltip">Не соответсвует нормативам</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,96</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,97</div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101,600</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">101+532,20</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,0</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">2,40</div>
+                    <div class="table__td-aside">
+                      <div class="tooltip-wrapper">
+                        <svg class="icon icon-alert" width="24" height="24"><use xlink:href="#icon-alert-triangle"></use></svg>
+                        <div class="tooltip">Не соответсвует нормативам</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">5,93</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,96</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">1,97</div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="layout__footer">
+          @@include('./components/_pagination.html')
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @@include('./components/_svg.html')
+  @@include('./components/_foot.html')
+</body>
+</html>
