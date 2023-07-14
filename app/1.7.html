@@ -5,11 +5,13 @@
 </head>
 <body>
   @@include('./components/_header.html', {
-    "tableDisabled": true,
+    "tableLink": "2.4.0.html",
   })
 
   <div class="content">
-    @@include('./components/aside/_aside-1.html')
+    @@include('./components/aside/_aside-2.html', {
+      title: 'Аудит по всей сети дорог',
+    })
 
     <div class="main">
       @@include('./components/map/_map.html')

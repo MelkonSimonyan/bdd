@@ -5,16 +5,15 @@
 </head>
 <body>
   @@include('./components/_header.html', {
-    "select_plot": true,
     "type": "table",
     "switcher": "hide",
-    "mapLink": "2.1.html",
+    "mapLink": "1.7.html",
   })
 
   <div class="content">
-    <div class="aside">
-      @@include('./components/aside/_aside-m3.html')
-    </div>
+    @@include('./components/aside/_aside-2.html', {
+      title: 'М-3 «Украина»',
+    })
 
     <div class="main">
       <div class="layout">

@@ -1,0 +1,246 @@
+<div class="aside">
+  <div class="aside__main">
+    @@include('./_aside-back.html', {
+      "title": "@@title",
+      "link": "1.1.html",
+    })
+
+    <div class="aside__content px-8 has-hidden-scrollbar">
+      <div class="aside-nav">
+        <div class="aside-nav__group@@if(context.open1){ is-open}">
+          <div class="aside-nav__group-header">
+            <div class="aside-nav__item">
+              @@include('./_aside-item-head.html', {
+                title: 'Дорожные условия',
+                period: '<span class="color-accent-success">+10</span> за период',
+                value: '33',
+              })
+            </div>
+          </div>
+
+          <div class="aside-nav__group-content">
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Продольная ровность',
+                period: '<span class="color-accent-success">+10</span> балла за период',
+                value: '83',
+                active: '@@selected11',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Поперечная ровность',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+                active: '@@selected12',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Коэффициент сцепления',
+                period: '<span class="color-accent-success">+10</span> балла за период',
+                value: '83',
+                active: '@@selected13',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Дефекты проезж. части',
+                period: '<span class="color-accent-success">+10</span> балла за период',
+                value: '33',
+                active: '@@selected14',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Дефекты обочин',
+                period: '<span class="color-accent-success">+10</span> балла за период',
+                value: '83',
+                active: '@@selected15',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Дефекты раздел. полосы',
+                period: '<span class="color-accent-success">+10</span> балла за период',
+                value: '63',
+                active: '@@selected16',
+              })
+            </div>
+          </div>
+        </div>
+
+        <div class="aside-nav__group@@if(context.open2){ is-open}">
+          <div class="aside-nav__group-header">
+            <div class="aside-nav__item">
+              @@include('./_aside-item-head.html', {
+                title: 'Аварийно -опасные участки',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+              })
+            </div>
+          </div>
+
+          <div class="aside-nav__group-content">
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'ДТП',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+                active: '@@selected21',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Неучетные ДТП',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+                active: '@@selected22',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Места концентрации ДТП',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+                active: '@@selected23',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Потенциально опасные места',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+                active: '@@selected24',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Опасность участков по комплекс. показателю',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+                active: '@@selected25',
+              })
+            </div>
+          </div>
+        </div>
+
+        <div class="aside-nav__group@@if(context.open3){ is-open}">
+          <div class="aside-nav__group-header">
+            <div class="aside-nav__item">
+              @@include('./_aside-item-head.html', {
+                title: 'ОДД',
+                period: '<span class="color-accent-success">+10</span> за период',
+                value: '83',
+              })
+            </div>
+          </div>
+
+          <div class="aside-nav__group-content">
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Эксплуатационная скорость движения ТС',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+                active: '@@selected31',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Транспортные задержки и перепробег',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+                active: '@@selected32',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Число и опасность конфликтных ситуаций',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                value: '63',
+                active: '@@selected33',
+              })
+            </div>
+          </div>
+        </div>
+
+        <div class="aside-nav__group@@if(context.open4){ is-open}">
+          <div class="aside-nav__group-header">
+            <div class="aside-nav__item">
+              @@include('./_aside-item-head.html', {
+                title: 'Мероприятия',
+                period: '<span class="color-accent-success">+10</span> за период',
+                value: '83',
+              })
+            </div>
+          </div>
+
+          <div class="aside-nav__group-content">
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Мероприятия',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                graph: 'hide',
+                active: '@@selected41',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Эффективность мероприятий',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                graph: 'hide',
+                active: '@@selected41',
+              })
+            </div>
+
+            <div class="aside-nav__item aside-nav__item_subitem">
+              @@include('./_aside-item.html', {
+                title: 'Прогноз',
+                period: '<span class="color-accent-warning">-10</span> за период',
+                graph: 'hide',
+                active: '@@selected41',
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="aside__settings-dropdown">
+  <div class="droplist has-scrollbar">
+    <div class="text-reg-12 color-subhead mb-8">Настройка: Дефекты проезж. части</div>
+
+    <div class="form-check">
+      <label>
+        <input type="checkbox">
+        <span>Отображать слой на карте постоянно</span>
+      </label>
+    </div>
+    <div class="form-check">
+      <label>
+        <input type="checkbox" checked>
+        <span>Скрыть виджет ДТП</span>
+      </label>
+    </div>
+    <div class="form-check">
+      <label>
+        <input type="checkbox" checked>
+        <span>Скрыть график ДТП прогноз</span>
+      </label>
+    </div>
+  </div>
+</div>

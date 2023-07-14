@@ -1,3 +1,5 @@
 @@include('_radial-graph.js')
 @@include('_table.js')
 @@include('_map.js')
+@@include('_aside.js')
+@@include('_form.js')

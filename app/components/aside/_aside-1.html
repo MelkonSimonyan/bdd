@@ -1,0 +1,285 @@
+<div class="aside">
+  <div class="aside__main">
+    <div class="aside__header">
+        <div class="flex gx-8">
+          <div class="aside__header-search">
+            <div class="search-field">
+              <svg class="search-field__icon" width="20" height="20"><use xlink:href="#icon-search"></use></svg>
+              <input type="text" name="search" placeholder="Поиск">
+            </div>
+          </div>
+          <div class="aside__header-filter">
+            <button type="button" class="aside__header-filter-btn btn btn_smx btn_secondary">
+              <svg class="icon" width="24" height="24"><use xlink:href="#icon-filter"></use></svg>
+            </button>
+          </div>
+        </div>
+    </div>
+
+    <div class="aside__content px-8 has-hidden-scrollbar">
+      <div class="aside-nav aside-nav_compact">
+        <div class="aside-nav__header">
+          @@include('./_aside-item-all.html', {
+            title: 'Аналитика и аудит по всей сети дорог',
+            period: '<span class="color-accent-danger">-6</span> ЗА ПЕРИОД',
+            value: '33',
+            active: '@@active0',
+          })
+        </div>
+
+        <div class="aside-nav__section">
+          <div class="aside-nav__section-header">
+            <div class="aside-nav__item">
+              @@include('./_aside-item-section.html', {
+                settings: true,
+                title: 'М-3 «Украина»',
+                text: 'км 0+000 - км 32+195',
+                period: '<span class="color-accent-success">+4</span> ЗА ПЕРИОД',
+                value: '33',
+                link: '2.4.0.html',
+                active: '@@active1',
+                settingsActive: '@@subitems',
+              })
+            </div>
+          </div>
+
+          <div class="aside-nav__section-content">
+            @@if(context.subitems){
+              <div class="aside-nav__item aside-nav__item_subitem">
+                @@include('./_aside-item-section.html', {
+                  title: 'М-3 «Украина»',
+                  text: 'км 0+000 - км 32+195',
+                  period: '<span class="color-accent-success">+4</span> ЗА ПЕРИОД',
+                  value: '33',
+                  link: '2.4.0.html',
+                  active: '@@subitems',
+                })
+              </div>
+
+              <div class="aside-nav__item aside-nav__item_subitem">
+                @@include('./_aside-item-section.html', {
+                  title: 'М-3 «Украина»',
+                  text: 'км 0+000 - км 32+195',
+                  period: '<span class="color-accent-success">+4</span> ЗА ПЕРИОД',
+                  value: '33',
+                  link: '2.4.0.html',
+                  active: '@@subitems',
+                })
+              </div>
+            }
+          </div>
+        </div>
+        
+        <div class="aside-nav__section">
+          <div class="aside-nav__section-header">
+            <div class="aside-nav__item">
+              @@include('./_aside-item-section.html', {
+                settings: true,
+                title: 'М-4 «Волга»',
+                text: 'км 0+000 - км 14+595',
+                period: '<span class="color-accent-success">+10</span> ЗА ПЕРИОД',
+                value: '83',
+                link: '2.1.html',
+                active: '@@active2',
+              })
+            </div>
+          </div>
+
+          <div class="aside-nav__section-content"></div>
+        </div>
+
+        <div class="aside-nav__section">
+          <div class="aside-nav__group-header">
+            <div class="aside-nav__item">
+              @@include('./_aside-item-section.html', {
+                settings: true,
+                title: 'М-5 «Урал»',
+                text: 'км 0+000 - км 19+542',
+                period: '<span class="color-accent-danger">-3</span> ЗА ПЕРИОД',
+                value: '63',
+                link: '#',
+                active: '@@active3',
+              })
+            </div>
+          </div>
+
+          <div class="aside-nav__section-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="aside__filter">
+    <div class="aside__filter-back aside__back">
+      <svg class="icon" width="20" height="20"><use xlink:href="#icon-arrow-back"></use></svg>
+      <span>Фильтры дорог</span>
+    </div>
+
+    <div class="filter-control">
+      <div class="flex gx-8">
+        <div class="flex-grow">
+          <button type="button" class="btn btn_block btn_primary" disabled>Применить</button>
+        </div>
+        <div class="flex-grow">
+          <button type="button" class="btn btn_block">Сбросить фильтры</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="aside__content p-8 has-hidden-scrollbar">
+      <div class="mb-8 color-subhead">Владелец дороги</div>
+      <div class="mb-4">
+        @@include('../_select-block.html', {
+          removable: true,
+          placeholder: 'Выберите владельца дороги',
+          list: [
+            ['Владелец дороги 1', ''],
+            ['Владелец дороги 2', ''],
+            ['Владелец дороги 3', ''],
+          ],
+        })
+      </div>
+
+      <div class="mb-8 color-subhead">Значение дороги</div>
+      <div class="mb-4">
+        @@include('../_select-block.html', {
+          removable: true,
+          placeholder: 'Выберите назначение дороги',
+          list: [
+            ['Значение дороги 1', ''],
+            ['Значение дороги 2', ''],
+            ['Значение дороги 3', ''],
+          ],
+        })
+      </div>
+
+      <div class="mb-8 color-subhead">Субъект</div>
+      <div class="mb-4">
+        @@include('../_select-block.html', {
+          removable: true,
+          placeholder: 'Выберите субъект',
+          list: [
+            ['Субъект 1', ''],
+            ['Субъект 2', ''],
+            ['Субъект 3', ''],
+          ],
+        })
+      </div>
+
+      <div class="mb-8 color-subhead">Район</div>
+      <div class="mb-4">
+        @@include('../_select-block.html', {
+          removable: true,
+          placeholder: 'Выберите район',
+          list: [
+            ['Район 1', ''],
+            ['Район 2', ''],
+            ['Район 3', ''],
+          ],
+        })
+      </div>
+
+      <div class="mb-8 color-subhead">Населенный пункт</div>
+      <div class="mb-4">
+        @@include('../_select-block.html', {
+          removable: true,
+          placeholder: 'Укажите населенный пункт',
+          list: [
+            ['Населенный пункт 1', ''],
+            ['Населенный пункт 2', ''],
+            ['Населенный пункт 3', ''],
+          ],
+        })
+      </div>
+
+      <div class="mb-8 color-subhead">Улица</div>
+      <div class="mb-4">
+        @@include('../_select-block.html', {
+          removable: true,
+          placeholder: 'Укажите населенный улицу',
+          list: [
+            ['Улица 1', ''],
+            ['Улица 2', ''],
+            ['Улица 3', ''],
+          ],
+        })
+      </div>
+
+      <div class="mb-8 color-subhead">Подразделение ГИБДД</div>
+      <div class="mb-4">
+        @@include('../_select-block.html', {
+          removable: true,
+          placeholder: 'Выберите подразделение',
+          list: [
+            ['Подразделение ГИБДД 1', ''],
+            ['Подразделение ГИБДД 2', ''],
+            ['Подразделение ГИБДД 3', ''],
+          ],
+        })
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="aside__settings-dropdown aside__settings-dropdown_areas">
+  <div class="droplist has-scrollbar">
+    <div class="text-reg-12 color-subhead mb-8">Настройка М-3 «Украина»</div>
+
+    <button type="button" class="btn btn_block btn_smx btn_secondary">
+      <svg class="icon" width="24" height="24"><use xlink:href="#icon-plus"></use></svg>
+      <span>Добавить участок</span>
+    </button>
+
+    <div class="my-8">
+      <div class="flex align-items-start gx-8">
+        <div class="flex-grow mb-8">Участок 1</div>
+        <button type="button" class="btn btn_0">
+          <svg class="icon" width="24" height="24"><use xlink:href="#icon-trash"></use></svg>
+        </button>
+      </div>
+
+      <div class="flex gx-8 mb-8">
+        <div class="flex-grow">
+          <div class="mb-8">От</div>
+          <input type="text" value="0">
+        </div>
+        
+        <div class="flex-grow">
+          <div class="mb-8">До</div>
+          <input type="text" value="16+000">
+        </div>
+      </div>
+    </div>
+
+    <div class="my-8">
+      <div class="flex align-items-start gx-8">
+        <div class="flex-grow mb-8">Участок 1</div>
+        <button type="button" class="btn btn_0">
+          <svg class="icon" width="24" height="24"><use xlink:href="#icon-trash"></use></svg>
+        </button>
+      </div>
+
+      <div class="flex gx-8 mb-8">
+        <div class="flex-grow">
+          <div class="mb-8">От</div>
+          <input type="text" value="17+000">
+        </div>
+        
+        <div class="flex-grow">
+          <div class="mb-8">До</div>
+          <input type="text" value="32+195">
+        </div>
+      </div>
+    </div>
+
+    <div class="flex gx-8">
+      <div class="flex-grow">
+        <button type="button" class="btn btn_block btn_primary" disabled>Применить</button>
+      </div>
+
+      <div class="flex-grow">
+        <button type="button" class="btn btn_block" disabled>Сбросить</button>
+      </div>
+    </div>
+  </div>
+</div>

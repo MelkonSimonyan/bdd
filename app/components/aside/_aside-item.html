@@ -1,0 +1,19 @@
+<div class="aside-item@@if(context.active === 'true'){ is-active}">
+  <div class="aside-item__settings">
+    <button type="button" class="aside-item__settings-btn btn">
+      <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
+    </button>
+    <div class="aside-item__settings-dropdown"></div>
+  </div>
+  <div class="aside-item__content">
+    <div class="fw-semibold">@@title</div>
+    <div>@@period</div>
+  </div>
+  @@if(context.graph !== 'hide'){
+    <div class="aside-item__graph">
+      @@include('../_radial-graph.html', {
+        value: '@@value',
+      })
+    </div>
+  }
+</div>

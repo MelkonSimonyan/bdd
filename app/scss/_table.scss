@@ -190,22 +190,17 @@
 	}
 }
 
-.table-filters-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 6px 8px 5px;
-	border-left: 1px solid var(--table-border);
-}
-
 .table-filters-value {
 	font-size: 12px;
 	line-height: 16px;
+	margin-left: -8px;
 }
 
 .table-columns-control {
 	$this: &;
 	position: relative;
+	margin-right: -8px;
+	margin-left: auto;
 
 	&__btn {
 		&:hover {
@@ -237,4 +232,9 @@
 	&.is-open &__dropdown {
 		display: block;
 	}
+}
+
+.table-objects-control {
+	flex: 0 0 auto;
+	width: 200px;
 }

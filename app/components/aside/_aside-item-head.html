@@ -1,0 +1,14 @@
+<div class="aside-item@@if(context.active === 'true'){ is-active}">
+  <div class="aside-item__expand">
+    <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-solid-right"></use></svg>
+  </div>
+  <div class="aside-item__content">
+    <div class="fw-semibold">@@title</div>
+    <div>@@period</div>
+  </div>
+  <div class="aside-item__graph">
+    @@include('../_radial-graph.html', {
+      value: '@@value',
+    })
+  </div>
+</div>

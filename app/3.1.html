@@ -5,22 +5,22 @@
 </head>
 <body>
   @@include('./components/_header.html', {
-    "select_plot": true,
-    "tableLink": "2.4.html",
+    switchChecked: true,
   })
 
   <div class="content">
-    <div class="aside">
-      @@include('./components/aside/_aside-dtp.html')
-    </div>
+    @@include('./components/aside/_aside-2.html', {
+      title: 'М-4 «Волга» км 0+000 - 14+595',
+      open2: true,
+    })
 
     <div class="main">
       <div class="layout">
         <div class="map-wrapper">
-          @@include('./components/_map.html')
+          @@include('./components/map/_map.html')
           
           <div style="position: absolute; left: 30.7%; bottom: 59.4%;">
-            @@include('./components/_map-tooltip.html', {
+            @@include('./components/map/_map-tooltip.html', {
               "icon": "#icon-car-accident",
               "title": "Высокая конц. ДТП",
               "subtitle": "-6 баллов",
@@ -38,7 +38,7 @@
           </div>
           
           <div style="position: absolute; left: 55%; bottom: 56.7%;">
-            @@include('./components/_map-tooltip.html', {
+            @@include('./components/map/_map-tooltip.html', {
               "icon": "#icon-alert-triangle",
               "title": "Опасный участок дороги",
               "subtitle": "-6 баллов",
@@ -56,7 +56,7 @@
           </div>
           
           <div style="position: absolute; left: 75.7%; bottom: 54.3%;">
-            @@include('./components/_map-tooltip.html', {
+            @@include('./components/map/_map-tooltip.html', {
               "icon": "#icon-car-accident",
               "title": "Высокая конц. ДТП",
               "subtitle": "-6 баллов",
@@ -71,82 +71,6 @@
                 "type": "circle"
               }
             })
-          </div>
-        </div>
-
-        <div class="map-widget hint-widget">
-          <button type="button" class="map-widget__target btn">
-            <svg class="icon" width="24" height="24"><use xlink:href="#icon-double-chevron-up"></use></svg>
-            <span>Развернуть</span>
-          </button>
-
-          <div class="map-widget__content">
-            <div class="hint-widget__main">
-              <div class="hint-widget__header">
-                <div class="hint-widget__title">ДТП</div>
-                <button type="button" class="hint-widget__close map-widget__close">
-                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-close-delete"></use></svg>
-                </button>
-              </div>
-
-              <div class="hint-widget__content">
-                <div class="hint-widget__item">
-                  <div class="hint-widget__item-title color-secondary">Всего дтп</div>
-                  <div class="hint-widget__item-desc">
-                    <div class="hint-widget__item-percent color-accent-danger">+12%</div>
-                    <div class="hint-widget__item-value">542</div>
-                  </div>
-                </div>
-
-                <div class="hint-widget__item">
-                  <div class="hint-widget__item-icon">
-                    <div class="hint-icon" style="color: #C0504F;">
-                      <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
-                    </div>
-                  </div>
-                  <div class="hint-widget__item-title">Учетные смерт. исход</div>
-                  <div class="hint-widget__item-desc">
-                    <div class="hint-widget__item-percent color-accent-danger">+5%</div>
-                    <div class="hint-widget__item-value">364</div>
-                  </div>
-                </div>
-
-                <div class="hint-widget__item">
-                  <div class="hint-widget__item-icon">
-                    <div class="hint-icon" style="color: #F89444;">
-                      <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
-                    </div>
-                  </div>
-                  <div class="hint-widget__item-title">Учетные</div>
-                  <div class="hint-widget__item-desc">
-                    <div class="hint-widget__item-percent color-accent-success">-21%</div>
-                    <div class="hint-widget__item-value">146</div>
-                  </div>
-                </div>
-
-                <div class="hint-widget__item">
-                  <div class="hint-widget__item-icon">
-                    <div class="hint-icon" style="color: #79DB62;">
-                      <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
-                    </div>
-                  </div>
-                  <div class="hint-widget__item-title">Не учетные</div>
-                  <div class="hint-widget__item-desc">
-                    <div class="hint-widget__item-percent color-accent-danger">+14%</div>
-                    <div class="hint-widget__item-value">65</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="hint-widget__footer">
-                <button type="button" class="btn is-active">
-                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-list"></use></svg>
-                </button>
-                <button type="button" class="btn flex-grow">
-                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-chart-pie"></use></svg>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

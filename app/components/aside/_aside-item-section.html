@@ -1,0 +1,22 @@
+<div class="aside-item@@if(context.active === 'true'){ is-active}">
+  @@if(context.settings){
+    <div class="aside-item__settings">
+      <button type="button" class="aside-item__settings-btn btn@@if(context.settingsActive === 'true'){ is-active}">
+        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
+      </button>
+    </div>
+  }
+  <div class="aside-item__content">
+    <div class="fw-semibold">@@title</div>
+    <div class="color-subhead">@@text</div>
+    <div class="text-upper-12">@@period</div>
+  </div>
+  <div class="aside-item__graph">
+    @@include('../_radial-graph.html', {
+      value: '@@value',
+    })
+  </div>
+  <a href="@@link" class="aside-item__arrow">
+    <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
+  </a>
+</div>

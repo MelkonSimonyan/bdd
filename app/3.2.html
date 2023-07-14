@@ -5,24 +5,23 @@
 </head>
 <body>
   @@include('./components/_header.html', {
-    "select_plot": true,
-    "tableLink": "2.4.html",
+    switchChecked: true,
   })
 
   <div class="content">
-    <div class="aside">
-      @@include('./components/aside/_aside-dtp.html', {
-        "active": "2"
-      })
-    </div>
+    @@include('./components/aside/_aside-2.html', {
+      title: 'М-4 «Волга» км 0+000 - 14+595',
+      open2: true,
+      selected21: true,
+    })
 
     <div class="main">
       <div class="layout">
         <div class="map-wrapper">
-          @@include('./components/_map.html')
+          @@include('./components/map/_map.html')
           
-          <div style="position: absolute; left: 47.7%; bottom: 45.4%;">
-            @@include('./components/_map-tooltip.html', {
+          <div style="position: absolute; left: 30.7%; bottom: 59.4%;">
+            @@include('./components/map/_map-tooltip.html', {
               "icon": "#icon-car-accident",
               "title": "Высокая конц. ДТП",
               "subtitle": "-6 баллов",
@@ -34,10 +33,141 @@
                 ["Количество ДТП", "23"]
               ],
               "pin": {
-                "type": "circle",
-                "size": "lg"
+                "type": "circle"
               }
             })
+          </div>
+          
+          <div style="position: absolute; left: 55%; bottom: 56.7%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "icon": "#icon-alert-triangle",
+              "title": "Опасный участок дороги",
+              "subtitle": "-6 баллов",
+              "class": "danger",
+              "btn": "Подробнее...",
+              "list": [
+                ["Адрес", "12+35,738 / 12+36,738"],
+                ["Тип аудита", "Места конц. ДТП"],
+                ["Количество ДТП", "23"]
+              ],
+              "pin": {
+                "type": "circle"
+              }
+            })
+          </div>
+          
+          <div style="position: absolute; left: 75.7%; bottom: 54.3%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "icon": "#icon-car-accident",
+              "title": "Высокая конц. ДТП",
+              "subtitle": "-6 баллов",
+              "class": "danger",
+              "btn": "Подробнее...",
+              "list": [
+                ["Адрес", "12+35,738 / 12+36,738"],
+                ["Тип аудита", "Места конц. ДТП"],
+                ["Количество ДТП", "23"]
+              ],
+              "pin": {
+                "type": "circle"
+              }
+            })
+          </div>
+        </div>
+
+        <div class="map-widgets">
+          <button type="button" class="map-widgets__target btn">
+            <svg class="icon" width="24" height="24"><use xlink:href="#icon-double-chevron-up"></use></svg>
+          </button>
+
+          <div class="map-widgets__content">
+            <div class="map-widgets__row">
+              <div class="map-widgets__col map-widgets__col_data">
+                <div class="data-widget">
+                  <div class="data-widget__header">
+                    <div class="data-widget__title">ДТП</div>
+                  </div>
+
+                  <div class="data-widget__content has-scrollbar">
+                    <div class="data-widget__item">
+                      <div class="data-widget__item-title color-secondary">Всего дтп</div>
+                      <div class="data-widget__item-desc">
+                        <div class="data-widget__item-percent color-accent-danger">+12%</div>
+                        <div class="data-widget__item-value">542</div>
+                      </div>
+                    </div>
+
+                    <div class="data-widget__item">
+                      <div class="data-widget__item-icon">
+                        <div class="hint-icon" style="color: #C0504F;">
+                          <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
+                        </div>
+                      </div>
+                      <div class="data-widget__item-title">Учетные смерт. исход</div>
+                      <div class="data-widget__item-desc">
+                        <div class="data-widget__item-percent color-accent-danger">+5%</div>
+                        <div class="data-widget__item-value">364</div>
+                      </div>
+                    </div>
+
+                    <div class="data-widget__item">
+                      <div class="data-widget__item-icon">
+                        <div class="hint-icon" style="color: #F89444;">
+                          <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
+                        </div>
+                      </div>
+                      <div class="data-widget__item-title">Учетные</div>
+                      <div class="data-widget__item-desc">
+                        <div class="data-widget__item-percent color-accent-success">-21%</div>
+                        <div class="data-widget__item-value">146</div>
+                      </div>
+                    </div>
+
+                    <div class="data-widget__item">
+                      <div class="data-widget__item-icon">
+                        <div class="hint-icon" style="color: #79DB62;">
+                          <svg width="24" height="24"><use xlink:href="#icon-car-accident"></use></svg>
+                        </div>
+                      </div>
+                      <div class="data-widget__item-title">Не учетные</div>
+                      <div class="data-widget__item-desc">
+                        <div class="data-widget__item-percent color-accent-danger">+14%</div>
+                        <div class="data-widget__item-value">65</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="data-widget__footer">
+                    <button type="button" class="btn is-active">
+                      <svg class="icon" width="20" height="20"><use xlink:href="#icon-list"></use></svg>
+                    </button>
+                    <button type="button" class="btn flex-grow">
+                      <svg class="icon" width="20" height="20"><use xlink:href="#icon-chart-pie"></use></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="map-widgets__col map-widgets__col_graph">
+                <div class="graph-widget">
+                  <div class="graph-widget__header">
+                    <div class="graph-widget__buttons">
+                      <button type="button" class="btn is-active">
+                        <svg class="icon" width="20" height="20"><use xlink:href="#icon-chart-line"></use></svg>
+                      </button>
+                      <button type="button" class="btn flex-grow">
+                        <svg class="icon" width="20" height="20"><use xlink:href="#icon-chart-bar"></use></svg>
+                      </button>
+                    </div>
+                    <div class="graph-widget__title">ДТП прогноз</div>
+                  </div>
+
+                  <div class="graph-widget__content">
+                    @@include('./components/_graph.html')
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

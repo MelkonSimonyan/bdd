@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
+                  <div class="aside-item is-active">
                     <div class="aside-item__settings">
                       <button type="button" class="aside-item__settings-btn btn">
                         <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
+                  <div class="aside-item is-active">
                     <div class="aside-item__settings">
                       <button type="button" class="aside-item__settings-btn btn">
                         <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
@@ -581,9 +581,33 @@
       <div class="layout">
         <div class="layout__header">
           <div class="layout__header-row">
+            <div class="table-objects-control">
+              <div class="select-block is-empty" data-placeholder="Выберите...">
+                <button type="button" class="select-block__target">
+                  <div class="select-block__value">Выберите...</div>
+                  <div class="select-block__arrow">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-arrow"></use></svg>
+                  </div>
+                  
+                </button>
+                <div class="select-block__droplist droplist has-scrollbar">
+                  
+                    <div class="text-reg-12 color-subhead mb-4">Доступные объекты</div>
+                  
+                  
+                    <div class="select-block__item is-active">Продольная ровность</div>
+                  
+                    <div class="select-block__item ">Поперечная ровность</div>
+                  
+                    <div class="select-block__item ">Коэффициент сцепления</div>
+                  
+                </div>
+              </div>
+            </div>
+
             <div class="layout__title">
               <svg class="icon" width="24" height="24"><use xlink:href="#icon-layer-map"></use></svg>
-              <span>М-4 “Волга” / Дорожные условия / Продольная ровность  (Количество объектов: 3754)</span>
+              <span>М-4 “Волга” / Дорожные условия (Количество объектов: 3754)</span>
             </div>
           </div>
           <div class="layout__header-row layout__header-row_border-left">

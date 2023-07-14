@@ -39,17 +39,10 @@
         <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
       </button>
 
-      @@if(context.select_plot){
-        <button type="button" class="btn btn_smx btn_secondary">
-          <span>Выбрать участок</span>
-          <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
-        </button>
-      }
-
       @@if(context.switcher !== "hide"){
         <label class="switcher">
           <span class="switch">
-            <input type="checkbox" name="swicth" checked>
+            <input type="checkbox" name="swicth" @@if(context.switchChecked){checked}>
             <span class="switch__content"></span>
           </span>
           <span class="switcher__text">Показать подсказки</span>
@@ -59,9 +52,14 @@
 
     <div class="flex align-items-center gx-8">
       <div class="buttons">
-        <a href="@@if(context.mapLink){@@mapLink}@@if(!context.mapLink){#}" class="btn @@if(context.type !== 'table' && context.type !== 'event'){is-active}">Карта</a>
-        <a href="@@if(context.tableLink){@@tableLink}@@if(!context.tableLink){#}" class="btn @@if(context.type === 'table'){is-active}">Таблица</a>
-        <a href="@@if(context.eventLink){@@eventLink}@@if(!context.eventLink){#}" class="btn @@if(context.type === 'event'){is-active}">Мероприятия</a>
+        <a href="@@if(context.mapLink){@@mapLink}@@if(!context.mapLink){#}" class="btn fw-regular @@if(context.type !== 'table' && context.type !== 'event'){is-active}">Карта</a>
+        @@if(context.tableDisabled){
+          <a class="btn" disabled>Таблица</a>
+        }
+        @@if(!context.tableDisabled){
+          <a href="@@if(context.tableLink){@@tableLink}@@if(!context.tableLink){#}" class="btn fw-regular @@if(context.type === 'table'){is-active}">Таблица</a>
+        }
+        <a href="@@if(context.eventLink){@@eventLink}@@if(!context.eventLink){#}" class="btn fw-regular @@if(context.type === 'event'){is-active}">Мероприятия</a>
       </div>
 
       <a href="#" class="btn btn_smx btn_secondary">

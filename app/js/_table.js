@@ -30,8 +30,8 @@ tableSectionHeaders.forEach(sectionHeader => {
 
 const tableColumnsControl = document.querySelector('.table-columns-control');
 if(tableColumnsControl){
-  const btn = tableColumnsControl.querySelector('.table-columns-control__btn');
-  btn.addEventListener('click', () => {
+  const tableColumnsControlBtn = tableColumnsControl.querySelector('.table-columns-control__btn');
+  tableColumnsControlBtn.addEventListener('click', () => {
     tableColumnsControl.classList.toggle('is-open');
   });
   

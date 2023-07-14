@@ -5,38 +5,157 @@
 </head>
 <body>
   @@include('./components/_header.html', {
-    "select_plot": true,
-    "tableLink": "2.4.html",
+    switchChecked: true,
   })
 
   <div class="content">
-    <div class="aside">
-      @@include('./components/aside/_aside-dtp.html', {
-        "active": "2"
-      })
-    </div>
+    @@include('./components/aside/_aside-2.html', {
+      title: 'М-4 «Волга» км 0+000 - 14+595',
+      open2: true,
+      selected21: true,
+      selected23: true,
+    })
 
     <div class="main">
       <div class="layout">
         <div class="map-wrapper">
-          @@include('./components/_map.html')
+          @@include('./components/map/_map.html')
           
-          <div style="position: absolute; left: 33.7%; bottom: 53%;">
-            @@include('./components/_map-tooltip.html', {
-              "icon": "#icon-car-hollow",
-              "title": "Высокая конц. ДТП",
+          <div style="position: absolute; left: 30.5%; bottom: 56.5%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-car-accident",
+            })
+          </div>
+
+          <div style="position: absolute; left: 33.1%; bottom: 53.4%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-car-accident",
+            })
+          </div>
+
+          <div style="position: absolute; left: 35.7%; bottom: 49.5%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-car-accident",
+              "pinColor": "danger",
+            })
+          </div>
+
+          <div style="position: absolute; left: 40.2%; bottom: 44.9%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-car-accident",
+              "pinColor": "success",
+            })
+          </div>
+
+          <div style="position: absolute; left: 41.9%; bottom: 43.1%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-car-accident",
+            })
+          </div>
+
+          <div style="position: absolute; left: 43.7%; bottom: 42.7%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-car-accident",
+              "pinColor": "success",
+            })
+          </div>
+
+          <div style="position: absolute; left: 45.7%; bottom: 40.7%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-car-accident",
+              "pinColor": "success",
+            })
+          </div>
+
+          <div style="position: absolute; left: 47.1%; bottom: 40.4%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-car-accident",
+              "pinColor": "danger",
+            })
+          </div>
+
+          <div style="position: absolute; left: 48.7%; bottom: 40.2%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-bus-hollow",
+              "pinColor": "danger",
+            })
+          </div>
+
+          <div style="position: absolute; left: 53.3%; bottom: 41.7%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-bus-hollow",
+              "pinColor": "danger",
+            })
+          </div>
+          
+          <div style="position: absolute; left: 58.3%; bottom: 44%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "icon": "#icon-car-accident",
+              "title": "ДТП",
               "subtitle": "-6 баллов",
               "class": "danger",
               "btn": "Подробнее...",
               "list": [
                 ["Адрес", "12+35,738 / 12+36,738"],
                 ["Тип аудита", "Места конц. ДТП"],
-                ["Количество ДТП", "23"]
+                ["Количество ДТП", "7"]
               ],
               "pin": {
-                "type": "circle",
-                "size": "lg"
-              }
+                "type": "pin",
+              },
+              "pinIcon": "icon-bus-hollow",
+              "pinColor": "success",
+            })
+          </div>
+
+          <div style="position: absolute; left: 62.6%; bottom: 44%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "pin",
+              },
+              "pinIcon": "icon-car-accident",
+              "pinColor": "success",
             })
           </div>
         </div>

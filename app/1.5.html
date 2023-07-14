@@ -7,17 +7,20 @@
   @@include('./components/_header.html')
 
   <div class="content">
-    <div class="aside">
-      @@include('./components/aside/_aside.html')
-    </div>
+    @@include('./components/aside/_aside-1.html', {
+      active1: true,
+      active2: true,
+      active3: true,
+    })
 
     <div class="main">
       <div class="layout">
         <div class="map-wrapper">
-          @@include('./components/_map.html')
+          @@include('./components/map/_map.html')
+          @@include('./components/map/_map-layers.html')
           
           <div style="position: absolute; left: 26.5%; bottom: 57.1%;">
-            @@include('./components/_map-objects-tooltip.html')
+            @@include('./components/map/_map-objects-tooltip.html')
           </div>
         </div>
       </div>

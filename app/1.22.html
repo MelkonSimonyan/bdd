@@ -9,7 +9,9 @@
   })
 
   <div class="content">
-    @@include('./components/aside/_aside-1.html')
+    @@include('./components/aside/_aside-1.html', {
+      subitems: true
+    })
 
     <div class="main">
       @@include('./components/map/_map.html')

@@ -4,19 +4,9 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   padding: 8px;
-  min-width: 228px;
 
-  &__header {
-  	font-size: 12px;
-  	line-height: 20px;
-  }
-
-  &__title {
-  	letter-spacing: 0.5px;
-  	text-transform: uppercase;
-  }
-
-  &__subtitle {
-  	color: var(--text-secondary);
+  .link-btn {
+    margin-left: -8px;
+    margin-right: -8px;
   }
 }

@@ -1,0 +1,21 @@
+<div class="select-block is-empty@@if(context.removable){ is-removable}" data-placeholder="@@placeholder">
+  <button type="button" class="select-block__target">
+    <div class="select-block__value">@@placeholder</div>
+    <div class="select-block__arrow">
+      <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-arrow"></use></svg>
+    </div>
+    @@if(context.removable){
+      <div class="select-block__clear">
+        <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-clear"></use></svg>
+      </div>
+    }
+  </button>
+  <div class="select-block__droplist droplist has-scrollbar">
+    @@if(context.droplistTitle){
+      <div class="text-reg-12 color-subhead mb-4">@@droplistTitle</div>
+    }
+    @@for (var i = 0; i < list.length; i++) {
+      <div class="select-block__item ` + list[i][1] + `">` + list[i][0] + `</div>
+    }
+  </div>
+</div>

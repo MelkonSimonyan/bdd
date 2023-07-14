@@ -15,15 +15,29 @@
       title: 'М-4 «Волга» км 0+000 - 14+595',
       open1: true,
       selected11: true,
+      selected12: true,
+      selected13: true,
     })
 
     <div class="main">
       <div class="layout">
         <div class="layout__header">
           <div class="layout__header-row">
+            <div class="table-objects-control">
+              @@include('./components/_select-block.html', {
+                placeholder: 'Выберите...',
+                droplistTitle: 'Доступные объекты',
+                list: [
+                  ['Продольная ровность', 'is-active'],
+                  ['Поперечная ровность', ''],
+                  ['Коэффициент сцепления', ''],
+                ],
+              })
+            </div>
+
             <div class="layout__title">
               <svg class="icon" width="24" height="24"><use xlink:href="#icon-layer-map"></use></svg>
-              <span>М-4 “Волга” / Дорожные условия / Продольная ровность  (Количество объектов: 3754)</span>
+              <span>М-4 “Волга” / Дорожные условия (Количество объектов: 3754)</span>
             </div>
           </div>
           <div class="layout__header-row layout__header-row_border-left">

@@ -54,7 +54,7 @@
         
           <label class="switcher">
             <span class="switch">
-              <input type="checkbox" name="swicth" checked>
+              <input type="checkbox" name="swicth" >
               <span class="switch__content"></span>
             </span>
             <span class="switcher__text">Показать подсказки</span>
@@ -67,7 +67,7 @@
           <a href="#" class="btn fw-regular is-active">Карта</a>
           
           
-            <a href="2.4.html" class="btn fw-regular ">Таблица</a>
+            <a href="#" class="btn fw-regular ">Таблица</a>
           
           <a href="#" class="btn fw-regular ">Мероприятия</a>
         </div>
@@ -83,23 +83,57 @@
   <div class="content">
     <div class="aside">
       <div class="aside__main">
-        <a href="1.1.html" class="aside__back">
-          <svg class="icon" width="20" height="20"><use xlink:href="#icon-arrow-back"></use></svg>
-          <span>М-4 «Волга» км 0+000 - 14+595</span>
-        </a>
+        <div class="aside__header">
+            <div class="flex gx-8">
+              <div class="aside__header-search">
+                <div class="search-field">
+                  <svg class="search-field__icon" width="20" height="20"><use xlink:href="#icon-search"></use></svg>
+                  <input type="text" name="search" placeholder="Поиск">
+                </div>
+              </div>
+              <div class="aside__header-filter">
+                <button type="button" class="aside__header-filter-btn btn btn_smx btn_secondary">
+                  <svg class="icon" width="24" height="24"><use xlink:href="#icon-filter"></use></svg>
+                </button>
+              </div>
+            </div>
+        </div>
 
         <div class="aside__content px-8 has-hidden-scrollbar">
-          <div class="aside-nav">
-            <div class="aside-nav__group">
-              <div class="aside-nav__group-header">
+          <div class="aside-nav aside-nav_compact">
+            <div class="aside-nav__header">
+              <div class="aside-item">
+                <div class="aside-item__content">
+                  <div class="fw-semibold">Аналитика и аудит по всей сети дорог</div>
+                  <div class="text-upper-12"><span class="color-accent-danger">-6</span> ЗА ПЕРИОД</div>
+                </div>
+                <div class="aside-item__graph">
+                  <span class="radial-graph">
+                    <svg class="radial-graph__graph color-accent-danger" fill="none" stroke-linecap="round" stroke-width="6" data-angle="119"><path /></svg>
+                    <span class="radial-graph__text">33</span>
+                  </span>
+                </div>
+                <a href="1.7.html" class="aside-item__arrow">
+                  <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="aside-nav__section">
+              <div class="aside-nav__section-header">
                 <div class="aside-nav__item">
-                  <div class="aside-item">
-                    <div class="aside-item__expand">
-                      <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-solid-right"></use></svg>
-                    </div>
+                  <div class="aside-item is-active">
+                    
+                      <div class="aside-item__settings">
+                        <button type="button" class="aside-item__settings-btn btn">
+                          <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
+                        </button>
+                      </div>
+                    
                     <div class="aside-item__content">
-                      <div class="fw-semibold">Дорожные условия</div>
-                      <div><span class="color-accent-success">+10</span> за период</div>
+                      <div class="fw-semibold">М-3 «Украина»</div>
+                      <div class="color-subhead">км 0+000 - км 32+195</div>
+                      <div class="text-upper-12"><span class="color-accent-success">+4</span> ЗА ПЕРИОД</div>
                     </div>
                     <div class="aside-item__graph">
                       <span class="radial-graph">
@@ -107,161 +141,65 @@
                         <span class="radial-graph__text">33</span>
                       </span>
                     </div>
+                    <a href="2.4.0.html" class="aside-item__arrow">
+                      <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <div class="aside-nav__group-content">
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Продольная ровность</div>
-                      <div><span class="color-accent-success">+10</span> балла за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
-                          <span class="radial-graph__text">83</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
-
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Поперечная ровность</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
-
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Коэффициент сцепления</div>
-                      <div><span class="color-accent-success">+10</span> балла за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
-                          <span class="radial-graph__text">83</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
-
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Дефекты проезж. части</div>
-                      <div><span class="color-accent-success">+10</span> балла за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-danger" fill="none" stroke-linecap="round" stroke-width="6" data-angle="119"><path /></svg>
-                          <span class="radial-graph__text">33</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
-
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Дефекты обочин</div>
-                      <div><span class="color-accent-success">+10</span> балла за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
-                          <span class="radial-graph__text">83</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
-
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Дефекты раздел. полосы</div>
-                      <div><span class="color-accent-success">+10</span> балла за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
+              <div class="aside-nav__section-content">
+                
               </div>
             </div>
+        
+            <div class="aside-nav__section">
+              <div class="aside-nav__section-header">
+                <div class="aside-nav__item">
+                  <div class="aside-item is-active">
+                    
+                      <div class="aside-item__settings">
+                        <button type="button" class="aside-item__settings-btn btn">
+                          <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
+                        </button>
+                      </div>
+                    
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">М-4 «Волга»</div>
+                      <div class="color-subhead">км 0+000 - км 14+595</div>
+                      <div class="text-upper-12"><span class="color-accent-success">+10</span> ЗА ПЕРИОД</div>
+                    </div>
+                    <div class="aside-item__graph">
+                      <span class="radial-graph">
+                        <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
+                        <span class="radial-graph__text">83</span>
+                      </span>
+                    </div>
+                    <a href="2.1.html" class="aside-item__arrow">
+                      <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-            <div class="aside-nav__group">
+              <div class="aside-nav__section-content"></div>
+            </div>
+
+            <div class="aside-nav__section">
               <div class="aside-nav__group-header">
                 <div class="aside-nav__item">
-                  <div class="aside-item">
-                    <div class="aside-item__expand">
-                      <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-solid-right"></use></svg>
-                    </div>
+                  <div class="aside-item is-active">
+                    
+                      <div class="aside-item__settings">
+                        <button type="button" class="aside-item__settings-btn btn">
+                          <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
+                        </button>
+                      </div>
+                    
                     <div class="aside-item__content">
-                      <div class="fw-semibold">Аварийно -опасные участки</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
+                      <div class="fw-semibold">М-5 «Урал»</div>
+                      <div class="color-subhead">км 0+000 - км 19+542</div>
+                      <div class="text-upper-12"><span class="color-accent-danger">-3</span> ЗА ПЕРИОД</div>
                     </div>
                     <div class="aside-item__graph">
                       <span class="radial-graph">
@@ -269,290 +207,222 @@
                         <span class="radial-graph__text">63</span>
                       </span>
                     </div>
+                    <a href="#" class="aside-item__arrow">
+                      <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-right"></use></svg>
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <div class="aside-nav__group-content">
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">ДТП</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
+              <div class="aside-nav__section-content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Неучетные ДТП</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
+      <div class="aside__filter">
+        <div class="aside__filter-back aside__back">
+          <svg class="icon" width="20" height="20"><use xlink:href="#icon-arrow-back"></use></svg>
+          <span>Фильтры дорог</span>
+        </div>
 
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Места концентрации ДТП</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
+        <div class="filter-control">
+          <div class="flex gx-8">
+            <div class="flex-grow">
+              <button type="button" class="btn btn_block btn_primary" disabled>Применить</button>
+            </div>
+            <div class="flex-grow">
+              <button type="button" class="btn btn_block">Сбросить фильтры</button>
+            </div>
+          </div>
+        </div>
 
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Потенциально опасные места</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
-                  </div>
+        <div class="aside__content p-8 has-hidden-scrollbar">
+          <div class="mb-8 color-subhead">Владелец дороги</div>
+          <div class="mb-4">
+            <div class="select-block is-empty is-removable" data-placeholder="Выберите владельца дороги">
+              <button type="button" class="select-block__target">
+                <div class="select-block__value">Выберите владельца дороги</div>
+                <div class="select-block__arrow">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-arrow"></use></svg>
                 </div>
-
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Опасность участков по комплекс. показателю</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
+                
+                  <div class="select-block__clear">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-clear"></use></svg>
                   </div>
-                </div>
+                
+              </button>
+              <div class="select-block__droplist droplist has-scrollbar">
+                
+                
+                  <div class="select-block__item ">Владелец дороги 1</div>
+                
+                  <div class="select-block__item ">Владелец дороги 2</div>
+                
+                  <div class="select-block__item ">Владелец дороги 3</div>
+                
               </div>
             </div>
+          </div>
 
-            <div class="aside-nav__group">
-              <div class="aside-nav__group-header">
-                <div class="aside-nav__item">
-                  <div class="aside-item">
-                    <div class="aside-item__expand">
-                      <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-solid-right"></use></svg>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">ОДД</div>
-                      <div><span class="color-accent-success">+10</span> за период</div>
-                    </div>
-                    <div class="aside-item__graph">
-                      <span class="radial-graph">
-                        <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
-                        <span class="radial-graph__text">83</span>
-                      </span>
-                    </div>
-                  </div>
+          <div class="mb-8 color-subhead">Значение дороги</div>
+          <div class="mb-4">
+            <div class="select-block is-empty is-removable" data-placeholder="Выберите назначение дороги">
+              <button type="button" class="select-block__target">
+                <div class="select-block__value">Выберите назначение дороги</div>
+                <div class="select-block__arrow">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-arrow"></use></svg>
                 </div>
-              </div>
-
-              <div class="aside-nav__group-content">
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Эксплуатационная скорость движения ТС</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
+                
+                  <div class="select-block__clear">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-clear"></use></svg>
                   </div>
-                </div>
-
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Транспортные задержки и перепробег</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
-
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Число и опасность конфликтных ситуаций</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                      <div class="aside-item__graph">
-                        <span class="radial-graph">
-                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
-                          <span class="radial-graph__text">63</span>
-                        </span>
-                      </div>
-                    
-                  </div>
-                </div>
+                
+              </button>
+              <div class="select-block__droplist droplist has-scrollbar">
+                
+                
+                  <div class="select-block__item ">Значение дороги 1</div>
+                
+                  <div class="select-block__item ">Значение дороги 2</div>
+                
+                  <div class="select-block__item ">Значение дороги 3</div>
+                
               </div>
             </div>
+          </div>
 
-            <div class="aside-nav__group">
-              <div class="aside-nav__group-header">
-                <div class="aside-nav__item">
-                  <div class="aside-item">
-                    <div class="aside-item__expand">
-                      <svg class="icon" width="24" height="24"><use xlink:href="#icon-chevron-solid-right"></use></svg>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Мероприятия</div>
-                      <div><span class="color-accent-success">+10</span> за период</div>
-                    </div>
-                    <div class="aside-item__graph">
-                      <span class="radial-graph">
-                        <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
-                        <span class="radial-graph__text">83</span>
-                      </span>
-                    </div>
-                  </div>
+          <div class="mb-8 color-subhead">Субъект</div>
+          <div class="mb-4">
+            <div class="select-block is-empty is-removable" data-placeholder="Выберите субъект">
+              <button type="button" class="select-block__target">
+                <div class="select-block__value">Выберите субъект</div>
+                <div class="select-block__arrow">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-arrow"></use></svg>
                 </div>
+                
+                  <div class="select-block__clear">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-clear"></use></svg>
+                  </div>
+                
+              </button>
+              <div class="select-block__droplist droplist has-scrollbar">
+                
+                
+                  <div class="select-block__item ">Субъект 1</div>
+                
+                  <div class="select-block__item ">Субъект 2</div>
+                
+                  <div class="select-block__item ">Субъект 3</div>
+                
               </div>
+            </div>
+          </div>
 
-              <div class="aside-nav__group-content">
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Мероприятия</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                  </div>
+          <div class="mb-8 color-subhead">Район</div>
+          <div class="mb-4">
+            <div class="select-block is-empty is-removable" data-placeholder="Выберите район">
+              <button type="button" class="select-block__target">
+                <div class="select-block__value">Выберите район</div>
+                <div class="select-block__arrow">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-arrow"></use></svg>
                 </div>
+                
+                  <div class="select-block__clear">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-clear"></use></svg>
+                  </div>
+                
+              </button>
+              <div class="select-block__droplist droplist has-scrollbar">
+                
+                
+                  <div class="select-block__item ">Район 1</div>
+                
+                  <div class="select-block__item ">Район 2</div>
+                
+                  <div class="select-block__item ">Район 3</div>
+                
+              </div>
+            </div>
+          </div>
 
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Эффективность мероприятий</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                  </div>
+          <div class="mb-8 color-subhead">Населенный пункт</div>
+          <div class="mb-4">
+            <div class="select-block is-empty is-removable" data-placeholder="Укажите населенный пункт">
+              <button type="button" class="select-block__target">
+                <div class="select-block__value">Укажите населенный пункт</div>
+                <div class="select-block__arrow">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-arrow"></use></svg>
                 </div>
+                
+                  <div class="select-block__clear">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-clear"></use></svg>
+                  </div>
+                
+              </button>
+              <div class="select-block__droplist droplist has-scrollbar">
+                
+                
+                  <div class="select-block__item ">Населенный пункт 1</div>
+                
+                  <div class="select-block__item ">Населенный пункт 2</div>
+                
+                  <div class="select-block__item ">Населенный пункт 3</div>
+                
+              </div>
+            </div>
+          </div>
 
-                <div class="aside-nav__item aside-nav__item_subitem">
-                  <div class="aside-item">
-                    <div class="aside-item__settings">
-                      <button type="button" class="aside-item__settings-btn btn">
-                        <svg class="icon" width="24" height="24"><use xlink:href="#icon-settings"></use></svg>
-                      </button>
-                      <div class="aside-item__settings-dropdown"></div>
-                    </div>
-                    <div class="aside-item__content">
-                      <div class="fw-semibold">Прогноз</div>
-                      <div><span class="color-accent-warning">-10</span> за период</div>
-                    </div>
-                    
-                  </div>
+          <div class="mb-8 color-subhead">Улица</div>
+          <div class="mb-4">
+            <div class="select-block is-empty is-removable" data-placeholder="Укажите населенный улицу">
+              <button type="button" class="select-block__target">
+                <div class="select-block__value">Укажите населенный улицу</div>
+                <div class="select-block__arrow">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-arrow"></use></svg>
                 </div>
+                
+                  <div class="select-block__clear">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-clear"></use></svg>
+                  </div>
+                
+              </button>
+              <div class="select-block__droplist droplist has-scrollbar">
+                
+                
+                  <div class="select-block__item ">Улица 1</div>
+                
+                  <div class="select-block__item ">Улица 2</div>
+                
+                  <div class="select-block__item ">Улица 3</div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8 color-subhead">Подразделение ГИБДД</div>
+          <div class="mb-4">
+            <div class="select-block is-empty is-removable" data-placeholder="Выберите подразделение">
+              <button type="button" class="select-block__target">
+                <div class="select-block__value">Выберите подразделение</div>
+                <div class="select-block__arrow">
+                  <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-arrow"></use></svg>
+                </div>
+                
+                  <div class="select-block__clear">
+                    <svg class="icon" width="20" height="20"><use xlink:href="#icon-select-clear"></use></svg>
+                  </div>
+                
+              </button>
+              <div class="select-block__droplist droplist has-scrollbar">
+                
+                
+                  <div class="select-block__item ">Подразделение ГИБДД 1</div>
+                
+                  <div class="select-block__item ">Подразделение ГИБДД 2</div>
+                
+                  <div class="select-block__item ">Подразделение ГИБДД 3</div>
+                
               </div>
             </div>
           </div>
@@ -560,27 +430,65 @@
       </div>
     </div>
 
-    <div class="aside__settings-dropdown">
+    <div class="aside__settings-dropdown aside__settings-dropdown_areas">
       <div class="droplist has-scrollbar">
-        <div class="text-reg-12 color-subhead mb-8">Настройка: Дефекты проезж. части</div>
+        <div class="text-reg-12 color-subhead mb-8">Настройка М-3 «Украина»</div>
 
-        <div class="form-check">
-          <label>
-            <input type="checkbox">
-            <span>Отображать слой на карте постоянно</span>
-          </label>
+        <button type="button" class="btn btn_block btn_smx btn_secondary">
+          <svg class="icon" width="24" height="24"><use xlink:href="#icon-plus"></use></svg>
+          <span>Добавить участок</span>
+        </button>
+
+        <div class="my-8">
+          <div class="flex align-items-start gx-8">
+            <div class="flex-grow mb-8">Участок 1</div>
+            <button type="button" class="btn btn_0">
+              <svg class="icon" width="24" height="24"><use xlink:href="#icon-trash"></use></svg>
+            </button>
+          </div>
+
+          <div class="flex gx-8 mb-8">
+            <div class="flex-grow">
+              <div class="mb-8">От</div>
+              <input type="text" value="0">
+            </div>
+        
+            <div class="flex-grow">
+              <div class="mb-8">До</div>
+              <input type="text" value="16+000">
+            </div>
+          </div>
         </div>
-        <div class="form-check">
-          <label>
-            <input type="checkbox" checked>
-            <span>Скрыть виджет ДТП</span>
-          </label>
+
+        <div class="my-8">
+          <div class="flex align-items-start gx-8">
+            <div class="flex-grow mb-8">Участок 1</div>
+            <button type="button" class="btn btn_0">
+              <svg class="icon" width="24" height="24"><use xlink:href="#icon-trash"></use></svg>
+            </button>
+          </div>
+
+          <div class="flex gx-8 mb-8">
+            <div class="flex-grow">
+              <div class="mb-8">От</div>
+              <input type="text" value="17+000">
+            </div>
+        
+            <div class="flex-grow">
+              <div class="mb-8">До</div>
+              <input type="text" value="32+195">
+            </div>
+          </div>
         </div>
-        <div class="form-check">
-          <label>
-            <input type="checkbox" checked>
-            <span>Скрыть график ДТП прогноз</span>
-          </label>
+
+        <div class="flex gx-8">
+          <div class="flex-grow">
+            <button type="button" class="btn btn_block btn_primary" disabled>Применить</button>
+          </div>
+
+          <div class="flex-grow">
+            <button type="button" class="btn btn_block" disabled>Сбросить</button>
+          </div>
         </div>
       </div>
     </div>
@@ -650,179 +558,116 @@
           		<span>4 км</span>
           	</div>
           </div>
-          
-          <div style="position: absolute; left: 30.7%; bottom: 59.4%;">
-            
-            	<div 
-            		class="map-tooltip" 
-            		
-            			
-            			
-            				
-            					style="margin-bottom: 28px;"
-            				
-            				
-            			
-            		
-            	>
-            		<div class="map-tooltip__header">
-            			<div class="map-tooltip__header-icon">
-            				<svg class="icon"><use xlink:href="#icon-car-accident"></use></svg>
-            			</div>
-            			<div class="map-tooltip__header-content">
-            				<div class="map-tooltip__header-title">Высокая конц. ДТП</div>
-            				<div class="map-tooltip__header-text color-accent-danger">-6 баллов</div>
-            			</div>
-            		</div>
-            		<div class="map-tooltip__content has-scrollbar">
-            			
-            			  <div class="map-tooltip__item">
-            					<div class="map-tooltip__item-title">Адрес</div>
-            					<div class="map-tooltip__item-text">12+35,738 / 12+36,738</div>
-            				</div>
-            			
-            			  <div class="map-tooltip__item">
-            					<div class="map-tooltip__item-title">Тип аудита</div>
-            					<div class="map-tooltip__item-text">Места конц. ДТП</div>
-            				</div>
-            			
-            			  <div class="map-tooltip__item">
-            					<div class="map-tooltip__item-title">Количество ДТП</div>
-            					<div class="map-tooltip__item-text">23</div>
-            				</div>
-            			
-            		</div>
-            		<div class="map-tooltip__footer">
-            			<a href="#" class="btn btn_secondary btn_block">Подробнее...</a>
-            		</div>
-            	</div>
-            
+          <div class="map-layers-control">
+            <button type="button" class="map-layers-control__btn btn btn_smx btn_white">
+              <svg class="icon" width="24" height="24"><use xlink:href="#icon-folder-layer"></use></svg>
+              <span>Дополнительные слои</span>
+              <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
+            </button>
 
-            
-            	
-            		<div class="map-pin-circle ">
-            			<svg width="34" height="34"><use xlink:href="#icon-map-pin-circle"></use></svg>
-            		</div>
-            	
+            <div class="map-layers-control__dropdown">
+              <div class="droplist has-scrollbar">
+                <div class="text-reg-12 mb-4 mt-8">Дорожные условия</div>
 
-            	
-            
+                <div class="form-check">
+                  <label>
+                    <input type="checkbox" checked>
+                    <span>Ровность покрытий</span>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label>
+                    <input type="checkbox">
+                    <span>Сцепление с покрытием</span>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label>
+                    <input type="checkbox">
+                    <span>Повреждения</span>
+                  </label>
+                </div>
+
+                <div class="text-reg-12 mb-4 mt-8">ДТП</div>
+
+                <div class="form-check">
+                  <label>
+                    <input type="checkbox" checked disabled>
+                    <span>ДТП</span>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label>
+                    <input type="checkbox">
+                    <span>Опасность участков дорог</span>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label>
+                    <input type="checkbox">
+                    <span>Риска ДТП и гибели людей</span>
+                  </label>
+                </div>
+
+                <div class="text-reg-12 mb-4 mt-8">ОДД</div>
+
+                <div class="form-check">
+                  <label>
+                    <input type="checkbox">
+                    <span>Дорожные условия</span>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label>
+                    <input type="checkbox">
+                    <span>Эксплуатационная скорость</span>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label>
+                    <input type="checkbox">
+                    <span>Дорожные условия</span>
+                  </label>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div style="position: absolute; left: 45%; bottom: 56.7%;">
-            
-            	<div 
-            		class="map-tooltip" 
-            		
-            			
-            			
-            				
-            					style="margin-bottom: 28px;"
-            				
-            				
-            			
-            		
-            	>
-            		<div class="map-tooltip__header">
-            			<div class="map-tooltip__header-icon">
-            				<svg class="icon"><use xlink:href="#icon-work"></use></svg>
-            			</div>
-            			<div class="map-tooltip__header-content">
-            				<div class="map-tooltip__header-title">Неровный участок</div>
-            				<div class="map-tooltip__header-text color-accent-danger">-8 баллов</div>
-            			</div>
-            		</div>
-            		<div class="map-tooltip__content has-scrollbar">
-            			
-            			  <div class="map-tooltip__item">
-            					<div class="map-tooltip__item-title">Адрес</div>
-            					<div class="map-tooltip__item-text">12+35,738 / 12+36,738</div>
-            				</div>
-            			
-            			  <div class="map-tooltip__item">
-            					<div class="map-tooltip__item-title">Тип аудита</div>
-            					<div class="map-tooltip__item-text">Дорожные условия</div>
-            				</div>
-            			
-            			  <div class="map-tooltip__item">
-            					<div class="map-tooltip__item-title">Протяженность</div>
-            					<div class="map-tooltip__item-text">20м</div>
-            				</div>
-            			
-            		</div>
-            		<div class="map-tooltip__footer">
-            			<a href="#" class="btn btn_secondary btn_block">Подробнее...</a>
-            		</div>
+          <div style="position: absolute; left: 26.5%; bottom: 57.1%;">
+            <div class="map-objects-tooltip droplist has-scrollbar">
+            	<div class="text-reg-12 color-subhead mb-4">Доступные объекты</div>
+  
+              <div>
+            		<a href="#" class="link-btn">М-3 «Украина»</a>
             	</div>
-            
-
-            
-            	
-            		<div class="map-pin-circle ">
-            			<svg width="34" height="34"><use xlink:href="#icon-map-pin-circle"></use></svg>
-            		</div>
-            	
-
-            	
-            
-          </div>
-          
-          <div style="position: absolute; left: 75.7%; bottom: 54.3%;">
-            
-            	<div 
-            		class="map-tooltip" 
-            		
-            			
-            			
-            				
-            					style="margin-bottom: 28px;"
-            				
-            				
-            			
-            		
-            	>
-            		<div class="map-tooltip__header">
-            			<div class="map-tooltip__header-icon">
-            				<svg class="icon"><use xlink:href="#icon-car-accident"></use></svg>
-            			</div>
-            			<div class="map-tooltip__header-content">
-            				<div class="map-tooltip__header-title">Высокая конц. ДТП</div>
-            				<div class="map-tooltip__header-text color-accent-danger">-6 баллов</div>
-            			</div>
-            		</div>
-            		<div class="map-tooltip__content has-scrollbar">
-            			
-            			  <div class="map-tooltip__item">
-            					<div class="map-tooltip__item-title">Адрес</div>
-            					<div class="map-tooltip__item-text">12+35,738 / 12+36,738</div>
-            				</div>
-            			
-            			  <div class="map-tooltip__item">
-            					<div class="map-tooltip__item-title">Тип аудита</div>
-            					<div class="map-tooltip__item-text">Места конц. ДТП</div>
-            				</div>
-            			
-            			  <div class="map-tooltip__item">
-            					<div class="map-tooltip__item-title">Количество ДТП</div>
-            					<div class="map-tooltip__item-text">23</div>
-            				</div>
-            			
-            		</div>
-            		<div class="map-tooltip__footer">
-            			<a href="#" class="btn btn_secondary btn_block">Подробнее...</a>
-            		</div>
+            	<div>
+            		<a href="#" class="link-btn">М-5 «Урал»</a>
             	</div>
-            
-
-            
-            	
-            		<div class="map-pin-circle ">
-            			<svg width="34" height="34"><use xlink:href="#icon-map-pin-circle"></use></svg>
-            		</div>
-            	
-
-            	
-            
+            	<div>
+            		<a href="#" class="link-btn">М-7 «Волга»</a>
+            	</div>
+            	<div>
+            		<a href="#" class="link-btn">М-7 «Волга»</a>
+            	</div>
+            	<div>
+            		<a href="#" class="link-btn">М-7 «Волга»</a>
+            	</div>
+            	<div>
+            		<a href="#" class="link-btn">М-7 «Волга»</a>
+            	</div>
+            	<div>
+            		<a href="#" class="link-btn">М-7 «Волга»</a>
+            	</div>
+            	<div>
+            		<a href="#" class="link-btn">М-7 «Волга»</a>
+            	</div>
+            	<div>
+            		<a href="#" class="link-btn">М-7 «Волга»</a>
+            	</div>
+            	<div>
+            		<a href="#" class="link-btn">М-7 «Волга»</a>
+            	</div>
+            </div>
           </div>
         </div>
       </div>
