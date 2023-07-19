@@ -1,0 +1,133 @@
+.modal {
+  $this: &;
+
+  position: fixed;
+  z-index: 99992;
+
+  &:not(.is-open) {
+    display: none;
+  }
+
+  &,
+  &__bg,
+  &__inner {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    transform: translateZ(0);
+  }
+
+  &__bg,
+  &__inner {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: .35s cubic-bezier(.47,0,.74,.71);
+    transition-property: opacity, visibility;
+
+    #{$this}:not(.is-visible) & {
+      pointer-events: none;
+    }
+
+    #{$this}.is-visible & {
+      opacity: 1;
+      visibility: visible;
+      transition-timing-function: cubic-bezier(.22,.61,.36,1);
+    }
+  }
+
+  &__bg {
+    z-index: 99993;
+    background: #000000;
+
+    #{$this}.is-visible & {
+      opacity: .24;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 99994;
+    padding: 64px;
+  }
+
+  &__window {
+    background: #fff;
+    width: 420px;
+    max-width: 100%;
+    max-height: calc(100vh - 128px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: auto;
+    border-radius: 4px;
+    background: var(--bg-surface);
+    box-shadow: var(--shadow);
+
+    &_w360 {
+      width: 360px;
+    }
+
+    &_w420 {
+      width: 420px;
+    }
+
+    &_w480 {
+      width: 480px;
+    }
+
+    &_w600 {
+      width: 600px;
+    }
+    
+    &-header {
+      padding: 16px;
+      position: relative;
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      column-gap: 8px;
+    }
+
+    &-inner {
+      flex-grow: 1;
+      min-height: 1px;
+      padding: 16px;
+      padding-top: 0;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+
+  &__title {
+    color: var(--text-subhead);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+  }
+}
+
+.event-editor {
+  display: none;
+
+  &.is-visible {
+    display: block;
+  }
+}

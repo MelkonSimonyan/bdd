@@ -1,0 +1,62 @@
+<div class="modal js-more-modal @@if(open === 'true'){is-open is-visible}">
+	<div class="modal__bg"></div>
+	<div class="modal__inner">
+		<div class="modal__window modal__window_w600">
+			<div class="modal__window-header">
+				<div class="modal__title">Подробнее...</div>
+				<button type="button" class="modal__close js-modal-close btn">
+					<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+				</button>
+			</div>
+			<div class="modal__window-inner has-scrollbar">
+				<div class="flex gx-8 mb-16">
+          <div>
+            <button type="button" class="btn btn_success btn_smx js-modal-close">Сохранить</button>
+          </div>
+
+          <div>
+            <button type="button" class="btn btn_smx js-modal-close">Отменить</button>
+          </div>
+        </div>
+
+        <div class="buttons mb-16">
+          <button type="button" class="btn js-more-modal-info-btn is-active">Информация</button>
+          <button type="button" class="btn js-more-modal-editor-btn">Редактор мероприятий</button>
+        </div>
+
+        <div class="event-editor">
+	        <div class="mb-8 color-subhead">Выберите необходимые мероприятия</div>
+	        <div class="mb-16">
+		        @@include('../_select-block-multiple.html')
+						<div class="text-reg-12 color-secondary mt-4">* - рекомендуемые мероприятия на основе автоматизированного расчёта</div>
+	        </div>
+
+	        <div class="mb-8 color-subhead">Дата выполнения</div>
+	        <div class="mb-16">
+	        	<textarea class="has-scrollbar" placeholder="Укажите дату" rows="2"></textarea>
+	        </div>
+
+	        <div class="mb-8 color-subhead">Комментарий</div>
+	        <div class="mb-16">
+	        	<textarea class="has-scrollbar" placeholder="Оставьте тут дополнительную информацию о мероприятиях" rows="2"></textarea>
+	        </div>
+        </div>
+
+        <div class="color-secondary mb-4">Тип ОДД</div>
+        <div class="mb-16">Эксплуатационная скорость транспортных средств</div>
+
+				<div class="color-secondary mb-4">Происшествие</div>
+        <div class="mb-16">Скорость</div>
+
+        <div class="color-secondary mb-4">Адрес</div>
+        <div class="mb-16">12+35,738 / 12+36,738</div>
+
+        <div class="color-secondary mb-4">Вид ДТП</div>
+        <div class="mb-16">Встречные столкновения</div>
+
+        <div class="color-secondary mb-4">Определение</div>
+        <div class="mb-16">Выезд на полосу встречного движения, Выезд на полосу встречного движения с разворотом, поворотом налево или объездом препятствия, Выезд на полосу встречного движения в местах, где это запрещено, Нарушение правил обгона, Разворот в местах, где разворот запрещён</div>
+			</div>
+		</div>
+	</div>
+</div>

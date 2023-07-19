@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  @@include('./components/_head.html')
+</head>
+<body>
+  @@include('./components/_header.html', {
+    switchChecked: true,
+  })
+
+  <div class="content">
+    @@include('./components/aside/_aside-2.html', {
+      title: 'М-4 «Волга» км 0+000 - 14+595',
+      open3: true,
+    })
+
+    <div class="main">
+      <div class="layout">
+        <div class="map-wrapper">
+          @@include('./components/map/_map.html')
+          
+          <div style="position: absolute; left: 30.7%; bottom: 59.4%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "icon": "#icon-speed-intense",
+              "title": "Скорость",
+              "subtitle": "-6 баллов",
+              "class": "danger",
+              "btn": "Подробнее...",
+              "list": [
+                ["Адрес", "12+35,738 / 12+36,738"],
+                ["Тип аудита", "Места конц. ДТП"],
+                ["Количество ДТП", "23"]
+              ],
+              "pin": {
+                "type": "circle"
+              }
+            })
+          </div>
+          
+          <div style="position: absolute; left: 55%; bottom: 56.7%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "icon": "#icon-speed-intense",
+              "title": "Скорость",
+              "subtitle": "-6 баллов",
+              "class": "danger",
+              "btn": "Подробнее...",
+              "list": [
+                ["Адрес", "12+35,738 / 12+36,738"],
+                ["Тип аудита", "Места конц. ДТП"],
+                ["Количество ДТП", "23"]
+              ],
+              "pin": {
+                "type": "circle"
+              }
+            })
+          </div>
+          
+          <div style="position: absolute; left: 75.7%; bottom: 54.3%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "icon": "#icon-speed-intense",
+              "title": "Скорость",
+              "subtitle": "-6 баллов",
+              "class": "danger",
+              "btn": "Подробнее...",
+              "list": [
+                ["Адрес", "12+35,738 / 12+36,738"],
+                ["Тип аудита", "Места конц. ДТП"],
+                ["Количество ДТП", "23"]
+              ],
+              "pin": {
+                "type": "circle"
+              }
+            })
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @@include('./components/_foot.html', {
+    modalMoreOpen: true,
+  })
+</body>
+</html>

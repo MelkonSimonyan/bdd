@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  @@include('./components/_head.html')
+</head>
+<body>
+  @@include('./components/_header.html')
+
+  <div class="content">
+    @@include('./components/aside/_aside-2.html', {
+      title: 'М-4 «Волга» км 0+000 - 14+595',
+      open4: true,
+      selected41: true,
+      selected42: true,
+    })
+
+    <div class="main">
+      <div class="layout">
+        <div class="map-wrapper">
+          @@include('./components/map/_map.html')
+          
+          <div style="position: absolute; left: 24.3%; bottom: 58.4%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "icon": "#icon-wind",
+              "title": "Установка МБО по оси проезжей части",
+              "subtitle": "-6 баллов",
+              "class": "danger",
+              "btn": "Подробнее...",
+              "list": [
+                ["Адрес", "12+35,738 / 12+36,738"],
+                ["Мероприятия", "Возможные мероприятия"],
+                ["Реализация", "Просрочено"]
+              ],
+              "pin": {
+                "type": "dott",
+              },
+              "pinIcon": "icon-wind",
+              "pinColor": "warning",
+            })
+          </div>
+
+          <div style="position: absolute; left: 33.1%; bottom: 60.6%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "dott",
+              },
+              "pinIcon": "icon-wind",
+              "pinColor": "warning",
+            })
+          </div>
+
+          <div style="position: absolute; left: 51.9%; bottom: 56.6%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "dott",
+              },
+              "pinIcon": "icon-overpass",
+              "pinColor": "primary",
+            })
+          </div>
+
+          <div style="position: absolute; left: 62.7%; bottom: 57.3%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "dott",
+              },
+              "pinIcon": "icon-overpass",
+              "pinColor": "primary",
+            })
+          </div>
+
+          <div style="position: absolute; left: 85.5%; bottom: 51.4%;">
+            @@include('./components/map/_map-tooltip.html', {
+              "tooltip": "hide",
+              "pin": {
+                "type": "dott",
+              },
+              "pinIcon": "icon-overpass",
+              "pinColor": "primary",
+            })
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @@include('./components/_foot.html')
+</body>
+</html>

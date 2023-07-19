@@ -1,0 +1,28 @@
+<div class="modal js-delete-modal @@if(open === 'true'){is-open is-visible}">
+	<div class="modal__bg"></div>
+	<div class="modal__inner">
+		<div class="modal__window modal__window_w360">
+			<div class="modal__window-header">
+				<div class="modal__title">Удалить подложку</div>
+				<button type="button" class="modal__close js-modal-close btn">
+					<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+				</button>
+			</div>
+			<div class="modal__window-inner has-scrollbar">
+				<div class="mb-16">
+					Вы уверены, что хотите удалить подложку? Её нельзя будет восстановить.
+				</div>
+
+				<div class="flex gx-8">
+          <div>
+            <button type="button" class="btn btn_danger js-modal-close">Удалить</button>
+          </div>
+
+          <div>
+            <button type="button" class="btn js-modal-close">Не удалять</button>
+          </div>
+        </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,83 @@
+.air-datepicker {
+	--adp-font-family: inherit;
+	--adp-width: 282px;
+	--adp-padding: 16px;
+	--adp-background-color: var(--bg-surface);
+	--adp-background-color-hover: rgba(0, 0, 0, 0.05);
+	--adp-background-color-active: rgba(0, 0, 0, 0.08);
+	--adp-nav-height: 28px;
+	--adp-nav-action-size: 28px;
+	--adp-day-cell-height: 36px;
+	--adp-color: var(--text-primary);
+	--adp-color-secondary: var(--text-secondary);
+	--adp-color-disabled: var(--text-secondary);
+	--adp-color-other-month: var(--text-secondary);
+	--adp-color-other-month-hover: var(--text-secondary);
+	--adp-day-name-color: var(--text-secondary);
+	--adp-day-name-color-hover: var(--text-primary);
+	--adp-nav-color-secondary: var(--text-secondary);
+	--adp-accent-color: var(--accent-primary);
+	--adp-cell-background-color-selected: var(--accent-primary);
+	--adp-cell-background-color-selected-hover: var(--accent-primary);
+	--adp-background-color-selected-other-month: var(--accent-primary);
+	--adp-background-color-selected-other-month-focused: var(--accent-primary);
+	--adp-border-color: var(--dividers-low-contrast);
+	--adp-border-color-inner: var(--dividers-low-contrast);
+	--adp-border-color-inline: var(--dividers-low-contrast);
+	--adp-nav-arrow-color: var(--icons-high-contrast);
+	--adp-transition-duration: 0s;
+
+	box-shadow: var(--shadow);
+	margin: -4px 0;
+
+	&-nav {
+		border: none;
+		padding-bottom: 0;
+
+		&--action {
+			width: var(--adp-nav-action-size);
+			height: var(--adp-nav-action-size);
+
+			svg {
+				flex-shrink: 0;
+			}
+		}
+
+		&--title {
+			font-weight: 600;
+			color: var(--accent-primary);
+
+			i {
+				color: inherit;
+			}
+		}
+	}
+
+	&-body {
+		&--day-names {
+			margin: 0 0 5px;
+		}
+		
+		&--day-name {
+			font-size: 12px;
+			font-weight: 600;
+			border-bottom: 1px solid var(--dividers-low-contrast);
+			padding: 1px 0 6px;
+		}
+		
+		&--cells.-days- {
+			grid-auto-rows: calc(var(--adp-day-cell-height) + 4px);
+			margin-bottom: -4px;
+		}
+	}
+	
+	&-cell {
+		margin-bottom: 4px;
+	}
+
+	&--pointer {
+		display: none;
+	}
+}
+
+

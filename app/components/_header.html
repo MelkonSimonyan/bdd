@@ -1,13 +1,13 @@
 <div class="header">
   <div class="header__row">
-    <div class="flex align-items-center gx-16">
-      <div class="header__logo-wrapper flex align-items-center gx-16 pr-16">
+    <div class="flex align-center gx-16">
+      <div class="header__logo-wrapper flex align-center gx-16 pr-16">
         <a href="/" class="header__logo">
           <img src="assets/images/logo.png" alt="">
         </a>
         
         <button type="button" class="btn btn_smx btn_secondary">
-          <svg class="icon" width="24" height="24"><use xlink:href="#icon-list"></use></svg>
+          <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-list"></use></svg>
           <span>Все модули</span>
         </button>
       </div>
@@ -15,29 +15,86 @@
       <div class="header__title">Безопасность дорожного движения</div>
     </div>
 
-    <div class="flex align-items-center gx-16">
+    <div class="flex align-center gx-16">
       <button type="button" class="btn btn_smx color-secondary">
-        <svg class="icon" width="24" height="24"><use xlink:href="#icon-sync-done"></use></svg>
+        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-sync-done"></use></svg>
         <span>Данные сохранены</span>
       </button>
 
       <button type="button" class="btn btn_smx">
-        <svg class="icon" width="24" height="24"><use xlink:href="#icon-notification"></use></svg>
+        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-notification"></use></svg>
       </button>
 
       <button type="button" class="btn btn_smx">
-        <svg class="icon" width="24" height="24"><use xlink:href="#icon-user-avatar"></use></svg>
-        <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
+        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-user-avatar"></use></svg>
+        <svg class="icon" width="16" height="16"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-down"></use></svg>
       </button>
     </div>
   </div>
 
   <div class="header__row">
-    <div class="flex align-items-center gx-8">
-      <button type="button" class="btn btn_smx btn_secondary">
-        <span>Показать данные за период</span>
-        <svg class="icon" width="16" height="16"><use xlink:href="#icon-drop-down"></use></svg>
-      </button>
+    <div class="flex align-center gx-8">
+      <div class="period-data-control">
+        <button type="button" class="period-data-control__btn btn btn_smx btn_secondary">
+          <span>Показать данные за период</span>
+          <svg class="icon" width="16" height="16"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-down"></use></svg>
+        </button>
+        <div class="period-data-control__dropdown">
+          <div class="droplist has-scrollbar">
+            <div class="text-upper-12 mb-8">фильтр по дате</div>
+
+            <div class="mb-8 color-subhead">Провести аудит на дату:</div>
+            <div class="mb-8">
+              @@include('./_datepicker-field.html', {
+                date: '20.05.2023',
+                disabled: false,
+              })
+            </div>
+
+            <div class="mb-8 color-subhead">При аудите учитывать аварийность за период:</div>
+            <div class="buttons mb-8">
+              <button type="button" class="btn">Неделя</button>
+              <button type="button" class="btn">Месяц</button>
+              <button type="button" class="btn js-period-data-year is-active">Год</button>
+              <button type="button" class="btn js-period-data-choose">Выбрать...</button>
+            </div>
+
+            <div class="js-period-data-dates">
+              <div class="flex gx-8">
+                <div class="flex-grow">
+                  <div class="mb-8 color-subhead">Начало</div>
+                  <div class="mb-8">
+                    @@include('./_datepicker-field.html', {
+                      date: '20.05.2022',
+                      disabled: true,
+                    })
+                  </div>
+                </div>
+
+                <div class="flex-grow">
+                  <div class="mb-8 color-subhead">Окончание</div>
+                  <div class="mb-8">
+                    @@include('./_datepicker-field.html', {
+                      date: '20.05.2023',
+                      disabled: true,
+                    })
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gx-8">
+                <div>
+                  <button type="button" class="btn btn_primary" disabled>Применить</button>
+                </div>
+
+                <div>
+                  <button type="button" class="btn" disabled>Сбросить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       @@if(context.switcher !== "hide"){
         <label class="switcher">
@@ -50,20 +107,20 @@
       }
     </div>
 
-    <div class="flex align-items-center gx-8">
-      <div class="buttons">
-        <a href="@@if(context.mapLink){@@mapLink}@@if(!context.mapLink){#}" class="btn fw-regular @@if(context.type !== 'table' && context.type !== 'event'){is-active}">Карта</a>
+    <div class="flex align-center gx-8">
+      <div class="header__buttons buttons">
+        <a href="@@if(context.mapLink){@@mapLink}@@if(!context.mapLink){#}" class="btn @@if(context.type !== 'table' && context.type !== 'event'){is-active}">Карта</a>
         @@if(context.tableDisabled){
           <a class="btn" disabled>Таблица</a>
         }
         @@if(!context.tableDisabled){
-          <a href="@@if(context.tableLink){@@tableLink}@@if(!context.tableLink){#}" class="btn fw-regular @@if(context.type === 'table'){is-active}">Таблица</a>
+          <a href="@@if(context.tableLink){@@tableLink}@@if(!context.tableLink){#}" class="btn @@if(context.type === 'table'){is-active}">Таблица</a>
         }
-        <a href="@@if(context.eventLink){@@eventLink}@@if(!context.eventLink){#}" class="btn fw-regular @@if(context.type === 'event'){is-active}">Мероприятия</a>
+        <a href="@@if(context.eventLink){@@eventLink}@@if(!context.eventLink){4.6.html}" class="btn @@if(context.type === 'event'){is-active}">Мероприятия</a>
       </div>
 
       <a href="#" class="btn btn_smx btn_secondary">
-        <svg class="icon" width="24" height="24"><use xlink:href="#icon-download"></use></svg>
+        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-download"></use></svg>
         <span>Создать отчёт</span>
       </a>
     </div>

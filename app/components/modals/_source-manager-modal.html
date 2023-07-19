@@ -1,0 +1,280 @@
+<div class="modal modal_source-managaer js-source-manager-modal @@if(open === 'true'){is-open is-visible}">
+	<div class="modal__bg"></div>
+	<div class="modal__inner">
+		<div class="modal__window modal__window_w480">
+			<div class="modal__window-header">
+				<div class="modal__title">Мененджер источников данных</div>
+				<button type="button" class="modal__close js-modal-close btn">
+					<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+				</button>
+			</div>
+			<div class="modal__window-inner flex flex-columnn">
+				<div class="flex justify-between gx-8 mb-16">
+          <div>
+            <button type="button" class="btn btn_primary js-modal-close">
+            	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+            	<span>Создать источник данных</span>
+            </button>
+          </div>
+          <div>
+            <button type="button" class="btn btn_secondary js-modal-close" onclick="showModal('.js-new-layer-modal')">Добавить слой</button>
+          </div>
+        </div>
+
+        <div class="source-managaer">
+        	<div class="source-managaer__header mb-8">
+			  		<div class="search-field">
+			        <svg class="search-field__icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-search"></use></svg>
+			        <input type="text" name="search" placeholder="Поиск">
+			      </div>
+			  	</div>
+			  	<div class="source-managaer__content has-scrollbar">
+			  		<div class="source-list">
+			  			<div class="source-group">
+			  				<div class="source-group__header">
+			  					<div class="source-item">
+			  						<div class="source-item__expand">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-right"></use></svg>
+			  						</div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-model-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Модель 1</div>
+			  					</div>
+			  				</div>
+			  				<div class="source-group__content">
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  				</div>
+			  			</div>
+
+			  			<div class="source-group is-open">
+			  				<div class="source-group__header">
+			  					<div class="source-item">
+			  						<div class="source-item__expand">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-right"></use></svg>
+			  						</div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-model-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Модель 2</div>
+			  					</div>
+			  				</div>
+			  				<div class="source-group__content">
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  					<div class="source-item">
+			  						<div class="source-item__line"></div>
+			  						<div class="source-item__icon">
+			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+			  						</div>
+			  						<div class="source-item__content">Main text</div>
+			  					</div>
+			  				</div>
+			  			</div>
+			  		</div>
+			  	</div>
+        </div>
+			</div>
+		</div>
+	</div>
+</div>

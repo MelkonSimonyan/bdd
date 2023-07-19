@@ -2,27 +2,150 @@
   <div class="map-control__group">
     <div class="map-control__item">
       <button type="button" class="map-control__btn">
-        <svg><use xlink:href="#icon-folder-layer"></use></svg>
+        <svg><use xlink:href="assets/images/svg.svg#icon-folder-layer"></use></svg>
+      </button>
+      <div class="map-control__droplist map-layers-control droplist">
+        <div class="map-control__droplist-header flex align-center justify-between gx-8 mb-8">
+          <div class="text-upper-12 flex-grow">подложки</div>
+          <button type="button" class="map-control__close btn flex-shrink p-0">
+            <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+          </button>
+        </div>
+        <div class="map-control__droplist-content has-scrollbar">
+          <div class="text-reg-12 color-subhead mb-4">Системные</div>
+          <div>
+            <div class="map-object-btn">Mapbox Basic</div>
+          </div>
+          <div>
+            <div class="map-object-btn">Mapbox Streets</div>
+          </div>
+          <div>
+            <div class="map-object-btn">Mapbox Light</div>
+          </div>
+          <div>
+            <div class="map-object-btn">Mapbox Dark</div>
+          </div>
+          <div>
+            <div class="map-object-btn">Mapbox Satellite</div>
+          </div>
+          <div>
+            <div class="map-object-btn">Mapbox Satellite Streets</div>
+          </div>
+
+          <div class="flex align-center justify-between mt-8">
+            <div class="text-reg-12 color-subhead">Пользовательские</div>
+            <button type="button" class="btn btn_secondary p-4" onclick="showModal('.js-new-underlayer-modal')">
+              <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+            </button>
+          </div>
+          <div>
+            <div class="map-object-btn">
+              <span onclick="showModal('.js-delete-modal')">User podlojka</span>
+              <button type="button" class="btn btn_secondary" onclick="showModal('.js-source-manager-modal')">
+                <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div class="map-object-btn">
+              <span onclick="showModal('.js-delete-modal')">123456</span>
+              <button type="button" class="btn btn_secondary" onclick="showModal('.js-source-manager-modal')">
+                <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div class="map-object-btn">
+              <span onclick="showModal('.js-delete-modal')">Moscow_custom</span>
+              <button type="button" class="btn btn_secondary" onclick="showModal('.js-source-manager-modal')">
+                <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-control__item">
+      <button type="button" class="map-control__btn">
+        <svg><use xlink:href="assets/images/svg.svg#icon-image"></use></svg>
+      </button>
+      <div class="map-control__droplist map-export droplist">
+        <div class="map-control__droplist-header flex align-center justify-between gx-8 mb-8">
+          <div class="text-upper-12 flex-grow">Экспорт карты</div>
+          <button type="button" class="map-control__close btn flex-shrink p-0">
+            <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+          </button>
+        </div>
+        <div class="map-control__droplist-content has-scrollbar">
+          <div class="map-export__group">
+            <div class="text-reg-12 color-subhead mb-4">Качество</div>
+            <div class="form-check">
+              <label>
+                <input type="radio" name="quality">
+                <span>Высокое (для печати)</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <label>
+                <input type="radio" name="quality" checked>
+                <span>Обычное</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="map-export__group">
+            <div class="text-reg-12 color-subhead mb-4">Формат</div>
+            <div class="columns-2">
+              <div class="form-check">
+                <label>
+                  <input type="radio" name="format">
+                  <span>JPG</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label>
+                  <input type="radio" name="format" checked>
+                  <span>PNG</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label>
+                  <input type="radio" name="format">
+                  <span>TIFF</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label>
+                  <input type="radio" name="format">
+                  <span>GIF</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label>
+                  <input type="radio" name="format">
+                  <span>BMP</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn_primary btn_block">Сохранить в файл</a>
+        </div>
+      </div>
+    </div>
+    <div class="map-control__item">
+      <button type="button" class="map-control__btn">
+        <svg><use xlink:href="assets/images/svg.svg#icon-2d"></use></svg>
       </button>
     </div>
     <div class="map-control__item">
       <button type="button" class="map-control__btn">
-        <svg><use xlink:href="#icon-image"></use></svg>
+        <svg><use xlink:href="assets/images/svg.svg#icon-compass-north"></use></svg>
       </button>
     </div>
     <div class="map-control__item">
       <button type="button" class="map-control__btn">
-        <svg><use xlink:href="#icon-2d"></use></svg>
-      </button>
-    </div>
-    <div class="map-control__item">
-      <button type="button" class="map-control__btn">
-        <svg><use xlink:href="#icon-compass-north"></use></svg>
-      </button>
-    </div>
-    <div class="map-control__item">
-      <button type="button" class="map-control__btn">
-        <svg><use xlink:href="#icon-geometry-instruments"></use></svg>
+        <svg><use xlink:href="assets/images/svg.svg#icon-geometry-instruments"></use></svg>
       </button>
     </div>
   </div>
@@ -30,7 +153,7 @@
   <div class="map-control__group">
     <div class="map-control__item">
       <button type="button" class="map-control__btn">
-        <svg><use xlink:href="#icon-info"></use></svg>
+        <svg><use xlink:href="assets/images/svg.svg#icon-info"></use></svg>
       </button>
     </div>
   </div>

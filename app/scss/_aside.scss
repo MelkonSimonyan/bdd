@@ -86,16 +86,11 @@
   }
 
   &__filter {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-100%);
-    transition: 0.25s ease-in-out;
+    display: none;
     z-index: 1;
 
     &.is-open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(0);
+      display: flex;
     }
   }
 }
@@ -276,7 +271,7 @@
   }
 }
 
-.aside__settings-dropdown {
+.aside__settings-droplist {
   position: fixed;
   z-index: 10;
   display: none;
@@ -287,10 +282,6 @@
   
   &.is-open {
     display: block;
-  }
-
-  .droplist {
-    max-height: 100vh;
   }
 }
 

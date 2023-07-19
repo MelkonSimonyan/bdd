@@ -1,3 +1,135 @@
+const dropdownPosition = (target, dropdown, space = 8, fixedWidth = false) => {
+	dropdown.style.maxHeight = 'none';
+
+	let windowHeight = window.innerHeight,
+	targetRect = target.getBoundingClientRect(),
+	dropdownRect = dropdown.getBoundingClientRect(),
+	dropdownHeight = dropdownRect.height,
+	targetLeft = targetRect.left,
+	targetTop = targetRect.top,
+	targetHeight = targetRect.height,
+	distanceTop = targetTop - space,
+	distanceBottom = windowHeight - targetTop - targetHeight - space,
+	positionTop = targetTop + targetHeight + space,
+	positionBottom = windowHeight - targetTop + space;
+
+	if(fixedWidth){
+		dropdown.style.width = targetRect.width + 'px';
+	}
+
+	dropdown.style.left = targetLeft + 'px';
+	dropdown.style.top = positionTop + 'px';
+	dropdown.style.bottom = 'auto';
+
+	if(distanceBottom < dropdownHeight && distanceTop > distanceBottom){
+		dropdown.style.top = 'auto';
+		dropdown.style.bottom = positionBottom + 'px';
+		dropdown.style.maxHeight = distanceTop + 'px';
+	} else {
+		dropdown.style.maxHeight = distanceBottom + 'px';
+	}
+}
+
+const datepickerFields = document.querySelectorAll('.datepicker-field');
+datepickerFields.forEach(datepickerField => {
+	const input = datepickerField.querySelector('input');
+	const d = input.value.split('.');
+	new AirDatepicker(input, {
+		selectedDates: [new Date(d[2] + '/' + d[1] + '/' + d[0])]
+	});
+});
+
+const periodDataControl = document.querySelector('.period-data-control');
+if(periodDataControl){
+  const periodDataControlBtn = periodDataControl.querySelector('.period-data-control__btn');
+  periodDataControlBtn.addEventListener('click', () => {
+    periodDataControl.classList.toggle('is-open');
+  });
+
+  document.addEventListener('click', e => {
+    if(!e.target.closest('.period-data-control') && !e.target.closest('.air-datepicker')){
+      periodDataControl.classList.remove('is-open');
+    }
+  });
+
+  const periodDataYearBtn = periodDataControl.querySelector('.js-period-data-year');
+  const periodDataChooseBtn = periodDataControl.querySelector('.js-period-data-choose');
+  const periodDataDatesWrapper = periodDataControl.querySelector('.js-period-data-dates');
+  const periodDataDatesInputs = periodDataDatesWrapper.querySelectorAll('input');
+
+  periodDataChooseBtn.addEventListener('click', e => {
+  	periodDataYearBtn.classList.remove('is-active');
+  	periodDataChooseBtn.classList.add('is-active');
+  	periodDataDatesInputs.forEach(input => {
+  		input.disabled = false;
+  	});
+  });
+
+  periodDataYearBtn.addEventListener('click', e => {
+  	periodDataChooseBtn.classList.remove('is-active');
+  	periodDataYearBtn.classList.add('is-active');
+  	periodDataDatesInputs.forEach(input => {
+  		input.disabled = true;
+  	});
+  });
+}
+
+const showModal = (selector) => {
+	const modal = document.querySelector(selector);
+	modal.classList.add('is-open');
+  setTimeout(function(){
+    modal.classList.add('is-visible');
+  });
+  return false;
+}
+
+const modals = document.querySelectorAll('.modal');
+modals.forEach(modal => {
+	modal.addEventListener('click', e => {
+		if(!e.target.closest('.modal__window') || e.target.closest('.js-modal-close')){
+			modal.classList.remove('is-visible');
+			setTimeout(function(){
+				modal.classList.remove('is-open');
+			}, 350);
+		}
+	});
+});
+
+const moreModal = document.querySelector('.js-more-modal');
+if(moreModal){
+	const moreModalInfoBtn = document.querySelector('.js-more-modal-info-btn');
+	const moreModalEditorBtn = document.querySelector('.js-more-modal-editor-btn');
+	const moreModalEditor = document.querySelector('.event-editor');
+
+	moreModalInfoBtn.addEventListener('click', e => {
+		moreModalEditorBtn.classList.remove('is-active');
+		moreModalInfoBtn.classList.add('is-active');
+		moreModalEditor.classList.remove('is-visible');
+	});
+
+	moreModalEditorBtn.addEventListener('click', e => {
+		moreModalInfoBtn.classList.remove('is-active');
+		moreModalEditorBtn.classList.add('is-active');
+		moreModalEditor.classList.add('is-visible');
+	});
+}
+
+const sourceGroups = document.querySelectorAll('.source-group');
+sourceGroups.forEach(group => {
+	const header = group.querySelector('.source-group__header');
+	const items = group.querySelectorAll('.source-group__content .source-item');
+
+	header.addEventListener('click', e => {
+		e.stopPropagation;
+		group.classList.toggle('is-open');
+	});
+
+	items.forEach(item => {
+		item.addEventListener('click', e => {
+			item.classList.toggle('is-active');
+		});
+	});
+});
 document.querySelectorAll('.radial-graph__graph').forEach(graph => {
   const w = graph.getBoundingClientRect().width || 40;
   const a = graph.dataset.angle;
@@ -55,16 +187,16 @@ if(mapWidgets){
   });
 }
 
-const mapLayersControl = document.querySelector('.map-layers-control');
-if(mapLayersControl){
-  const mapLayersControlBtn = mapLayersControl.querySelector('.map-layers-control__btn');
-  mapLayersControlBtn.addEventListener('click', () => {
-    mapLayersControl.classList.toggle('is-open');
+const mapAdvancedLayers = document.querySelector('.map-advanced-layers');
+if(mapAdvancedLayers){
+  const mapAdvancedLayersBtn = mapAdvancedLayers.querySelector('.map-advanced-layers__btn');
+  mapAdvancedLayersBtn.addEventListener('click', () => {
+    mapAdvancedLayers.classList.toggle('is-open');
   });
 
   document.addEventListener('click', e => {
-    if(!e.target.closest('.map-layers-control')){
-      mapLayersControl.classList.remove('is-open');
+    if(!e.target.closest('.map-advanced-layers')){
+      mapAdvancedLayers.classList.remove('is-open');
     }
   });
 }
@@ -78,26 +210,40 @@ mapTooltips.forEach(mapTooltip => {
     mapTooltip.classList.add('is-active');
   });
 });
+
+const mapControlItems = document.querySelectorAll('.map-control__item');
+mapControlItems.forEach(item => {
+  const btn = item.querySelector('.map-control__btn');
+  btn.addEventListener('click', e => {
+    mapControlItems.forEach(curItem => {
+      if(curItem !== item){
+        curItem.classList.remove('is-open');
+      }
+      
+      item.classList.remove('is-open');
+    });
+
+    item.classList.toggle('is-open');
+  });
+  
+  const close = item.querySelector('.map-control__close');
+  if(close){
+    close.addEventListener('click', e => {
+      item.classList.remove('is-open');
+    });
+  }
+});
+
+document.addEventListener('click', e => {
+  if(!e.target.closest('.map-control__item')){
+    mapControlItems.forEach(item => {
+      item.classList.remove('is-open');
+    });
+  }
+});
 const asideItems = document.querySelectorAll('.aside-item');
-const asideSettingsDropdown = document.querySelector('.aside__settings-dropdown');
+const asideSettingsDropdown = document.querySelector('.aside__settings-droplist');
 const asideSettingsBtns = document.querySelectorAll('.aside-item__settings-btn');
-
-const dropdownPosition = (target) => {
-	const targetBoundingClientRect = target.getBoundingClientRect();
-	const dropdownBoundingClientRect = asideSettingsDropdown.getBoundingClientRect();
-	const left = targetBoundingClientRect.left;
-	const top = targetBoundingClientRect.top + targetBoundingClientRect.height + 8;
-
-	asideSettingsDropdown.style.left = left + 'px';
-	asideSettingsDropdown.style.top = top + 'px';
-	asideSettingsDropdown.style.bottom = 'auto';
-
-	if(top + dropdownBoundingClientRect.height > window.innerHeight){
-		asideSettingsDropdown.style.top = 'auto';
-		asideSettingsDropdown.style.bottom = 0;
-		asideSettingsDropdown.style.left = (left + targetBoundingClientRect.width + 6) + 'px';
-	}
-}
 
 asideItems.forEach(item => {
 	item.addEventListener('click', e => {
@@ -140,6 +286,7 @@ asideItems.forEach(item => {
 	if(itemSettingsBtn){
 		itemSettingsBtn.addEventListener('click', e => {
 			e.stopPropagation();
+			
 			if(itemSettingsBtn.classList.contains('is-open')){
 				itemSettingsBtn.classList.remove('is-open');
 				asideSettingsDropdown.classList.remove('is-open');
@@ -149,14 +296,14 @@ asideItems.forEach(item => {
 		  	});
 				itemSettingsBtn.classList.add('is-open');
 				asideSettingsDropdown.classList.add('is-open');
-				dropdownPosition(itemSettingsBtn);
+				dropdownPosition(itemSettingsBtn, asideSettingsDropdown);
 			}
 		});
 	}
 });
 
 document.addEventListener('click', e => {
-  if(!e.target.closest('.aside-item__settings-btn') && !e.target.closest('.aside__settings-dropdown')){
+  if(asideSettingsDropdown && !e.target.closest('.aside-item__settings-btn') && !e.target.closest('.aside__settings-droplist')){
   	asideSettingsBtns.forEach(btn => {
   		btn.classList.remove('is-open');
   	});
@@ -182,11 +329,40 @@ if(filterClose){
 }
 const selectBlocks = document.querySelectorAll('.select-block');
 selectBlocks.forEach(selectBlock => {
+	const multiple = selectBlock.dataset.multiple;
 	const target = selectBlock.querySelector('.select-block__target');
-	const value = selectBlock.querySelector('.select-block__value');
+	const dropdown = selectBlock.querySelector('.select-block__droplist');
+	const value = multiple ? selectBlock.querySelector('.select-block__content') : selectBlock.querySelector('.select-block__value');
 	const clear = selectBlock.querySelector('.select-block__clear');
 	const items = selectBlock.querySelectorAll('.select-block__item');
 	const placeholder = selectBlock.dataset.placeholder || '';
+
+	const selectBlockClear = () => {
+		selectBlock.classList.remove('is-filled');
+		selectBlock.classList.add('is-empty');
+		value.innerHTML = placeholder;
+
+		items.forEach(item => {
+			item.classList.remove('is-active');
+		});
+	}
+
+	const addChoice = (id, text) => {
+		if(selectBlock.classList.contains('is-empty')){
+			value.innerText = '';
+			selectBlock.classList.remove('is-empty');
+			selectBlock.classList.add('is-filled');
+		}
+
+		const choice = `
+			<div class="select-block__choice" data-id="${id}">
+    		<div class="select-block__choice-content">*${text}</div>
+    		<button type="button" class="select-block__choice-remove"></button>
+    	</div>
+		`;
+
+		value.insertAdjacentHTML('beforeEnd', choice);
+	}
 
 	target.addEventListener('click', e => {
 		selectBlocks.forEach(curSelectBlock => {
@@ -195,47 +371,92 @@ selectBlocks.forEach(selectBlock => {
   		}
   	});
 
-		selectBlock.classList.toggle('is-open');
+		if(e.target.closest('.select-block__choice')){
+			e.stopPropagation();
+			const choice = e.target.closest('.select-block__choice');
+
+			selectBlock.querySelectorAll('.select-block__item.is-active').forEach(item => {
+				if(choice.dataset.id === item.dataset.id){
+					item.classList.remove('is-active');
+				}
+			});
+
+			choice.remove();
+			
+			if(!selectBlock.querySelectorAll('.select-block__choice').length){
+				selectBlockClear();
+			}
+
+			dropdownPosition(target, dropdown, 4, true);
+		} else {
+			if(selectBlock.classList.contains('is-open')){
+				selectBlock.classList.remove('is-open');
+			} else {
+				selectBlock.classList.add('is-open');
+				dropdownPosition(target, dropdown, 4, true);
+			}
+		}
 	});
 
-	items.forEach(item => {
+	items.forEach((item, i) => {
 		if(item.classList.contains('is-active')){
 			selectBlock.classList.remove('is-empty');
 			selectBlock.classList.add('is-filled');
 
-			value.innerHTML = item.innerHTML;
+			if(multiple){
+				const id = new Date().getTime() + i;
+				item.dataset.id = id;
+				addChoice(id, item.innerHTML);
+			} else {
+				value.innerHTML = item.innerHTML;
+			}
 		}
 
 		item.addEventListener('click', e => {
 			e.preventDefault();
 
-			selectBlock.classList.remove('is-open');
-			selectBlock.classList.remove('is-empty');
-			selectBlock.classList.add('is-filled');
+			if(multiple){
+				if(item.classList.contains('is-active')){
+					item.classList.remove('is-active');
+					
+					selectBlock.querySelectorAll('.select-block__choice').forEach(choice => {
+						if(choice.dataset.id === item.dataset.id){
+							choice.remove();
+						}
+					});
+					
+					if(!selectBlock.querySelectorAll('.select-block__choice').length){
+						selectBlockClear();
+					}
+				} else {
+					const id = new Date().getTime();
+					item.classList.add('is-active');
+					item.dataset.id = id;
+					addChoice(id, item.innerHTML);
+				}
 
-			items.forEach(item => {
-				item.classList.remove('is-active');
-			});
+				dropdownPosition(target, dropdown, 4, true);
+			} else {
+				selectBlock.classList.remove('is-open');
+				selectBlock.classList.remove('is-empty');
+				selectBlock.classList.add('is-filled');
 
-			item.classList.add('is-active');
+				items.forEach(item => {
+					item.classList.remove('is-active');
+				});
 
-			value.innerHTML = item.innerHTML;
+				item.classList.add('is-active');
+
+				value.innerHTML = item.innerHTML;
+			}
 		});
 	});
 
 	if(clear){
 		clear.addEventListener('click', e => {
 			e.stopPropagation();
-
+			selectBlockClear();
 			selectBlock.classList.remove('is-open');
-			selectBlock.classList.remove('is-filled');
-			selectBlock.classList.add('is-empty');
-
-			items.forEach(item => {
-				item.classList.remove('is-active');
-			});
-			
-			value.innerHTML = placeholder;
 		});
 	}
 });

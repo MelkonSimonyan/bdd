@@ -1,0 +1,494 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  @@include('./components/_head.html')
+</head>
+<body>
+  @@include('./components/_header.html', {
+    "mapLink": "2.1.html",
+    type: "event",
+    tableDisabled: true,
+    switchChecked: true,
+  })
+
+  <div class="content">
+    <div class="main">
+      <div class="layout">
+        <div class="layout__header">
+          <div class="layout__header-row">
+            <div class="layout__title">
+              <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-layer-map"></use></svg>
+              <span>Мероприятия по повышению БДД М-3 “Украина” (Количество объектов: 3754)</span>
+            </div>
+          </div>
+          <div class="layout__header-row layout__header-row_border-left">
+            <div class="table-filters-value">Фильтрация по: —</div>
+            <div class="table-columns-control">
+              <button type="button" class="table-columns-control__btn btn btn_smx btn_secondary">
+                <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-columns"></use></svg>
+                <svg class="icon" width="16" height="16"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-down"></use></svg>
+              </button>
+              <div class="table-columns-control__dropdown">
+                @@include('./components/droplist/_droplist-columns.html')
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="layout__content has-scrollbar">
+          <table class="table">
+            <colgroup>
+              <col width="80">
+              <col width="373">
+              <col width="213">
+              <col width="295">
+              <col width="405">
+              <col width="0">
+            </colgroup>
+
+            <thead class="table__thead">
+              <tr class="table__thead-row">
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">ID</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="assets/images/svg.svg#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-root.html')
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Тип мероприятия</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="assets/images/svg.svg#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-root.html')
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Регион</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="assets/images/svg.svg#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-root.html')
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">адрес</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="assets/images/svg.svg#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-root.html')
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Вид ДТП</div>
+                    <div class="table__th-cell-aside">
+                      <div class="table__col-filter">
+                        <button type="button" class="table__col-filter-btn">
+                          <svg><use xlink:href="assets/images/svg.svg#icon-filter"></use></svg>
+                        </button>
+                        <div class="table__col-filter-dropdown">
+                          @@include('./components/droplist/_droplist-root.html')
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </th>
+
+                <th class="table__th table__aside">
+                  <div class="table__th-cell">
+                    <div class="table__th-cell-content">Действия</div></div>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody class="table__section">
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">232319</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Установка тросового ограждения (осевого)</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ул. Улица NN</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Встречные столкновения</div>
+                  </div>
+                </td>
+                <td class="table__td table__aside">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">
+                      <a href="1.4.html" class="table__btn btn btn_smx btn_secondary">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+                        <span>На карте</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">232318</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Установка МБО (осевого)</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ул. Улица NN</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Встречные столкновения</div>
+                  </div>
+                </td>
+                <td class="table__td table__aside">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">
+                      <a href="1.4.html" class="table__btn btn btn_smx btn_secondary">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+                        <span>На карте</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">232317</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Установка светофорного объекта (транспортный)</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ул. Улица с длинным названием NN</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Съезд с дороги, опрокидывание, Наезд на препятствие, Наезд на стоящее ТС</div>
+                  </div>
+                </td>
+                <td class="table__td table__aside">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">
+                      <a href="1.4.html" class="table__btn btn btn_smx btn_secondary">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+                        <span>На карте</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">232316</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Установка сетчатого ограждения</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ул. Улица NN</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Все ДТП</div>
+                  </div>
+                </td>
+                <td class="table__td table__aside">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">
+                      <a href="1.4.html" class="table__btn btn btn_smx btn_secondary">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+                        <span>На карте</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">232315</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Восстановление работы освещения</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ул. Улица NN</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Наезды на пешеходов вне пешеходного перехода</div>
+                  </div>
+                </td>
+                <td class="table__td table__aside">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">
+                      <a href="1.4.html" class="table__btn btn btn_smx btn_secondary">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+                        <span>На карте</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">232314</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Комплексы ФВФ</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ул. Улица NN</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Все ДТП в темное время суток</div>
+                  </div>
+                </td>
+                <td class="table__td table__aside">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">
+                      <a href="1.4.html" class="table__btn btn btn_smx btn_secondary">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+                        <span>На карте</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">232313</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Установка дорожных знаков 3.27</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ул. Улица NN</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Встречные столкновения</div>
+                  </div>
+                </td>
+                <td class="table__td table__aside">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">
+                      <a href="1.4.html" class="table__btn btn btn_smx btn_secondary">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+                        <span>На карте</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">232312</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Установка дорожных знаков 3.24</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ул. Улица с длинным названием NN</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Встречные столкновения</div>
+                  </div>
+                </td>
+                <td class="table__td table__aside">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">
+                      <a href="1.4.html" class="table__btn btn btn_smx btn_secondary">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+                        <span>На карте</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">232311</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Установка сетчатого ограждения</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">М-3 “Украина”</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">ул. Улица NN</div>
+                  </div>
+                </td>
+                <td class="table__td">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">Наезд на стоящее ТС, Наезд на препятствие</div>
+                  </div>
+                </td>
+                <td class="table__td table__aside">
+                  <div class="table__td-cell">
+                    <div class="table__td-content">
+                      <a href="1.4.html" class="table__btn btn btn_smx btn_secondary">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+                        <span>На карте</span>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="layout__footer">
+          @@include('./components/_pagination.html')
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @@include('./components/_foot.html')
+</body>
+</html>

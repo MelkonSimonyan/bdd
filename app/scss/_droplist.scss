@@ -1,12 +1,13 @@
 .droplist {
 	background: var(--bg-surface);
   border: 1px solid var(--dividers-low-contrast);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   border-radius: 4px;
   padding: 8px;
 
-  .link-btn {
+  .map-object-btn {
     margin-left: -8px;
     margin-right: -8px;
+    width: calc(100% + 16px);
   }
 }

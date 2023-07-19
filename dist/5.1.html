@@ -1,0 +1,1486 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=1280">
+
+  <title>Безопасность дорожного движения</title>
+
+  <link href="assets/lib/air-datepicker.3.3.5/air-datepicker.css" rel="stylesheet" />
+  <link href="css/style.css?3" rel="stylesheet" />
+</head>
+<body>
+  <div class="header">
+    <div class="header__row">
+      <div class="flex align-center gx-16">
+        <div class="header__logo-wrapper flex align-center gx-16 pr-16">
+          <a href="/" class="header__logo">
+            <img src="assets/images/logo.png" alt="">
+          </a>
+        
+          <button type="button" class="btn btn_smx btn_secondary">
+            <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-list"></use></svg>
+            <span>Все модули</span>
+          </button>
+        </div>
+
+        <div class="header__title">Безопасность дорожного движения</div>
+      </div>
+
+      <div class="flex align-center gx-16">
+        <button type="button" class="btn btn_smx color-secondary">
+          <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-sync-done"></use></svg>
+          <span>Данные сохранены</span>
+        </button>
+
+        <button type="button" class="btn btn_smx">
+          <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-notification"></use></svg>
+        </button>
+
+        <button type="button" class="btn btn_smx">
+          <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-user-avatar"></use></svg>
+          <svg class="icon" width="16" height="16"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-down"></use></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="header__row">
+      <div class="flex align-center gx-8">
+        <div class="period-data-control">
+          <button type="button" class="period-data-control__btn btn btn_smx btn_secondary">
+            <span>Показать данные за период</span>
+            <svg class="icon" width="16" height="16"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-down"></use></svg>
+          </button>
+          <div class="period-data-control__dropdown">
+            <div class="droplist has-scrollbar">
+              <div class="text-upper-12 mb-8">фильтр по дате</div>
+
+              <div class="mb-8 color-subhead">Провести аудит на дату:</div>
+              <div class="mb-8">
+                <div class="datepicker-field">
+                  <div class="datepicker-field__icon">
+                    <svg class="icon"><use xlink:href="assets/images/svg.svg#icon-date-calendar"></use></svg>
+                  </div>
+                  <div class="datepicker-field__arrow">
+                    <svg class="icon"><use xlink:href="assets/images/svg.svg#icon-chevron-down"></use></svg>
+                  </div>
+                  <input type="text" value="20.05.2023" readonly >
+                </div>
+              </div>
+
+              <div class="mb-8 color-subhead">При аудите учитывать аварийность за период:</div>
+              <div class="buttons mb-8">
+                <button type="button" class="btn">Неделя</button>
+                <button type="button" class="btn">Месяц</button>
+                <button type="button" class="btn js-period-data-year is-active">Год</button>
+                <button type="button" class="btn js-period-data-choose">Выбрать...</button>
+              </div>
+
+              <div class="js-period-data-dates">
+                <div class="flex gx-8">
+                  <div class="flex-grow">
+                    <div class="mb-8 color-subhead">Начало</div>
+                    <div class="mb-8">
+                      <div class="datepicker-field">
+                        <div class="datepicker-field__icon">
+                          <svg class="icon"><use xlink:href="assets/images/svg.svg#icon-date-calendar"></use></svg>
+                        </div>
+                        <div class="datepicker-field__arrow">
+                          <svg class="icon"><use xlink:href="assets/images/svg.svg#icon-chevron-down"></use></svg>
+                        </div>
+                        <input type="text" value="20.05.2022" readonly disabled>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-grow">
+                    <div class="mb-8 color-subhead">Окончание</div>
+                    <div class="mb-8">
+                      <div class="datepicker-field">
+                        <div class="datepicker-field__icon">
+                          <svg class="icon"><use xlink:href="assets/images/svg.svg#icon-date-calendar"></use></svg>
+                        </div>
+                        <div class="datepicker-field__arrow">
+                          <svg class="icon"><use xlink:href="assets/images/svg.svg#icon-chevron-down"></use></svg>
+                        </div>
+                        <input type="text" value="20.05.2023" readonly disabled>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex gx-8">
+                  <div>
+                    <button type="button" class="btn btn_primary" disabled>Применить</button>
+                  </div>
+
+                  <div>
+                    <button type="button" class="btn" disabled>Сбросить</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+          <label class="switcher">
+            <span class="switch">
+              <input type="checkbox" name="swicth" >
+              <span class="switch__content"></span>
+            </span>
+            <span class="switcher__text">Показать подсказки</span>
+          </label>
+        
+      </div>
+
+      <div class="flex align-center gx-8">
+        <div class="header__buttons buttons">
+          <a href="#" class="btn is-active">Карта</a>
+          
+          
+            <a href="#" class="btn ">Таблица</a>
+          
+          <a href="4.6.html" class="btn ">Мероприятия</a>
+        </div>
+
+        <a href="#" class="btn btn_smx btn_secondary">
+          <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-download"></use></svg>
+          <span>Создать отчёт</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="aside">
+      <div class="aside__main">
+        <a href="1.1.html" class="aside__back">
+          <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-arrow-back"></use></svg>
+          <span>М-4 «Волга» км 0+000 - 14+595</span>
+        </a>
+
+        <div class="aside__content px-8 has-hidden-scrollbar">
+          <div class="aside-nav">
+            <div class="aside-nav__group">
+              <div class="aside-nav__group-header">
+                <div class="aside-nav__item">
+                  <div class="aside-item">
+                    <div class="aside-item__expand">
+                      <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-right"></use></svg>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Дорожные условия</div>
+                      <div><span class="color-accent-success">+10</span> за период</div>
+                    </div>
+                    <div class="aside-item__graph">
+                      <span class="radial-graph">
+                        <svg class="radial-graph__graph color-accent-danger" fill="none" stroke-linecap="round" stroke-width="6" data-angle="119"><path /></svg>
+                        <span class="radial-graph__text">33</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="aside-nav__group-content">
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Продольная ровность</div>
+                      <div><span class="color-accent-success">+10</span> балла за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
+                          <span class="radial-graph__text">83</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Поперечная ровность</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Коэффициент сцепления</div>
+                      <div><span class="color-accent-success">+10</span> балла за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
+                          <span class="radial-graph__text">83</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Дефекты проезж. части</div>
+                      <div><span class="color-accent-success">+10</span> балла за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-danger" fill="none" stroke-linecap="round" stroke-width="6" data-angle="119"><path /></svg>
+                          <span class="radial-graph__text">33</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Дефекты обочин</div>
+                      <div><span class="color-accent-success">+10</span> балла за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
+                          <span class="radial-graph__text">83</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Дефекты раздел. полосы</div>
+                      <div><span class="color-accent-success">+10</span> балла за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aside-nav__group">
+              <div class="aside-nav__group-header">
+                <div class="aside-nav__item">
+                  <div class="aside-item">
+                    <div class="aside-item__expand">
+                      <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-right"></use></svg>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Аварийно -опасные участки</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    <div class="aside-item__graph">
+                      <span class="radial-graph">
+                        <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                        <span class="radial-graph__text">63</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="aside-nav__group-content">
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">ДТП</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Неучетные ДТП</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Места концентрации ДТП</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Потенциально опасные места</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Опасность участков по комплекс. показателю</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aside-nav__group">
+              <div class="aside-nav__group-header">
+                <div class="aside-nav__item">
+                  <div class="aside-item">
+                    <div class="aside-item__expand">
+                      <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-right"></use></svg>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">ОДД</div>
+                      <div><span class="color-accent-success">+10</span> за период</div>
+                    </div>
+                    <div class="aside-item__graph">
+                      <span class="radial-graph">
+                        <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
+                        <span class="radial-graph__text">83</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="aside-nav__group-content">
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Эксплуатационная скорость движения ТС</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Транспортные задержки и перепробег</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Число и опасность конфликтных ситуаций</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                      <div class="aside-item__graph">
+                        <span class="radial-graph">
+                          <svg class="radial-graph__graph color-accent-warning" fill="none" stroke-linecap="round" stroke-width="6" data-angle="227"><path /></svg>
+                          <span class="radial-graph__text">63</span>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aside-nav__group is-open">
+              <div class="aside-nav__group-header">
+                <div class="aside-nav__item">
+                  <div class="aside-item">
+                    <div class="aside-item__expand">
+                      <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-right"></use></svg>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Мероприятия</div>
+                      <div><span class="color-accent-success">+10</span> за период</div>
+                    </div>
+                    <div class="aside-item__graph">
+                      <span class="radial-graph">
+                        <svg class="radial-graph__graph color-accent-success" fill="none" stroke-linecap="round" stroke-width="6" data-angle="299"><path /></svg>
+                        <span class="radial-graph__text">83</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="aside-nav__group-content">
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item is-active">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Мероприятия</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item is-active">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Эффективность мероприятий</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div class="aside-nav__item aside-nav__item_subitem">
+                  <div class="aside-item">
+                    <div class="aside-item__settings">
+                      <button type="button" class="aside-item__settings-btn btn">
+                        <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-settings"></use></svg>
+                      </button>
+                      <div class="aside-item__settings-dropdown"></div>
+                    </div>
+                    <div class="aside-item__content">
+                      <div class="fw-semibold">Прогноз</div>
+                      <div><span class="color-accent-warning">-10</span> за период</div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="aside__settings-droplist droplist has-scrollbar">
+      <div class="text-reg-12 color-subhead mb-8">Настройка: Дефекты проезж. части</div>
+
+      <div class="form-check">
+        <label>
+          <input type="checkbox">
+          <span>Отображать слой на карте постоянно</span>
+        </label>
+      </div>
+      <div class="form-check">
+        <label>
+          <input type="checkbox" checked>
+          <span>Скрыть виджет ДТП</span>
+        </label>
+      </div>
+      <div class="form-check">
+        <label>
+          <input type="checkbox" checked>
+          <span>Скрыть график ДТП прогноз</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="layout">
+        <div class="map-wrapper">
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+             crossorigin=""/>
+          <div class="map" id="map"></div>
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+             crossorigin=""></script>
+          <script>
+            var map = new L.map('map', {
+              center: [55.751244, 42.618423],
+              zoom: 6,
+              zoomControl: false,
+              attributionControl: false,
+            });
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+          </script>
+          <div class="map-control">
+            <div class="map-control__group">
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="assets/images/svg.svg#icon-folder-layer"></use></svg>
+                </button>
+                <div class="map-control__droplist map-layers-control droplist">
+                  <div class="map-control__droplist-header flex align-center justify-between gx-8 mb-8">
+                    <div class="text-upper-12 flex-grow">подложки</div>
+                    <button type="button" class="map-control__close btn flex-shrink p-0">
+                      <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+                    </button>
+                  </div>
+                  <div class="map-control__droplist-content has-scrollbar">
+                    <div class="text-reg-12 color-subhead mb-4">Системные</div>
+                    <div>
+                      <div class="map-object-btn">Mapbox Basic</div>
+                    </div>
+                    <div>
+                      <div class="map-object-btn">Mapbox Streets</div>
+                    </div>
+                    <div>
+                      <div class="map-object-btn">Mapbox Light</div>
+                    </div>
+                    <div>
+                      <div class="map-object-btn">Mapbox Dark</div>
+                    </div>
+                    <div>
+                      <div class="map-object-btn">Mapbox Satellite</div>
+                    </div>
+                    <div>
+                      <div class="map-object-btn">Mapbox Satellite Streets</div>
+                    </div>
+
+                    <div class="flex align-center justify-between mt-8">
+                      <div class="text-reg-12 color-subhead">Пользовательские</div>
+                      <button type="button" class="btn btn_secondary p-4" onclick="showModal('.js-new-underlayer-modal')">
+                        <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+                      </button>
+                    </div>
+                    <div>
+                      <div class="map-object-btn">
+                        <span onclick="showModal('.js-delete-modal')">User podlojka</span>
+                        <button type="button" class="btn btn_secondary" onclick="showModal('.js-source-manager-modal')">
+                          <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="map-object-btn">
+                        <span onclick="showModal('.js-delete-modal')">123456</span>
+                        <button type="button" class="btn btn_secondary" onclick="showModal('.js-source-manager-modal')">
+                          <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="map-object-btn">
+                        <span onclick="showModal('.js-delete-modal')">Moscow_custom</span>
+                        <button type="button" class="btn btn_secondary" onclick="showModal('.js-source-manager-modal')">
+                          <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="assets/images/svg.svg#icon-image"></use></svg>
+                </button>
+                <div class="map-control__droplist map-export droplist">
+                  <div class="map-control__droplist-header flex align-center justify-between gx-8 mb-8">
+                    <div class="text-upper-12 flex-grow">Экспорт карты</div>
+                    <button type="button" class="map-control__close btn flex-shrink p-0">
+                      <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+                    </button>
+                  </div>
+                  <div class="map-control__droplist-content has-scrollbar">
+                    <div class="map-export__group">
+                      <div class="text-reg-12 color-subhead mb-4">Качество</div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="quality">
+                          <span>Высокое (для печати)</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="quality" checked>
+                          <span>Обычное</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="map-export__group">
+                      <div class="text-reg-12 color-subhead mb-4">Формат</div>
+                      <div class="columns-2">
+                        <div class="form-check">
+                          <label>
+                            <input type="radio" name="format">
+                            <span>JPG</span>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <label>
+                            <input type="radio" name="format" checked>
+                            <span>PNG</span>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <label>
+                            <input type="radio" name="format">
+                            <span>TIFF</span>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <label>
+                            <input type="radio" name="format">
+                            <span>GIF</span>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <label>
+                            <input type="radio" name="format">
+                            <span>BMP</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a href="#" class="btn btn_primary btn_block">Сохранить в файл</a>
+                  </div>
+                </div>
+              </div>
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="assets/images/svg.svg#icon-2d"></use></svg>
+                </button>
+              </div>
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="assets/images/svg.svg#icon-compass-north"></use></svg>
+                </button>
+              </div>
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="assets/images/svg.svg#icon-geometry-instruments"></use></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="map-control__group">
+              <div class="map-control__item">
+                <button type="button" class="map-control__btn">
+                  <svg><use xlink:href="assets/images/svg.svg#icon-info"></use></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="map-info">
+          	<div class="map-info__coord">57.64911,10.40744</div>
+          	<div class="map-info__scale">
+          		<span>4 км</span>
+          	</div>
+          </div>
+          
+          <div style="position: absolute; left: 24.3%; bottom: 58.4%;">
+            
+            	<div 
+            		class="map-tooltip" 
+            		
+            			
+            			
+            			style="margin-bottom: 22px;"
+            		
+            	>
+            		<div class="map-tooltip__header">
+            			<div class="map-tooltip__header-icon">
+            				<svg class="icon"><use xlink:href="assets/images/svg.svg#icon-wind"></use></svg>
+            			</div>
+            			<div class="map-tooltip__header-content">
+            				<div class="map-tooltip__header-title">Установка МБО по оси проезжей части</div>
+            				<div class="map-tooltip__header-text color-accent-danger">-6 баллов</div>
+            			</div>
+            		</div>
+            		<div class="map-tooltip__content has-scrollbar">
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Адрес</div>
+            					<div class="map-tooltip__item-text">12+35,738 / 12+36,738</div>
+            				</div>
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Мероприятия</div>
+            					<div class="map-tooltip__item-text">Возможные мероприятия</div>
+            				</div>
+            			
+            			  <div class="map-tooltip__item">
+            					<div class="map-tooltip__item-title">Реализация</div>
+            					<div class="map-tooltip__item-text">Просрочено</div>
+            				</div>
+            			
+            		</div>
+            		<div class="map-tooltip__footer">
+            			<button type="button" class="btn btn_secondary btn_block" onclick="showModal('.js-more-modal')">Подробнее...</button>
+            		</div>
+            	</div>
+            
+
+            
+            	
+
+            	
+
+            	
+            		<div class="map-pin-dott color-accent-warning">
+            			<svg width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-wind"></use></svg>
+            		</div>
+            	
+            
+          </div>
+
+          <div style="position: absolute; left: 33.1%; bottom: 60.6%;">
+            
+
+            
+            	
+
+            	
+
+            	
+            		<div class="map-pin-dott color-accent-warning">
+            			<svg width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-wind"></use></svg>
+            		</div>
+            	
+            
+          </div>
+
+          <div style="position: absolute; left: 51.9%; bottom: 56.6%;">
+            
+
+            
+            	
+
+            	
+
+            	
+            		<div class="map-pin-dott color-accent-primary">
+            			<svg width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-overpass"></use></svg>
+            		</div>
+            	
+            
+          </div>
+
+          <div style="position: absolute; left: 62.7%; bottom: 57.3%;">
+            
+
+            
+            	
+
+            	
+
+            	
+            		<div class="map-pin-dott color-accent-primary">
+            			<svg width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-overpass"></use></svg>
+            		</div>
+            	
+            
+          </div>
+
+          <div style="position: absolute; left: 85.5%; bottom: 51.4%;">
+            
+
+            
+            	
+
+            	
+
+            	
+            		<div class="map-pin-dott color-accent-primary">
+            			<svg width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-overpass"></use></svg>
+            		</div>
+            	
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal js-more-modal ">
+	<div class="modal__bg"></div>
+	<div class="modal__inner">
+		<div class="modal__window modal__window_w600">
+			<div class="modal__window-header">
+				<div class="modal__title">Подробнее...</div>
+				<button type="button" class="modal__close js-modal-close btn">
+					<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+				</button>
+			</div>
+			<div class="modal__window-inner has-scrollbar">
+				<div class="flex gx-8 mb-16">
+          <div>
+            <button type="button" class="btn btn_success btn_smx js-modal-close">Сохранить</button>
+          </div>
+
+          <div>
+            <button type="button" class="btn btn_smx js-modal-close">Отменить</button>
+          </div>
+        </div>
+
+        <div class="buttons mb-16">
+          <button type="button" class="btn js-more-modal-info-btn is-active">Информация</button>
+          <button type="button" class="btn js-more-modal-editor-btn">Редактор мероприятий</button>
+        </div>
+
+        <div class="event-editor">
+	        <div class="mb-8 color-subhead">Выберите необходимые мероприятия</div>
+	        <div class="mb-16">
+		        <div class="select-block is-empty" data-multiple="true" data-placeholder="Выберите необходимые мероприятия">
+		          <div class="select-block__target">
+		            <div class="select-block__content"></div>
+		            <div class="select-block__arrow">
+		              <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-chevron-down"></use></svg>
+		            </div>
+		          </div>
+		          <div class="select-block__droplist droplist">
+		          	<div class="select-block__droplist-header mb-8">
+		          		<div class="search-field">
+		                <svg class="search-field__icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-search"></use></svg>
+		                <input type="text" name="search" placeholder="Поиск">
+		              </div>
+		          	</div>
+		          	<div class="select-block__droplist-content has-scrollbar">
+		        	    <div class="mb-12">
+		        	    	<div class="text-reg-12 color-secondary">Мероприятия по разделению транспортных потоков</div>
+		        	    	<div class="select-block__item is-active">Установка МБО по оси проезжей части</div>
+		        	    	<div class="select-block__item is-active">Установка ограждения парапетного типа (Нью-джерси) по оси проезжей части</div>
+		        	    	<div class="select-block__item">Установка МБО без компенсаторов по оси проезжей части</div>
+		        	    	<div class="select-block__item">Установка осевого тросового ограждения </div>
+		        	    </div>
+
+		        	    <div class="mb-12">
+		        	    	<div class="text-reg-12 color-secondary">Мероприятия по предотвращению съездов с дороги</div>
+		        	    	<div class="select-block__item">Установка МБО на краю проезжей части</div>
+		        	    	<div class="select-block__item">Установка ограждения парапетного типа (Нью-джерси) на краю проезжей части</div>
+		        	    	<div class="select-block__item">Установка тросового ограждения на краю проезжей части</div>
+		        	    </div>
+
+		        	    <div class="mb-12">
+		        	    	<div class="text-reg-12 color-secondary">Мероприятия по повышению БДД на перекрестках</div>
+		        	    	<div class="select-block__item">Установка светофорного объекта</div>
+		        	    	<div class="select-block__item">Дублирование сигналов светофора светодиодной лентой</div>
+		        	    </div>
+
+		        	    <div class="mb-12">
+		        	    	<div class="text-reg-12 color-secondary">Мероприятия по повышению БДД в темное время суток</div>
+		        	    	<div class="select-block__item">Установка противоослепляющих экранов</div>
+		        	    	<div class="select-block__item">Строительство освещения</div>
+		        	    </div>
+
+		        	    <div class="mb-12">
+		        	    	<div class="text-reg-12 color-secondary">Мероприятия по повышению БДД при помощи знаков и разметки</div>
+		        	    	<div class="select-block__item">Устройство поперечных шумовых полос</div>
+		        	    	<div class="select-block__item">Нанесение разметки 1.1</div>
+		        	    	<div class="select-block__item">Нанесение разметки 1.11</div>
+		        	    	<div class="select-block__item">Нанесение разметки 1.13</div>
+		        	    	<div class="select-block__item">Нанесение разметки 1.14</div>
+		        	    	<div class="select-block__item">Нанесение разметки 1.14.1</div>
+		        	    	<div class="select-block__item">Установка дорожных знаков 3.24</div>
+		        	    	<div class="select-block__item">Установка дорожных знаков 3.20 </div>
+		        	    	<div class="select-block__item">Дублирование дорожных знаков 3.20 </div>
+		        	    	<div class="select-block__item">Установка дорожных знаков 3.27</div>
+		        	    </div>
+
+		        	    <div class="mb-12">
+		        	    	<div class="text-reg-12 color-secondary">Мероприятия по повышению безопасности пешеходов</div>
+		        	    	<div class="select-block__item">Строительство надземного пешеходного перехода </div>
+		        	    	<div class="select-block__item">Установка пешеходного ограждения</div>
+		        	    	<div class="select-block__item">Установка пешеходного ограждения по оси проезжей части</div>
+		        	    	<div class="select-block__item">Установка пешеходного светофора</div>
+		        	    	<div class="select-block__item">Установка пешеходного пешеходного светофора типа т.7</div>
+		        	    	<div class="select-block__item">Дублирование сигналов пешеходного светофора светодиодной лентой</div>
+		        	    </div>
+		            </div>
+		          </div>
+		        </div>
+						<div class="text-reg-12 color-secondary mt-4">* - рекомендуемые мероприятия на основе автоматизированного расчёта</div>
+	        </div>
+
+	        <div class="mb-8 color-subhead">Дата выполнения</div>
+	        <div class="mb-16">
+	        	<textarea class="has-scrollbar" placeholder="Укажите дату" rows="2"></textarea>
+	        </div>
+
+	        <div class="mb-8 color-subhead">Комментарий</div>
+	        <div class="mb-16">
+	        	<textarea class="has-scrollbar" placeholder="Оставьте тут дополнительную информацию о мероприятиях" rows="2"></textarea>
+	        </div>
+        </div>
+
+        <div class="color-secondary mb-4">Тип ОДД</div>
+        <div class="mb-16">Эксплуатационная скорость транспортных средств</div>
+
+				<div class="color-secondary mb-4">Происшествие</div>
+        <div class="mb-16">Скорость</div>
+
+        <div class="color-secondary mb-4">Адрес</div>
+        <div class="mb-16">12+35,738 / 12+36,738</div>
+
+        <div class="color-secondary mb-4">Вид ДТП</div>
+        <div class="mb-16">Встречные столкновения</div>
+
+        <div class="color-secondary mb-4">Определение</div>
+        <div class="mb-16">Выезд на полосу встречного движения, Выезд на полосу встречного движения с разворотом, поворотом налево или объездом препятствия, Выезд на полосу встречного движения в местах, где это запрещено, Нарушение правил обгона, Разворот в местах, где разворот запрещён</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <div class="modal js-delete-modal ">
+  	<div class="modal__bg"></div>
+  	<div class="modal__inner">
+  		<div class="modal__window modal__window_w360">
+  			<div class="modal__window-header">
+  				<div class="modal__title">Удалить подложку</div>
+  				<button type="button" class="modal__close js-modal-close btn">
+  					<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+  				</button>
+  			</div>
+  			<div class="modal__window-inner has-scrollbar">
+  				<div class="mb-16">
+  					Вы уверены, что хотите удалить подложку? Её нельзя будет восстановить.
+  				</div>
+
+  				<div class="flex gx-8">
+            <div>
+              <button type="button" class="btn btn_danger js-modal-close">Удалить</button>
+            </div>
+
+            <div>
+              <button type="button" class="btn js-modal-close">Не удалять</button>
+            </div>
+          </div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+  <div class="modal js-new-underlayer-modal ">
+  	<div class="modal__bg"></div>
+  	<div class="modal__inner">
+  		<div class="modal__window modal__window_w420">
+  			<div class="modal__window-header">
+  				<div class="modal__title">Новая подложка для карты</div>
+  				<button type="button" class="modal__close js-modal-close btn">
+  					<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+  				</button>
+  			</div>
+  			<div class="modal__window-inner has-scrollbar">
+  				<div class="mb-8 color-subhead">Название</div>
+          <div class="mb-16">
+          	<input type="text" placeholder="Вставьте название">
+          </div>
+
+  				<div class="mb-8 color-subhead">Ссылка на источник (URL)</div>
+          <div class="mb-16">
+          	<textarea class="has-scrollbar error" placeholder="Вставьте ссылку" rows="3"></textarea>
+          	<div class="text-reg-12 mt-4 color-accent-danger">Неверный формат</div>
+          </div>
+
+  				<div class="flex gx-8">
+            <div>
+              <button type="button" class="btn btn_primary js-modal-close">Добавить</button>
+            </div>
+
+            <div>
+              <button type="button" class="btn js-modal-close">Выйти</button>
+            </div>
+          </div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+  <div class="modal js-new-layer-modal ">
+  	<div class="modal__bg"></div>
+  	<div class="modal__inner">
+  		<div class="modal__window modal__window_w480">
+  			<div class="modal__window-header">
+  				<div class="modal__title">Новый слой по ссылке</div>
+  				<button type="button" class="modal__close js-modal-close btn">
+  					<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+  				</button>
+  			</div>
+  			<div class="modal__window-inner has-scrollbar">
+  				<div class="mb-8 color-subhead">Название</div>
+          <div class="mb-16">
+          	<input type="text" placeholder="Вставьте название">
+          </div>
+
+  				<div class="mb-8 color-subhead">Ссылка на источник (URL)</div>
+          <div class="mb-16">
+          	<textarea class="has-scrollbar" placeholder="Вставьте ссылку" rows="3"></textarea>
+          </div>
+
+  				<div class="flex gx-8">
+            <div>
+              <button type="button" class="btn btn_primary js-modal-close">Добавить</button>
+            </div>
+
+            <div>
+              <button type="button" class="btn js-modal-close">Выйти</button>
+            </div>
+          </div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+  <div class="modal modal_source-managaer js-source-manager-modal ">
+  	<div class="modal__bg"></div>
+  	<div class="modal__inner">
+  		<div class="modal__window modal__window_w480">
+  			<div class="modal__window-header">
+  				<div class="modal__title">Мененджер источников данных</div>
+  				<button type="button" class="modal__close js-modal-close btn">
+  					<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+  				</button>
+  			</div>
+  			<div class="modal__window-inner flex flex-columnn">
+  				<div class="flex justify-between gx-8 mb-16">
+            <div>
+              <button type="button" class="btn btn_primary js-modal-close">
+              	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-add-plus"></use></svg>
+              	<span>Создать источник данных</span>
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn btn_secondary js-modal-close" onclick="showModal('.js-new-layer-modal')">Добавить слой</button>
+            </div>
+          </div>
+
+          <div class="source-managaer">
+          	<div class="source-managaer__header mb-8">
+  			  		<div class="search-field">
+  			        <svg class="search-field__icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-search"></use></svg>
+  			        <input type="text" name="search" placeholder="Поиск">
+  			      </div>
+  			  	</div>
+  			  	<div class="source-managaer__content has-scrollbar">
+  			  		<div class="source-list">
+  			  			<div class="source-group">
+  			  				<div class="source-group__header">
+  			  					<div class="source-item">
+  			  						<div class="source-item__expand">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-right"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-model-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Модель 1</div>
+  			  					</div>
+  			  				</div>
+  			  				<div class="source-group__content">
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  				</div>
+  			  			</div>
+
+  			  			<div class="source-group is-open">
+  			  				<div class="source-group__header">
+  			  					<div class="source-item">
+  			  						<div class="source-item__expand">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-chevron-solid-right"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-model-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Модель 2</div>
+  			  					</div>
+  			  				</div>
+  			  				<div class="source-group__content">
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-node-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-line-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  					<div class="source-item">
+  			  						<div class="source-item__line"></div>
+  			  						<div class="source-item__icon">
+  			  							<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+  			  						</div>
+  			  						<div class="source-item__content">Main text</div>
+  			  					</div>
+  			  				</div>
+  			  			</div>
+  			  		</div>
+  			  	</div>
+          </div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+  <script src="assets/lib/air-datepicker.3.3.5/air-datepicker.js"></script>
+  <script src="js/scripts.js?3"></script>
+</body>
+</html>

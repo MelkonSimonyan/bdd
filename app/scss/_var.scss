@@ -4,32 +4,24 @@
   --text-secondary:             #9398a3;
   --text-tetriary:              #ced0d6;
   --text-tertiary-dark:         #545A66;
-
   --accent-primary:             #2e93fe;
   --accent-primary-12:          rgb(46 147 254 / 12%);
   --accent-primary-50:          rgb(46 147 254 / 50%);
-  
   --accent-danger:              #d94141;
-
+  --accent-danger-10:           rgba(217, 65, 65, 0.10);
   --accent-success:             #40a228;
-  
   --accent-warning:             #d69338;
-  
   --accent-active:              #b400e1;
-  
   --table-border:               #e1e3e6;
-  
   --bg-panel-primary:           #f2f3f5;
   --bg-surface:                 #f7f8fa;
-
   --dividers-low-contrast:      rgb(0 0 0 / 12%);
-  
   --icons-low-contrast:         #b4b8bf;
-  
   --icons-high-contrast:        #6e7480;
   --button-secondary-bg:        rgb(110 116 128 / 16%);
   --button-secondary-bg-h:      rgb(110 116 128 / 10%);
   --bg-containers-gray:         rgb(110 116 128 / 8%);
-
   --field-placeholder:          #909499;
+  --shadow:                     0 4px 16px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.08);
+  --shadow-inset:               0 0 0 40px rgb(0 0 0 / 5%) inset;
 }

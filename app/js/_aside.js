@@ -1,23 +1,6 @@
 const asideItems = document.querySelectorAll('.aside-item');
-const asideSettingsDropdown = document.querySelector('.aside__settings-dropdown');
+const asideSettingsDropdown = document.querySelector('.aside__settings-droplist');
 const asideSettingsBtns = document.querySelectorAll('.aside-item__settings-btn');
-
-const dropdownPosition = (target) => {
-	const targetBoundingClientRect = target.getBoundingClientRect();
-	const dropdownBoundingClientRect = asideSettingsDropdown.getBoundingClientRect();
-	const left = targetBoundingClientRect.left;
-	const top = targetBoundingClientRect.top + targetBoundingClientRect.height + 8;
-
-	asideSettingsDropdown.style.left = left + 'px';
-	asideSettingsDropdown.style.top = top + 'px';
-	asideSettingsDropdown.style.bottom = 'auto';
-
-	if(top + dropdownBoundingClientRect.height > window.innerHeight){
-		asideSettingsDropdown.style.top = 'auto';
-		asideSettingsDropdown.style.bottom = 0;
-		asideSettingsDropdown.style.left = (left + targetBoundingClientRect.width + 6) + 'px';
-	}
-}
 
 asideItems.forEach(item => {
 	item.addEventListener('click', e => {
@@ -60,6 +43,7 @@ asideItems.forEach(item => {
 	if(itemSettingsBtn){
 		itemSettingsBtn.addEventListener('click', e => {
 			e.stopPropagation();
+			
 			if(itemSettingsBtn.classList.contains('is-open')){
 				itemSettingsBtn.classList.remove('is-open');
 				asideSettingsDropdown.classList.remove('is-open');
@@ -69,14 +53,14 @@ asideItems.forEach(item => {
 		  	});
 				itemSettingsBtn.classList.add('is-open');
 				asideSettingsDropdown.classList.add('is-open');
-				dropdownPosition(itemSettingsBtn);
+				dropdownPosition(itemSettingsBtn, asideSettingsDropdown);
 			}
 		});
 	}
 });
 
 document.addEventListener('click', e => {
-  if(!e.target.closest('.aside-item__settings-btn') && !e.target.closest('.aside__settings-dropdown')){
+  if(asideSettingsDropdown && !e.target.closest('.aside-item__settings-btn') && !e.target.closest('.aside__settings-droplist')){
   	asideSettingsBtns.forEach(btn => {
   		btn.classList.remove('is-open');
   	});

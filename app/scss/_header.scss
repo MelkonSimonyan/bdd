@@ -24,9 +24,32 @@
     color: var(--text-subhead);
   }
 
-  .buttons {
+  &__buttons.buttons {
     .btn {
       min-width: 106px;
     }
+  }
+}
+
+.period-data-control {
+  $this: &;
+  position: relative;
+
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 4px;
+    z-index: 10;
+    width: 400px;
+    display: none;
+
+    .droplist {
+      max-height: calc(100vh - 100px);
+    }
+  }
+
+  &.is-open &__dropdown {
+    display: block;
   }
 }

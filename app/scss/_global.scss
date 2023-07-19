@@ -6,23 +6,23 @@
   flex-wrap: wrap;
 }
 
-.align-items-start {
+.align-start {
   align-items: flex-start;
 }
 
-.align-items-center {
+.align-center {
   align-items: center;
 }
 
-.align-items-end {
+.align-end {
   align-items: flex-end;
 }
 
-.justify-content-center {
+.justify-center {
   justify-content: center;
 }
 
-.justify-content-between {
+.justify-between {
   justify-content: space-between;
 }
 
@@ -30,6 +30,14 @@
   flex-grow: 1;
   min-width: 1px;
   flex-basis: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 0;
+}
+
+.flex-columnn {
+  flex-direction: column;
 }
 
 .g-4 {
@@ -66,6 +74,30 @@
 
 .gy-16 {
   row-gap: 16px;
+}
+
+.p-0,
+.py-0,
+.pt-0 {
+  padding-top: 0;
+}
+
+.p-0,
+.py-0,
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.p-0,
+.px-0,
+.pl-0 {
+  padding-left: 0;
+}
+
+.p-0,
+.px-0,
+.pr-0 {
+  padding-right: 0;
 }
 
 .p-2,
@@ -162,6 +194,30 @@
 .px-16,
 .pr-16 {
   padding-right: 16px;
+}
+
+.m-0,
+.my-0,
+.mt-0 {
+  margin-top: 0;
+}
+
+.m-0,
+.my-0,
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.m-0,
+.mx-0,
+.ml-0 {
+  margin-left: 0;
+}
+
+.m-0,
+.mx-0,
+.mr-0 {
+  margin-right: 0;
 }
 
 .m-2,
@@ -325,6 +381,17 @@
   color: var(--accent-active) !important;
 }
 
+.columns-2 {
+  column-count: 2;
+  column-gap: 8px;
+
+  > * {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
 .has-scrollbar,
 .has-hidden-scrollbar {
   overflow: auto;
@@ -351,10 +418,10 @@
   }
 }
 
+.has-scrollbar,
 .has-hidden-scrollbar {
   &::-webkit-scrollbar {
     width: 0;
-    height: 0;
   }
 }
 
@@ -366,10 +433,14 @@
 
 .main {
   position: absolute;
-  left: 300px;
+  left: 0;
   top: 0;
   bottom: 0;
   right: 0;
+
+  .aside ~ & {
+    left: 300px;
+  }
 }
 
 .layout {
