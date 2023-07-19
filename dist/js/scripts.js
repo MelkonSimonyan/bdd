@@ -219,8 +219,6 @@ mapControlItems.forEach(item => {
       if(curItem !== item){
         curItem.classList.remove('is-open');
       }
-      
-      item.classList.remove('is-open');
     });
 
     item.classList.toggle('is-open');

@@ -833,6 +833,70 @@
             <button type="button" class="map-control__btn">
               <svg><use xlink:href="assets/images/svg.svg#icon-info"></use></svg>
             </button>
+            <div class="map-control__droplist map-legend droplist">
+              <div class="map-control__droplist-header flex align-center justify-between gx-8 mb-8">
+                <div class="text-upper-12 flex-grow">легенда</div>
+                <button type="button" class="map-control__close btn flex-shrink p-0">
+                  <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+                </button>
+              </div>
+              <div class="map-control__droplist-content has-scrollbar">
+                <div class="map-export__group">
+                  <div class="text-reg-12 color-subhead mb-4">Качество</div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="quality">
+                      <span>Высокое (для печати)</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="quality" checked>
+                      <span>Обычное</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="map-export__group mb-0">
+                  <div class="text-reg-12 color-subhead mb-4">Формат</div>
+                  <div class="columns-2">
+                    <div class="form-check">
+                      <label>
+                        <input type="radio" name="format">
+                        <span>JPG</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label>
+                        <input type="radio" name="format" checked>
+                        <span>PNG</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label>
+                        <input type="radio" name="format">
+                        <span>TIFF</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label>
+                        <input type="radio" name="format">
+                        <span>GIF</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label>
+                        <input type="radio" name="format">
+                        <span>BMP</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-control__droplist-footer mt-8">
+                <a href="#" class="btn btn_primary btn_block">Сохранить в файл</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

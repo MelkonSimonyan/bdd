@@ -67,18 +67,20 @@
       flex-shrink: 0;
     }
 
+    &-footer {
+      flex-shrink: 0;
+    }
+
     &-content {
       flex-grow: 1;
       min-height: 1px;
-      margin: -8px;
-      padding: 8px;
-      margin-top: 0;
-      padding-top: 0;
+      margin: 0 -8px;
+      padding: 0 8px;
     }
   }
 
   &__item.is-open &__droplist {
-    display: block;
+    display: flex;
   }
 }
 
@@ -623,4 +625,12 @@
     border-radius: 4px;
     margin-bottom: 8px;
   }
+}
+
+.map-legend {
+  right: 0;
+  top: 100%;
+  margin: 8px 0 0 0;
+  width: 300px;
+  max-height: calc(100vh - 340px);
 }
