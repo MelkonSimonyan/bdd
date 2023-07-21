@@ -58,3 +58,39 @@ document.addEventListener('click', e => {
     });
   }
 });
+
+const mapLegendGroups = document.querySelector('.map-legend__groups');
+if(mapLegendGroups){
+  const mapLegendAllGroups = mapLegendGroups.querySelectorAll('.map-legend__group');
+
+  mapLegendAllGroups.forEach(item => {
+    item.addEventListener('dragstart', () => {
+      setTimeout(() => item.classList.add('is-dragging'), 0);
+    });
+
+    item.addEventListener('dragend', () => item.classList.remove('is-dragging'));
+  });
+
+  const initmapLegendGroups = (e) => {
+    e.preventDefault();
+    const draggingItem = mapLegendGroups.querySelector('.is-dragging');
+    let siblings = [...mapLegendGroups.querySelectorAll('.map-legend__group:not(.is-dragging)')];
+    let nextSibling = siblings.find(sibling => {
+      return e.clientY <= sibling.getBoundingClientRect().top + sibling.getBoundingClientRect().height / 2;
+    });
+    mapLegendGroups.insertBefore(draggingItem, nextSibling);
+  }
+
+  mapLegendGroups.addEventListener('dragover', initmapLegendGroups);
+  
+  mapLegendGroups.addEventListener('dragenter', e => e.preventDefault());
+}
+
+const mapLegendFooter = document.querySelector('.map-legend__footer');
+if(mapLegendFooter){
+  const mapLegendFooterBtn = mapLegendFooter.querySelector('.map-legend__footer-close');
+  mapLegendFooterBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    mapLegendFooter.remove();
+  });
+}

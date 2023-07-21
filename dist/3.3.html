@@ -8,7 +8,7 @@
   <title>Безопасность дорожного движения</title>
 
   <link href="assets/lib/air-datepicker.3.3.5/air-datepicker.css" rel="stylesheet" />
-  <link href="css/style.css?3" rel="stylesheet" />
+  <link href="css/style.css?4" rel="stylesheet" />
 </head>
 <body>
   <div class="header">
@@ -835,6 +835,7 @@
                 <button type="button" class="map-control__btn">
                   <svg><use xlink:href="assets/images/svg.svg#icon-info"></use></svg>
                 </button>
+      
                 <div class="map-control__droplist map-legend droplist">
                   <div class="map-control__droplist-header flex align-center justify-between gx-8 mb-8">
                     <div class="text-upper-12 flex-grow">легенда</div>
@@ -842,61 +843,204 @@
                       <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
                     </button>
                   </div>
+        
                   <div class="map-control__droplist-content has-scrollbar">
-                    <div class="map-export__group">
-                      <div class="text-reg-12 color-subhead mb-4">Качество</div>
-                      <div class="form-check">
-                        <label>
-                          <input type="radio" name="quality">
-                          <span>Высокое (для печати)</span>
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <label>
-                          <input type="radio" name="quality" checked>
-                          <span>Обычное</span>
-                        </label>
-                      </div>
-                    </div>
+                    <div class="map-legend__groups">
+                      <div class="map-legend__group" draggable="true">
+                        <div class="map-legend__group-header flex align-center gx-4 pb-8 mb-8">
+                          <div class="map-legend__group-drag">
+                            <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-drag"></use></svg>
+                          </div>
+                          <div>Дороги</div>
+                        </div>
+              
+                        <div class="map-legend__group-content">
+                          <div class="flex align-center justify-between gx-4">
+                            <div class="text-reg-12 color-secondary">Объектов показано / всего</div>
+                            <div class="flex align-center gx-4">
+                              <span>3 / 3</span>
+                            </div>
+                          </div>
 
-                    <div class="map-export__group mb-0">
-                      <div class="text-reg-12 color-subhead mb-4">Формат</div>
-                      <div class="columns-2">
-                        <div class="form-check">
-                          <label>
-                            <input type="radio" name="format">
-                            <span>JPG</span>
-                          </label>
+                          <div class="flex align-center justify-between gx-4">
+                            <div class="text-reg-12 color-secondary">Тип геометрии</div>
+                            <div class="flex align-center gx-4">
+                              <span class="map-legend__icon map-legend__icon_line">
+                                <span style="background-color: #40A228;"></span>
+                              </span>
+                              <span class="map-legend__icon map-legend__icon_line">
+                                <span style="background-color: #D69338;"></span>
+                              </span>
+                              <span class="map-legend__icon map-legend__icon_line">
+                                <span style="background-color: #D94141;"></span>
+                              </span>
+                              <span>Линия</span>
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-check">
-                          <label>
-                            <input type="radio" name="format" checked>
-                            <span>PNG</span>
-                          </label>
+                      </div>
+
+                      <div class="map-legend__group" draggable="true">
+                        <div class="map-legend__group-header flex align-center gx-4 pb-8 mb-8">
+                          <div class="map-legend__group-drag">
+                            <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-drag"></use></svg>
+                          </div>
+                          <div>Оченьдлинное название слоя для проверки поведения переносов</div>
                         </div>
-                        <div class="form-check">
-                          <label>
-                            <input type="radio" name="format">
-                            <span>TIFF</span>
-                          </label>
+
+                        <div class="map-legend__group-content">
+                          <div class="flex align-center justify-between gx-4">
+                            <div class="text-reg-12 color-secondary">Объектов показано / всего</div>
+                            <div class="flex align-center gx-4">
+                              <span>12414 / 12414</span>
+                            </div>
+                          </div>
+
+                          <div class="flex align-center justify-between gx-4">
+                            <div class="text-reg-12 color-secondary">Тип геометрии</div>
+                            <div class="flex align-center gx-4">
+                              <span class="map-legend__icon map-legend__icon_dot">
+                                <span style="background-color: #5462E1;"></span>
+                              </span>
+                              <span>Точка</span>
+                            </div>
+                          </div>
+
+                          <div class="expand-box">
+                            <div class="expand-box__header flex align-center justify-between gx-4">
+                              <div class="text-upper-12">Параметры отображения</div>
+                              <div class="expand-box__arrow">
+                                <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-chevron-down"></use></svg>
+                              </div>
+                            </div>
+
+                            <div class="expand-box__content flex flex-column gy-8">
+                              <div class="flex align-center justify-between gx-4">
+                                <div class="text-reg-12 color-secondary">Тип</div>
+                                <div class="flex align-center gx-4">
+                                  <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-epure-layer"></use></svg>
+                                  <span>Эпюры</span>
+                                </div>
+                              </div>
+
+                              <div class="flex align-center justify-between gx-4">
+                                <div class="text-reg-12 color-secondary">Атрибут</div>
+                                <div class="flex align-center gx-4">
+                                  <span>vehicle_on_link</span>
+                                </div>
+                              </div>
+
+                              <div class="flex align-center gx-4">
+                                <span class="map-legend__icon map-legend__icon_line">
+                                  <span style="background-color: #AE232D;"></span>
+                                </span>
+                                <div class="text-reg-12">> 74512.5</div>
+                              </div>
+
+                              <div class="flex align-center gx-4">
+                                <span class="map-legend__icon map-legend__icon_line">
+                                  <span style="background-color: #DE4B31;"></span>
+                                </span>
+                                <div class="text-reg-12">74512.5 - 65054.7</div>
+                              </div>
+
+                              <div class="flex align-center gx-4">
+                                <span class="map-legend__icon map-legend__icon_line">
+                                  <span style="background-color: #F3B45F;"></span>
+                                </span>
+                                <div class="text-reg-12">65054.7 - 41209.1</div>
+                              </div>
+
+                              <div class="flex align-center gx-4">
+                                <span class="map-legend__icon map-legend__icon_line">
+                                  <span style="background-color: #FFFEBB;"></span>
+                                </span>
+                                <div class="text-reg-12">≤ 41209.1</div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-check">
-                          <label>
-                            <input type="radio" name="format">
-                            <span>GIF</span>
-                          </label>
+                      </div>
+
+                      <div class="map-legend__group" draggable="true">
+                        <div class="map-legend__group-header flex align-center gx-4 pb-8 mb-8">
+                          <div class="map-legend__group-drag">
+                            <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-drag"></use></svg>
+                          </div>
+                          <div>Смежные маршруты по районам Москвы и области</div>
                         </div>
-                        <div class="form-check">
-                          <label>
-                            <input type="radio" name="format">
-                            <span>BMP</span>
-                          </label>
+
+                        <div class="map-legend__group-content">
+                          <div class="flex align-center justify-between gx-4">
+                            <div class="text-reg-12 color-secondary">Объектов показано / всего</div>
+                            <div class="flex align-center gx-4">
+                              <span>50 / 635</span>
+                            </div>
+                          </div>
+
+                          <div class="flex align-center gx-4">
+                            <svg class="icon" width="16" height="16"><use xlink:href="assets/images/svg.svg#icon-filter"></use></svg>
+                            <div class="text-reg-12 overflow-ellipsis">Фильтр по длине маршрута</div>
+                          </div>
+
+                          <div class="flex align-center gx-4">
+                            <svg class="icon" width="16" height="16"><use xlink:href="assets/images/svg.svg#icon-selection-field"></use></svg>
+                            <div class="text-reg-12 overflow-ellipsis">Пространственный фильтр</div>
+                          </div>
+
+                          <div class="flex align-center gx-4">
+                            <svg class="icon" width="16" height="16"><use xlink:href="assets/images/svg.svg#icon-filter"></use></svg>
+                            <div class="text-reg-12 overflow-ellipsis">Фильтр с длинным названием ыварывраыаыварывраыаыварывраыа</div>
+                          </div>
+
+                          <div class="flex align-center justify-between gx-4">
+                            <div class="text-reg-12 color-secondary">Тип геометрии</div>
+                            <div class="flex align-center gx-4">
+                              <span class="map-legend__icon map-legend__icon_line">
+                                <span style="background-color: #878787;"></span>
+                              </span>
+                              <span>Линия</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="map-legend__group" draggable="true">
+                        <div class="map-legend__group-header flex align-center gx-4 pb-8 mb-8">
+                          <div class="map-legend__group-drag">
+                            <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-drag"></use></svg>
+                          </div>
+                          <div>Районы Москвы</div>
+                        </div>
+
+                        <div class="map-legend__group-content">
+                          <div class="flex align-center justify-between gx-4">
+                            <div class="text-reg-12 color-secondary">Объектов показано / всего</div>
+                            <div class="flex align-center gx-4">
+                              <span>124 / 124</span>
+                            </div>
+                          </div>
+
+                          <div class="flex align-center justify-between gx-4">
+                            <div class="text-reg-12 color-secondary">Тип геометрии</div>
+                            <div class="flex align-center gx-4">
+                              <span class="map-legend__icon map-legend__icon_area">
+                                <span style="background-color: #F3B7A4;"></span>
+                              </span>
+                              <span>Полигон</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="map-control__droplist-footer mt-8">
-                    <a href="#" class="btn btn_primary btn_block">Сохранить в файл</a>
+        
+                  <div class="map-control__droplist-footer map-legend__footer flex align-center justify-between gx-8 mt-8">
+                    <svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-drag-1"></use></svg>
+                    <div class="flex-grow text-reg-12 color-secondary">Передвигайте слои в легенде, чтобы изменять порядок слоёв на карте</div>
+                    <button type="button" class="map-legend__footer-close btn btn_secondary p-4">
+                      <svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1481,7 +1625,7 @@
   					<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
   				</button>
   			</div>
-  			<div class="modal__window-inner flex flex-columnn">
+  			<div class="modal__window-inner flex flex-column">
   				<div class="flex justify-between gx-8 mb-16">
             <div>
               <button type="button" class="btn btn_primary js-modal-close">
@@ -1753,6 +1897,6 @@
   </div>
 
   <script src="assets/lib/air-datepicker.3.3.5/air-datepicker.js"></script>
-  <script src="js/scripts.js?3"></script>
+  <script src="js/scripts.js?4"></script>
 </body>
 </html>

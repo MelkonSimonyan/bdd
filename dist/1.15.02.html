@@ -139,8 +139,8 @@
         <div class="header__buttons buttons">
           <a href="#" class="btn is-active">Карта</a>
           
-            <a class="btn" disabled>Таблица</a>
           
+            <a href="#" class="btn ">Таблица</a>
           
           <a href="4.6.html" class="btn ">Мероприятия</a>
         </div>
@@ -1044,6 +1044,64 @@
           </div>
         </div>
       </div>
+      <div class="map-measurements droplist is-open">
+      	<div class="map-measurements__header">
+      		<div class="flex align-center justify-between gx-8">
+      			<div class="text-upper-12 flex-grow">измерения</div>
+      			<button type="button" class="map-measurements__close btn flex-shrink p-0">
+      				<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+      			</button>
+      		</div>
+      	</div>
+	
+      	<div class="map-measurements__content">
+      		<div class="flex align-center gx-8">
+      			
+
+      			
+
+      			
+
+      			
+
+      			
+
+      			
+      			<div class="flex-grow p-8 fw-semibold">
+      				<div class="overflow-ellipsis">Укажите 1 точку и введите значение</div>
+      			</div>
+      			<div class="label-field flex-shrink" style="width: 120px;">
+      				<input type="text" value="0" disabled>
+      				<div class="label-field__label">м</div>
+      			</div>
+      			<a href="1.15.01.html" class="btn btn_smx btn_secondary">
+      				<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-return"></use></svg>
+      			</a>
+      			
+      		</div>
+      	</div>
+
+      	<div class="map-measurements__nav">
+      		<div class="buttons">
+      	    <a href="1.12.01.html" class="btn  ">
+      	    	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+      	    	<span>Координаты</span>
+      	    </a>
+      	    <a href="1.13.01.html" class="btn ">
+      	    	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-ruler"></use></svg>
+      	    	<span>Линейка</span>
+      	    </a>
+      	    <a href="1.14.01.html" class="btn ">
+      	    	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+      	    	<span>Площадь</span>
+      	    </a>
+      	    <a href="1.15.01.html" class="btn  is-active">
+      	    	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-geometry-instruments"></use></svg>
+      	    	<span>Радиус</span>
+      	    </a>
+      	  </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1206,7 +1264,7 @@
   	</div>
   </div>
 
-  <div class="modal js-new-underlayer-modal is-open is-visible">
+  <div class="modal js-new-underlayer-modal ">
   	<div class="modal__bg"></div>
   	<div class="modal__inner">
   		<div class="modal__window modal__window_w420">

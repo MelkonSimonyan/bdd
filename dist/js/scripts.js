@@ -130,6 +130,12 @@ sourceGroups.forEach(group => {
 		});
 	});
 });
+
+const expandBoxes = document.querySelectorAll('.expand-box');
+expandBoxes.forEach(expandBox => {
+	const header = expandBox.querySelector('.expand-box__header');
+	header.addEventListener('click', e => expandBox.classList.toggle('is-open'));
+});
 document.querySelectorAll('.radial-graph__graph').forEach(graph => {
   const w = graph.getBoundingClientRect().width || 40;
   const a = graph.dataset.angle;
@@ -239,6 +245,42 @@ document.addEventListener('click', e => {
     });
   }
 });
+
+const mapLegendGroups = document.querySelector('.map-legend__groups');
+if(mapLegendGroups){
+  const mapLegendAllGroups = mapLegendGroups.querySelectorAll('.map-legend__group');
+
+  mapLegendAllGroups.forEach(item => {
+    item.addEventListener('dragstart', () => {
+      setTimeout(() => item.classList.add('is-dragging'), 0);
+    });
+
+    item.addEventListener('dragend', () => item.classList.remove('is-dragging'));
+  });
+
+  const initmapLegendGroups = (e) => {
+    e.preventDefault();
+    const draggingItem = mapLegendGroups.querySelector('.is-dragging');
+    let siblings = [...mapLegendGroups.querySelectorAll('.map-legend__group:not(.is-dragging)')];
+    let nextSibling = siblings.find(sibling => {
+      return e.clientY <= sibling.getBoundingClientRect().top + sibling.getBoundingClientRect().height / 2;
+    });
+    mapLegendGroups.insertBefore(draggingItem, nextSibling);
+  }
+
+  mapLegendGroups.addEventListener('dragover', initmapLegendGroups);
+  
+  mapLegendGroups.addEventListener('dragenter', e => e.preventDefault());
+}
+
+const mapLegendFooter = document.querySelector('.map-legend__footer');
+if(mapLegendFooter){
+  const mapLegendFooterBtn = mapLegendFooter.querySelector('.map-legend__footer-close');
+  mapLegendFooterBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    mapLegendFooter.remove();
+  });
+}
 const asideItems = document.querySelectorAll('.aside-item');
 const asideSettingsDropdown = document.querySelector('.aside__settings-droplist');
 const asideSettingsBtns = document.querySelectorAll('.aside-item__settings-btn');

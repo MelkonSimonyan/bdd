@@ -1,0 +1,114 @@
+<div class="map-measurements droplist is-open">
+	<div class="map-measurements__header">
+		<div class="flex align-center justify-between gx-8">
+			<div class="text-upper-12 flex-grow">измерения</div>
+			<button type="button" class="map-measurements__close btn flex-shrink p-0">
+				<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-close-delete"></use></svg>
+			</button>
+		</div>
+	</div>
+	
+	<div class="map-measurements__content">
+		<div class="flex align-center gx-8">
+			@@if(active === 1){
+			<div class="flex-grow p-8 flex align-center gx-8">
+				<div class="flex align-center justify-between gx-4 flex-grow fw-semibold">
+					<div class="overflow-ellipsis flex-grow">–</div>
+					<div class="color-secondary flex-shrink">Ш&nbsp;(N)</div>
+				</div>
+				<div class="map-measurements__divider"></div>
+				<div class="flex align-center justify-between gx-4 flex-grow fw-semibold">
+					<div class="overflow-ellipsis flex-grow">–</div>
+					<div class="color-secondary flex-shrink">Д&nbsp;(E)</div>
+				</div>
+			</div>
+			<a href="1.12.02.html" class="btn btn_smx btn_secondary">
+				<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-edit"></use></svg>
+			</a>
+			<button type="button" class="btn btn_smx btn_secondary">
+				<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-copy"></use></svg>
+			</button>
+			}
+
+			@@if(active === 11){
+			<div class="flex-grow flex gx-8">
+				<div class="flex-grow">
+					<div class="label-field">
+						<input type="text" value="123.45678901" style="padding-right: 50px;">
+						<div class="label-field__label">Ш (N)</div>
+					</div>
+				</div>
+				<div class="flex-grow">
+					<div class="label-field">
+						<input type="text" value="абв" class="error" style="padding-right: 44px;">
+						<div class="label-field__label">Д (E)</div>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="btn btn_smx">Сбросить</button>
+			<a href="1.12.01.html" class="btn btn_smx">Назад</a>
+			}
+
+			@@if(active === 2){
+			<div class="flex-grow p-8 flex align-center justify-between gx-4 fw-semibold">
+				<div class="overflow-ellipsis flex-grow">Укажите минимум 2 точки</div>
+				<div class="color-secondary flex-shrink">м</div>
+			</div>
+			<button type="button" class="btn btn_smx" disabled>Назад</button>
+			}
+
+			@@if(active === 3){
+			<div class="flex-grow p-8 flex align-center justify-between gx-4 fw-semibold">
+				<div class="overflow-ellipsis flex-grow">Укажите минимум 3 точки</div>
+				<div class="color-secondary flex-shrink">м2</div>
+			</div>
+			<button type="button" class="btn btn_smx" disabled>Назад</button>
+			}
+
+			@@if(active === 4){
+			<div class="flex-grow p-8 fw-semibold">
+				<div class="overflow-ellipsis">Укажите минимум 2 точки</div>
+			</div>
+			<a href="1.15.02.html" class="btn btn_smx btn_secondary">
+				<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-edit"></use></svg>
+				<span>Вручную</span>
+			</a>
+			<button type="button" class="btn btn_smx btn_secondary" disabled>Сбросить</button>
+			}
+
+			@@if(active === 41){
+			<div class="flex-grow p-8 fw-semibold">
+				<div class="overflow-ellipsis">Укажите 1 точку и введите значение</div>
+			</div>
+			<div class="label-field flex-shrink" style="width: 120px;">
+				<input type="text" value="0" disabled>
+				<div class="label-field__label">м</div>
+			</div>
+			<a href="1.15.01.html" class="btn btn_smx btn_secondary">
+				<svg class="icon" width="24" height="24"><use xlink:href="assets/images/svg.svg#icon-return"></use></svg>
+			</a>
+			}
+		</div>
+	</div>
+
+	<div class="map-measurements__nav">
+		<div class="buttons">
+	    <a href="1.12.01.html" class="btn @@if(active === 1){is-active} @@if(active === 11){is-active}">
+	    	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-focus-zone"></use></svg>
+	    	<span>Координаты</span>
+	    </a>
+	    <a href="1.13.01.html" class="btn @@if(active === 2){is-active}">
+	    	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-ruler"></use></svg>
+	    	<span>Линейка</span>
+	    </a>
+	    <a href="1.14.01.html" class="btn @@if(active === 3){is-active}">
+	    	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-polygon-layer"></use></svg>
+	    	<span>Площадь</span>
+	    </a>
+	    <a href="1.15.01.html" class="btn @@if(active === 4){is-active} @@if(active === 41){is-active}">
+	    	<svg class="icon" width="20" height="20"><use xlink:href="assets/images/svg.svg#icon-geometry-instruments"></use></svg>
+	    	<span>Радиус</span>
+	    </a>
+	  </div>
+  </div>
+</div>

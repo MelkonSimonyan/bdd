@@ -180,7 +180,7 @@ strong {
   flex-shrink: 0;
 }
 
-.flex-columnn {
+.flex-column {
   flex-direction: column;
 }
 
@@ -502,4 +502,10 @@ strong {
   &::-webkit-scrollbar {
     width: 0;
   }
+}
+
+.overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  @@include('./components/_head.html')
+</head>
+<body>
+  @@include('./components/_header.html')
+
+  <div class="content">
+    @@include('./components/aside/_aside-1.html')
+
+    <div class="main">
+      @@include('./components/map/_map.html')
+      @@include('./components/map/_map-layers.html')
+      @@include('./components/map/_map-measurements.html', {
+        active: 2
+      })
+    </div>
+  </div>
+
+  @@include('./components/_foot.html')
+</body>
+</html>

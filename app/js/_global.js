@@ -130,3 +130,9 @@ sourceGroups.forEach(group => {
 		});
 	});
 });
+
+const expandBoxes = document.querySelectorAll('.expand-box');
+expandBoxes.forEach(expandBox => {
+	const header = expandBox.querySelector('.expand-box__header');
+	header.addEventListener('click', e => expandBox.classList.toggle('is-open'));
+});

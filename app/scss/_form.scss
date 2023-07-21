@@ -287,6 +287,22 @@ textarea {
 	}
 }
 
+.label-field {
+	position: relative;
+
+	input {
+		padding-right: 24px;
+	}
+
+	&__label {
+		position: absolute;
+		top: 8px;
+		right: 12px;
+		color: var(--text-secondary);
+		pointer-events: none;
+	}
+}
+
 .select-block {
 	position: relative;
 

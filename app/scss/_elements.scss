@@ -250,3 +250,26 @@
 	padding: 0;
 	background: none;
 }
+
+.expand-box {
+	background: #fff;
+	border-radius: 4px;
+
+	&__header {
+		cursor: pointer;
+		padding: 8px;
+	}
+
+	&__content {
+		padding: 8px;
+		padding-top: 0;
+	}
+
+	&.is-open .expand-box__arrow {
+		transform: rotate(180deg);
+	}
+
+	&:not(.is-open) &__content {
+		display: none;
+	}
+}
